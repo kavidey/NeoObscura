@@ -11,8 +11,9 @@ letter = 'Q'  # Set a constant letter
 def get_coordinates(component_number):
     row = (component_number - 1) % grid_width
     col = (component_number - 1) // grid_width
-    x = col * horizontal_distance
-    y = row * vertical_distance
+    # print(component_number, row, row - (grid_width-1) / 2, col, col - (grid_height-1) / 2)
+    x = (col - (grid_height - 1) / 2) * horizontal_distance
+    y = (row - (grid_width - 1) / 2) * vertical_distance
     return x, y
 
 output_file = "component_coordinates.csv"
