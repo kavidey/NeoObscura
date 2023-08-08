@@ -26,6 +26,6 @@ with open(output_file, "w", newline="") as file:
     for i in range(1, component_count + 1):
         component_name = letter + str(i)
         x, y = get_coordinates(i)
-        writer.writerow([component_name, str(x) + "mil", str(y) + "mil", str(x) + "mil", str(y) + "mil", str(x) + "mil", str(y) + "mil", "T", "0", ""])
+        writer.writerow([component_name, str(x) + "mil", str(y) + "mil", str(x) + "mil", str(y) + "mil", str(x) + "mil", str(y) + "mil", "C", "0", ""])
 
 print(f"Component coordinates saved to {output_file}.")
