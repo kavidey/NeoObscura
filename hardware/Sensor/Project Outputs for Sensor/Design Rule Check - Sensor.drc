@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : Z:\github\NeoObscura\hardware\Sensor\Sensor.PcbDoc
-Date     : 5/19/2023
-Time     : 3:20:49 AM
+Date     : 9/6/2023
+Time     : 1:18:49 AM
 
 Processing Rule : Clearance Constraint (Gap=10mil) (All),(All)
 Rule Violations :0
@@ -10,20 +10,7 @@ Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
 Rule Violations :0
 
 Processing Rule : Un-Routed Net Constraint ( (All) )
-   Violation between Un-Routed Net Constraint: Net GND Between Pad J1-10(1742.126mil,-165.375mil) on Bottom Layer And Pad J1-12(1742.126mil,-133.875mil) on Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad J1-8(1742.126mil,-196.875mil) on Bottom Layer And Pad J1-10(1742.126mil,-165.375mil) on Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad J1-12(1742.126mil,-133.875mil) on Bottom Layer And Pad J1-14(1742.126mil,-102.375mil) on Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad J1-14(1742.126mil,-102.375mil) on Bottom Layer And Pad J1-16(1742.126mil,-70.875mil) on Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad J1-16(1742.126mil,-70.875mil) on Bottom Layer And Pad J1-18(1742.126mil,-39.375mil) on Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad J1-2(1742.126mil,-291.375mil) on Bottom Layer And Pad J1-4(1742.126mil,-259.875mil) on Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad J1-20(1742.126mil,-7.875mil) on Bottom Layer And Pad J1-22(1742.126mil,23.625mil) on Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad J1-22(1742.126mil,23.625mil) on Bottom Layer And Pad J1-24(1742.126mil,55.125mil) on Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad J1-38(1742.126mil,275.625mil) on Bottom Layer And Pad J1-40(1742.126mil,307.125mil) on Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad J1-4(1742.126mil,-259.875mil) on Bottom Layer And Pad J1-6(1742.126mil,-228.375mil) on Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad J1-6(1742.126mil,-228.375mil) on Bottom Layer And Pad J1-8(1742.126mil,-196.875mil) on Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad J1-75(1657.874mil,228.375mil) on Bottom Layer And Pad J1-77(1657.874mil,259.875mil) on Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad J1-77(1657.874mil,259.875mil) on Bottom Layer And Pad J1-79(1657.874mil,291.375mil) on Bottom Layer 
-Rule Violations :13
+Rule Violations :0
 
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
 Rule Violations :0
@@ -31,16 +18,16 @@ Rule Violations :0
 Processing Rule : Width Constraint (Min=5mil) (Max=100mil) (Preferred=10mil) (All)
 Rule Violations :0
 
-Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
+Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
 Rule Violations :0
 
-Processing Rule : Hole Size Constraint (Min=1mil) (Max=100mil) (All)
+Processing Rule : Hole Size Constraint (Min=0.984mil) (Max=248.031mil) (All)
 Rule Violations :0
 
 Processing Rule : Hole To Hole Clearance (Gap=10mil) (All),(All)
 Rule Violations :0
 
-Processing Rule : Minimum Solder Mask Sliver (Gap=4mil) (All),(All)
+Processing Rule : Minimum Solder Mask Sliver (Gap=3.15mil) (All),(All)
 Rule Violations :0
 
 Processing Rule : Silk To Solder Mask (Clearance=10mil) (IsPad),(All)
@@ -56,6 +43,6 @@ Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (
 Rule Violations :0
 
 
-Violations Detected : 13
+Violations Detected : 0
 Waived Violations : 0
-Time Elapsed        : 00:00:07
+Time Elapsed        : 00:00:03
