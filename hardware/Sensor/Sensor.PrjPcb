@@ -134,23 +134,6 @@ GenerateClassCluster=0
 DocumentUniqueId=QLJGGAQL
 
 [Document6]
-DocumentPath=Connectors.SchDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=JRSUNJUX
-
-[Document7]
 DocumentPath=Sensor.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -169,6 +152,10 @@ DocumentUniqueId=PHWCPELC
 
 [GeneratedDocument1]
 DocumentPath=Project Outputs for Sensor\Design Rule Check - Sensor.html
+DItemRevisionGUID=
+
+[GeneratedDocument2]
+DocumentPath=Project Outputs for Sensor\Footprint Comparison - Sensor.html
 DItemRevisionGUID=
 
 [Configuration1]
