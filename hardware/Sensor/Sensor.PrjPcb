@@ -150,12 +150,181 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=PHWCPELC
 
+[Document7]
+DocumentPath=Job1.OutJob
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
 [GeneratedDocument1]
-DocumentPath=Project Outputs for Sensor\Design Rule Check - Sensor.html
+DocumentPath=Project Outputs for Sensor\Assembly\Bill of Materials-Sensor.csv
 DItemRevisionGUID=
 
 [GeneratedDocument2]
+DocumentPath=Project Outputs for Sensor\BOM\Bill of Materials-Sensor.csv
+DItemRevisionGUID=
+
+[GeneratedDocument3]
+DocumentPath=Project Outputs for Sensor\Design Rule Check - Sensor.html
+DItemRevisionGUID=
+
+[GeneratedDocument4]
 DocumentPath=Project Outputs for Sensor\Footprint Comparison - Sensor.html
+DItemRevisionGUID=
+
+[GeneratedDocument5]
+DocumentPath=Project Outputs for Sensor\Fabrication\Sensor.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument6]
+DocumentPath=Project Outputs for Sensor\NC Drill\Sensor.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument7]
+DocumentPath=Project Outputs for Free Documents\Gerber\Sensor.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument8]
+DocumentPath=Project Outputs for Sensor\Fabrication\Sensor.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument9]
+DocumentPath=Project Outputs for Sensor\Gerber\Sensor.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument10]
+DocumentPath=Project Outputs for Sensor\Fabrication\Sensor.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument11]
+DocumentPath=Project Outputs for Sensor\Gerber\Sensor.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument12]
+DocumentPath=Project Outputs for Sensor\Fabrication\Sensor.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument13]
+DocumentPath=Project Outputs for Sensor\Gerber\Sensor.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument14]
+DocumentPath=Project Outputs for Sensor\Fabrication\Sensor.GBP
+DItemRevisionGUID=
+
+[GeneratedDocument15]
+DocumentPath=Project Outputs for Sensor\Gerber\Sensor.GBP
+DItemRevisionGUID=
+
+[GeneratedDocument16]
+DocumentPath=Project Outputs for Sensor\Fabrication\Sensor.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument17]
+DocumentPath=Project Outputs for Sensor\Gerber\Sensor.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument18]
+DocumentPath=Project Outputs for Sensor\Gerber\Sensor.GD1
+DItemRevisionGUID=
+
+[GeneratedDocument19]
+DocumentPath=Project Outputs for Sensor\Gerber\Sensor.GG1
+DItemRevisionGUID=
+
+[GeneratedDocument20]
+DocumentPath=Project Outputs for Sensor\Fabrication\Sensor.GKO
+DItemRevisionGUID=
+
+[GeneratedDocument21]
+DocumentPath=Project Outputs for Sensor\Gerber\Sensor.GKO
+DItemRevisionGUID=
+
+[GeneratedDocument22]
+DocumentPath=Project Outputs for Sensor\Fabrication\Sensor.GM
+DItemRevisionGUID=
+
+[GeneratedDocument23]
+DocumentPath=Project Outputs for Sensor\Gerber\Sensor.GM
+DItemRevisionGUID=
+
+[GeneratedDocument24]
+DocumentPath=Project Outputs for Sensor\Fabrication\Sensor.GM1
+DItemRevisionGUID=
+
+[GeneratedDocument25]
+DocumentPath=Project Outputs for Sensor\Gerber\Sensor.GM1
+DItemRevisionGUID=
+
+[GeneratedDocument26]
+DocumentPath=Project Outputs for Sensor\Fabrication\Sensor.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument27]
+DocumentPath=Project Outputs for Sensor\Gerber\Sensor.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument28]
+DocumentPath=Project Outputs for Sensor\Fabrication\Sensor.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument29]
+DocumentPath=Project Outputs for Sensor\Gerber\Sensor.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument30]
+DocumentPath=Project Outputs for Sensor\Fabrication\Sensor.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument31]
+DocumentPath=Project Outputs for Sensor\Gerber\Sensor.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument32]
+DocumentPath=Project Outputs for Sensor\Fabrication\Sensor.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument33]
+DocumentPath=Project Outputs for Sensor\Gerber\Sensor.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument34]
+DocumentPath=Project Outputs for Sensor\Fabrication\Sensor.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument35]
+DocumentPath=Project Outputs for Sensor\NC Drill\Sensor.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument36]
+DocumentPath=Project Outputs for Free Documents\Gerber\Sensor.REP
+DItemRevisionGUID=
+
+[GeneratedDocument37]
+DocumentPath=Project Outputs for Sensor\Fabrication\Sensor.REP
+DItemRevisionGUID=
+
+[GeneratedDocument38]
+DocumentPath=Project Outputs for Sensor\Gerber\Sensor.REP
+DItemRevisionGUID=
+
+[GeneratedDocument39]
+DocumentPath=Project Outputs for Sensor\Fabrication\Sensor.TXT
+DItemRevisionGUID=
+
+[GeneratedDocument40]
+DocumentPath=Project Outputs for Sensor\NC Drill\Sensor.TXT
 DItemRevisionGUID=
 
 [Configuration1]
