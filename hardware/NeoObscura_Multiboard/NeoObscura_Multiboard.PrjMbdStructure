@@ -1,0 +1,4 @@
+Record=DiagramHierarchy|SourceDocument=Schematic.MbsDoc|Kind=Multi-board Schematic Module|Designator=Board 2|Source=..\ImageSignalProcessor\ImageSignalProcessor.PrjPcb
+Record=SubProject|SourceDocument=Schematic.MbsDoc|ProjectPath=..\ImageSignalProcessor\ImageSignalProcessor.PrjPcb
+Record=DiagramHierarchy|SourceDocument=Schematic.MbsDoc|Kind=Multi-board Schematic Module|Designator=Board 1|Source=..\Sensor\Sensor.PrjPcb
+Record=SubProject|SourceDocument=Schematic.MbsDoc|ProjectPath=..\Sensor\Sensor.PrjPcb
