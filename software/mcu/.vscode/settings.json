@@ -1,0 +1,6 @@
+{
+    "clangd.fallbackFlags": [
+        "-I${workspaceFolder}/STM32L4xx/Device/Include",
+        "-I${workspaceFolder}/CMSIS_5/CMSIS/Core/Include"
+    ]
+}
