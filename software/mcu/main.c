@@ -1,34 +1,27 @@
-/*********************************************************************
-*                    SEGGER Microcontroller GmbH                     *
-*                        The Embedded Experts                        *
-**********************************************************************
+/*
+File: main.c
+Author: Kavi Dey
+Email: kdey@hmc.edu
+Date: 10/30/23
 
--------------------------- END-OF-HEADER -----------------------------
-
-File    : main.c
-Purpose : Generic application start
-
+Main file for NeoObscura
 */
 
+#include "lib/STM32L432KC.h"
+#include "lib/STM32L432KC_FLASH.h"
+#include "lib/STM32L432KC_GPIO.h"
+#include "lib/STM32L432KC_RCC.h"
+#include "lib/sensor.h"
 #include <stdio.h>
-#include <stdlib.h>
+#include <stm32l432xx.h>
 
-/*********************************************************************
-*
-*       main()
-*
-*  Function description
-*   Application entry point.
-*/
 int main(void) {
-  int i;
+    // Configure flash and PLL at 80 MHz
+    configureFlash();
+    configureClock();
 
-  for (i = 0; i < 100; i++) {
-    printf("Hello World %d!\n", i);
-  }
-  do {
-    i++;
-  } while (1);
+    // Setup GPIO
+    gpioEnable(GPIO_PORT_A);
+    gpioEnable(GPIO_PORT_B);
+    gpioEnable(GPIO_PORT_C);
 }
-
-/*************************** End of file ****************************/
