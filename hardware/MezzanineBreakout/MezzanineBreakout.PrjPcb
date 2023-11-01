@@ -133,6 +133,150 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
+[GeneratedDocument1]
+DocumentPath=Project Outputs for MezzanineBreakout\Gerber\MezzanineBreakout.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument2]
+DocumentPath=Project Outputs for MezzanineBreakout\MezzanineBreakout.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument3]
+DocumentPath=Project Outputs for MezzanineBreakout\NC Drill\MezzanineBreakout.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument4]
+DocumentPath=Project Outputs for MezzanineBreakout\Gerber\MezzanineBreakout.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument5]
+DocumentPath=Project Outputs for MezzanineBreakout\MezzanineBreakout.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument6]
+DocumentPath=Project Outputs for MezzanineBreakout\Gerber\MezzanineBreakout.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument7]
+DocumentPath=Project Outputs for MezzanineBreakout\MezzanineBreakout.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument8]
+DocumentPath=Project Outputs for MezzanineBreakout\Gerber\MezzanineBreakout.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument9]
+DocumentPath=Project Outputs for MezzanineBreakout\MezzanineBreakout.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument10]
+DocumentPath=Project Outputs for MezzanineBreakout\Gerber\MezzanineBreakout.GBP
+DItemRevisionGUID=
+
+[GeneratedDocument11]
+DocumentPath=Project Outputs for MezzanineBreakout\MezzanineBreakout.GBP
+DItemRevisionGUID=
+
+[GeneratedDocument12]
+DocumentPath=Project Outputs for MezzanineBreakout\Gerber\MezzanineBreakout.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument13]
+DocumentPath=Project Outputs for MezzanineBreakout\MezzanineBreakout.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument14]
+DocumentPath=Project Outputs for MezzanineBreakout\Gerber\MezzanineBreakout.GM
+DItemRevisionGUID=
+
+[GeneratedDocument15]
+DocumentPath=Project Outputs for MezzanineBreakout\MezzanineBreakout.GM
+DItemRevisionGUID=
+
+[GeneratedDocument16]
+DocumentPath=Project Outputs for MezzanineBreakout\Gerber\MezzanineBreakout.GM1
+DItemRevisionGUID=
+
+[GeneratedDocument17]
+DocumentPath=Project Outputs for MezzanineBreakout\MezzanineBreakout.GM1
+DItemRevisionGUID=
+
+[GeneratedDocument18]
+DocumentPath=Project Outputs for MezzanineBreakout\Gerber\MezzanineBreakout.GM15
+DItemRevisionGUID=
+
+[GeneratedDocument19]
+DocumentPath=Project Outputs for MezzanineBreakout\MezzanineBreakout.GM15
+DItemRevisionGUID=
+
+[GeneratedDocument20]
+DocumentPath=Project Outputs for MezzanineBreakout\Gerber\MezzanineBreakout.GM20
+DItemRevisionGUID=
+
+[GeneratedDocument21]
+DocumentPath=Project Outputs for MezzanineBreakout\MezzanineBreakout.GM20
+DItemRevisionGUID=
+
+[GeneratedDocument22]
+DocumentPath=Project Outputs for MezzanineBreakout\Gerber\MezzanineBreakout.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument23]
+DocumentPath=Project Outputs for MezzanineBreakout\MezzanineBreakout.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument24]
+DocumentPath=Project Outputs for MezzanineBreakout\Gerber\MezzanineBreakout.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument25]
+DocumentPath=Project Outputs for MezzanineBreakout\MezzanineBreakout.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument26]
+DocumentPath=Project Outputs for MezzanineBreakout\Gerber\MezzanineBreakout.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument27]
+DocumentPath=Project Outputs for MezzanineBreakout\MezzanineBreakout.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument28]
+DocumentPath=Project Outputs for MezzanineBreakout\Gerber\MezzanineBreakout.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument29]
+DocumentPath=Project Outputs for MezzanineBreakout\MezzanineBreakout.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument30]
+DocumentPath=Project Outputs for MezzanineBreakout\Gerber\MezzanineBreakout.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument31]
+DocumentPath=Project Outputs for MezzanineBreakout\Gerber\MezzanineBreakout.REP
+DItemRevisionGUID=
+
+[GeneratedDocument32]
+DocumentPath=Project Outputs for MezzanineBreakout\Gerber\MezzanineBreakout.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument33]
+DocumentPath=Project Outputs for MezzanineBreakout\MezzanineBreakout.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument34]
+DocumentPath=Project Outputs for MezzanineBreakout\Gerber\MezzanineBreakout.TXT
+DItemRevisionGUID=
+
+[GeneratedDocument35]
+DocumentPath=Project Outputs for MezzanineBreakout\MezzanineBreakout.TXT
+DItemRevisionGUID=
+
+[GeneratedDocument36]
+DocumentPath=Project Outputs for MezzanineBreakout\NC Drill\MezzanineBreakout.TXT
+DItemRevisionGUID=
+
 [Configuration1]
 Name=Sources
 ParameterCount=0
@@ -747,6 +891,36 @@ OutputName12=Web Review Data
 OutputDocumentPath12=
 OutputVariantName12=
 OutputDefault12=0
+OutputType13=Ansoft Neutral
+OutputName13=Ansoft Neutral (AutoPCB)
+OutputDocumentPath13=
+OutputVariantName13=
+OutputDefault13=0
+OutputType14=HyperLynx
+OutputName14=HyperLynx (AutoPCB)
+OutputDocumentPath14=
+OutputVariantName14=
+OutputDefault14=0
+OutputType15=Orcad v7 Capture Design
+OutputName15=Orcad v7 Capture Design (AutoSCH)
+OutputDocumentPath15=
+OutputVariantName15=
+OutputDefault15=0
+OutputType16=P-CAD ASCII
+OutputName16=P-CAD ASCII (AutoPCB)
+OutputDocumentPath16=
+OutputVariantName16=
+OutputDefault16=0
+OutputType17=P-CAD V16 Schematic Design
+OutputName17=P-CAD V16 Schematic Design (AutoSCH)
+OutputDocumentPath17=
+OutputVariantName17=
+OutputDefault17=0
+OutputType18=SiSoft
+OutputName18=SiSoft (AutoPCB)
+OutputDocumentPath18=
+OutputVariantName18=
+OutputDefault18=0
 
 [OutputGroup10]
 Name=PostProcess Outputs
