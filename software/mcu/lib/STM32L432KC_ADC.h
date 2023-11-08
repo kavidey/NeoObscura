@@ -33,4 +33,6 @@ void initADC(int resolution);
 
 void initChannel(int channel);
 
+uint16_t readADC();
+
 #endif

@@ -8,6 +8,7 @@
 void initADC(int resolution) {
   // Enable ADC clock
   RCC->AHB2ENR |= RCC_AHB2ENR_ADCEN;
+  RCC->CCIPR |= _VAL2FLD(RCC_CCIPR_ADCSEL, 0b11);
 
   // Disable Deep Power Down
   ADC1->CR &= ~ADC_CR_DEEPPWD;
@@ -44,4 +45,13 @@ void initChannel(int channel) {
 
   // Set channel
   ADC1->SQR1 |= channel << ADC_SQR1_SQ1_Pos;
+}
+
+uint16_t readADC() {
+  ADC1->CR |= ADC_CR_ADSTART;
+
+  while (!(ADC1->ISR & ADC_ISR_EOC))
+    ;
+
+  return ADC1->DR;
 }

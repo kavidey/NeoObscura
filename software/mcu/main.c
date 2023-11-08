@@ -44,6 +44,8 @@ void setupPins() {
   pinMode(MUX3_EN, GPIO_OUTPUT);
 }
 
+char tempString[32];
+
 int main(void) {
   // Configure flash and PLL at 80 MHz
   configureFlash();
@@ -56,19 +58,13 @@ int main(void) {
   USART_TypeDef *USART_DEBUG = initUSART(USART2_ID, 9600);
 
   // Setup ADC
-   initADC(ADC_12BIT_RESOLUTION);
-//   initChannel(ADC_PA0);
+  initADC(ADC_12BIT_RESOLUTION);
+  initChannel(ADC_PA0);
 
-  char tempString[32];
-  sprintf(tempString, "ADC Initialized\n");
-  sendString(USART_DEBUG, tempString);
+  sendString(USART_DEBUG, "DEBUG: ADC Initialized\n");
 
   while (1) {
-    // ADC1->CR |= ADC_CR_ADSTART;
-
-    // while (!(ADC1->ISR & ADC_ISR_EOC))
-      ;
-    // sprintf(tempString, "%d\n", ADC1->DR);
-    // sendString(USART_DEBUG, tempString);
+    sprintf(tempString, "%d\n", readADC());
+    sendString(USART_DEBUG, tempString);
   }
 }
