@@ -25,6 +25,9 @@ void initADC(int resolution) {
   // Set sampling resolution
   ADC1->CFGR |= resolution;
 
+  // Set left bit alignment
+  ADC1->CFGR |= _VAL2FLD(ADC_CFGR_ALIGN, 1);
+
   // Clear ARDY flag
   ADC1->ISR |= ADC_ISR_ADRDY;
 

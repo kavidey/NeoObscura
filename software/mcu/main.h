@@ -22,7 +22,5 @@ Main header file for NeoObscura
 #define COL_1 PB0
 #define COL_2 PB7
 #define COL_3 PB6
-
-#define MUX1_EN PC15
-#define MUX2_EN PC14
-#define MUX3_EN PB1
+#define COL_4 PC15
+#define COL_5 PC14
