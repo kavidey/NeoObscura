@@ -26,7 +26,7 @@ void initADC(int resolution) {
   ADC1->CFGR |= resolution;
 
   // Set left bit alignment
-  ADC1->CFGR |= _VAL2FLD(ADC_CFGR_ALIGN, 1);
+  ADC1->CFGR |= ADC_CFGR_ALIGN;
 
   // Clear ARDY flag
   ADC1->ISR |= ADC_ISR_ADRDY;
@@ -51,10 +51,13 @@ void initChannel(int channel) {
 }
 
 uint16_t readADC() {
+  // Start conversion
   ADC1->CR |= ADC_CR_ADSTART;
 
+  // Wait until conversion is done
   while (!(ADC1->ISR & ADC_ISR_EOC))
     ;
 
+  // Return the ADC value
   return ADC1->DR;
 }
