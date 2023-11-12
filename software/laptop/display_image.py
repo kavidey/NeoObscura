@@ -49,7 +49,7 @@ def read_serial():
 def display_image():
     global image
     while True:
-        displayImage = (cv2.resize(image, (400, 300)) - 120) * 8
+        displayImage = cv2.resize(image, (400, 300))
         cv2.putText(
             displayImage,
             f"{fps:.1f} FPS",
