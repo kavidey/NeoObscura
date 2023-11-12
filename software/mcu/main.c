@@ -40,27 +40,25 @@ int main(void) {
   setupSensor(&sensor_cfg);
 
   // Setup UART
-  USART_TypeDef *USART_DEBUG = initUSART(USART2_ID, 9600);
+  USART_TypeDef *USART_LAPTOP = initUSART(USART2_ID, 19200);
 
   // Setup ADC
   initADC(ADC_12BIT_RESOLUTION);
   initChannel(ADC_PA0);
 
-  sendString(USART_DEBUG, "[DEBUG] ADC Initialized\n");
+  // sendString(USART_DEBUG, "[DEBUG] ADC Initialized\n");
 
   char tempString[32];
   uint8_t pixels[HORIZONTAL_RESOLUTION][VERTICAL_RESOLUTION];
 
   while (1) {
-    sendString(USART_DEBUG, "[INFO] Image Start");
-
     for (int i = 0; i < HORIZONTAL_RESOLUTION; i++) {
       for (int j = 0; j < VERTICAL_RESOLUTION; j++) {
         sprintf(tempString, "%02X", adcToBrightness(&sensor_cfg, readADC()));
-        sendString(USART_DEBUG, tempString);
+        sendString(USART_LAPTOP, tempString);
       }
     }
 
-    sendString(USART_DEBUG, "[INFO] Image End");
+    sendString(USART_LAPTOP, "\n");
   }
 }
