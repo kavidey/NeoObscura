@@ -91,10 +91,10 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="46" useTextEdit="1" path="main.c" left="0" top="6" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="26" y="62" useTextEdit="1" path="main.c" left="0" selected="1" top="20" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="25" y="6" useTextEdit="1" path="lib/STM32L432KC_RCC.c" left="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="7" y="117" useTextEdit="1" openedFrom="/Users/kavidey/github/NeoObscura/software/mcu/main.c" path="/Applications/SEGGER Embedded Studio for ARM 7.32/include/stdio.h" left="0" top="80" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="15" y="29" useTextEdit="1" path="lib/STM32L432KC_ADC.c" left="0" selected="1" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="21" y="20" useTextEdit="1" path="lib/STM32L432KC_ADC.c" left="0" top="0" codecName="Default"/>
  </Files>
  <EMStudioWindow activeProject="NeoObscura" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="/Users/kavidey/github/NeoObscura/software/mcu/lib" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>

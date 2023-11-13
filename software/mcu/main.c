@@ -75,7 +75,7 @@ int main(void) {
 
   // Setup ADC
   initADC(ADC_12BIT_RESOLUTION);
-  initChannel(ADC_PA0);
+  initChannel(ANALOG_IN_ADC_CHANNEL);
 
   // Enable end of conversion interrupt
   NVIC->ISER[0] |= (1 << 18);
