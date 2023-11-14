@@ -27,7 +27,7 @@ void selectPixel(SENSOR_CFG_TypeDef *sensor_cfg, int x, int y) {
     digitalWrite(sensor_cfg->col_pins[i], (x >> i) & 1);
   }
 
-  for (int i = 0; i < HORIZONTAL_BITS; i++) {
+  for (int i = 0; i < VERTICAL_BITS; i++) {
     digitalWrite(sensor_cfg->row_pins[i], (y >> i) & 1);
   }
 }

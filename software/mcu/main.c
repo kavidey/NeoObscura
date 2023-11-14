@@ -27,6 +27,9 @@ int y_coord = 0;
 int frame_done = 0;
 uint8_t pixels[HORIZONTAL_RESOLUTION][VERTICAL_RESOLUTION];
 
+char tempString[32];
+USART_TypeDef *USART_LAPTOP;
+
 void ADC1_IRQHandler(void) {
   // Clear the interrupt flag
   ADC1->ISR |= ADC_ISR_EOC;
@@ -71,7 +74,7 @@ int main(void) {
   setupSensor(&sensor_cfg);
 
   // Setup UART
-  USART_TypeDef *USART_LAPTOP = initUSART(USART2_ID, 19200);
+  USART_LAPTOP = initUSART(USART2_ID, 19200);
 
   // Setup ADC
   initADC(ADC_12BIT_RESOLUTION);
@@ -81,10 +84,9 @@ int main(void) {
   NVIC->ISER[0] |= (1 << 18);
   ADC1->IER |= ADC_IER_EOCIE;
 
-  char tempString[32];
-
   // Start the first conversion
-  ADC1->CR |= ADC_CR_ADSTART;
+  // ADC1->CR |= ADC_CR_ADSTART;
+  selectPixel(&sensor_cfg, 3, 3);
 
   while (1) {
     if (frame_done) {
