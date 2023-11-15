@@ -31,19 +31,26 @@ def read_serial():
     global running
     global fps
 
-    ser = serial.Serial("/dev/tty.usbmodem0007700041561", 19200)
-
     while running:
-        start_time = time.time()
-        data = ser.readline()[:-1]
-        if len(data) == IMAGE_BYTES:
-            pixels_strings = split_into_groups(data, BYTES_PER_CHANNEL)
-            pixels = [int(pixel, 16) for pixel in pixels_strings]
-            pixels = np.array(pixels, dtype=np.uint8).reshape(
-                (VERTICAL_RESOLUTION, HORIZONAL_RESOLUTION, NUM_CHANNELS)
-            )
-            image = pixels
-            fps = 1 / (time.time() - start_time)
+        try:
+            ser = serial.Serial("/dev/tty.usbmodem0007700041561", 115200)
+
+            while running:
+                start_time = time.time()
+                data = ser.readline()[:-1]
+                if len(data) == IMAGE_BYTES:
+                    pixels_strings = split_into_groups(data, BYTES_PER_CHANNEL)
+                    pixels = [int(pixel, 16) for pixel in pixels_strings]
+                    pixels = np.array(pixels, dtype=np.uint8).reshape(
+                        (VERTICAL_RESOLUTION, HORIZONAL_RESOLUTION, NUM_CHANNELS)
+                    )
+                    image = pixels
+                    fps = 1 / (time.time() - start_time)
+                else:
+                    print(f"Recieved invalid image with {len(data)} bytes")
+        except OSError or ValueError:
+            # print("Connection failed, reconnecting")
+            pass
 
 # Displays (and upscales) the image
 def display_image():

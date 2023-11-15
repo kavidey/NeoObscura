@@ -8,8 +8,8 @@ Main header file for NeoObscura
 */
 
 /// Pin definitions
-#define ANALOG_IN PA5
-#define ANALOG_IN_ADC_CHANNEL ADC_PA5
+#define ANALOG_IN PA3
+#define ANALOG_IN_ADC_CHANNEL ADC_PA3
 
 // Row Address Pins
 #define ROW_0 PB1
