@@ -132,7 +132,7 @@ int main(void) {
       frame_done = 0;
       ADC1->CR |= ADC_CR_ADSTART;
 
-      for (int j = 0; j < VERTICAL_RESOLUTION; j++) {
+      for (int j = VERTICAL_RESOLUTION-1; j >= 0; j--) {
         for (int i = 0; i < HORIZONTAL_RESOLUTION; i++) {
           sprintf(tempString, "%02X", (*pixel_buf)[i][j]);
           sendString(USART_LAPTOP, tempString);
