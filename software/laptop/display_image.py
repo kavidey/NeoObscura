@@ -50,7 +50,7 @@ def read_serial():
                     print(f"Recieved invalid image with {len(data)} bytes")
         except OSError or ValueError:
             # print("Connection failed, reconnecting")
-            pass
+            time.sleep(1)
 
 # Displays (and upscales) the image
 def display_image():
