@@ -1,0 +1,14 @@
+"PCB_Width" = 4.42in
+"D2@Sketch1"="PCB_Width"
+"PCB_Height" = 3in
+"D1@Sketch1"="PCB_Height"
+"PCB_Hole_Diameter" = 0.12in
+"Sensor_Width"= 0.07in * 40
+"Sensor_Height"= 0.07in * 30
+"D3@Sketch1"="Sensor_Width"
+"D4@Sketch1"="Sensor_Height"
+"Hole_Horizontal_Offset"= 0.17in
+"Hole_Vertical_Offset"= 0.15in
+"D5@Sketch1"="Hole_Vertical_Offset"
+"D6@Sketch1"="Hole_Horizontal_Offset"
+"PCB_Thickness"= 1.6mm
