@@ -48,17 +48,18 @@ void initUSB() {
 }
 
 __ALIGNED(8)
-__IO static USB_BTABLE_ENTRY * BTable = (volatile uint16_t *)__USBBUF_BEGIN;
+__IO static USB_BTABLE_ENTRY *BTable = (volatile uint16_t *)__USBBUF_BEGIN;
 
 __ALIGNED(8)
-__IO static char EP0_Buf[2][64] = {0};
+__IO static char *EP0_Buf =
+    ((volatile uint16_t *)__USBBUF_BEGIN) + sizeof(USB_BTABLE_ENTRY) * 9;
 
 static void USB_ClearSRAM() {
-    char *buffer = (char*) __USBBUF_BEGIN;
+  char *buffer = (char *)__USBBUF_BEGIN;
 
-    for (int i = 0; i < 1024; i++) {
-        buffer[i] = 0;
-    }
+  for (int i = 0; i < 1024; i++) {
+    buffer[i] = 0;
+  }
 }
 
 void USB_IRQHandler() {
@@ -66,9 +67,19 @@ void USB_IRQHandler() {
     // Clear interrupt
     USB->ISTR = ~USB_ISTR_RESET;
 
+    // Clear SRAM for readability
+    USB_ClearSRAM();
+
+    // Prepare BTable
+    USB->BTABLE = __MEM2USB(BTable);
+
+    BTable[0].ADDR_RX = __MEM2USB(EP0_Buf[0]);
+    BTable[0].ADDR_TX = __MEM2USB(EP0_Buf[1]);
+    BTable[0].COUNT_TX = 0;
+    BTable[0].COUNT_RX = (1 << 15) | (1 << 10);
+
     // ((uint16_t *) __USBBUF_BEGIN)[0] = __MEM2USB(EP0_Buf[0]);
     // ((uint16_t *) __USBBUF_BEGIN)[2] = __MEM2USB(EP0_Buf[1]);
-    
 
     // Endpoint type: control, enable receiving, disable transmitting
     USB_SetEPnR(&USB->EP0R, USB_EP_CONTROL | USB_EP_RX_VALID | USB_EP_TX_NAK,
