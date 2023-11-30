@@ -1,5 +1,5 @@
-Output/Debug/Obj/Camera/STM32L432KC_USART.o: \
-  /Users/neilchulani/Documents/Polarbear/College/Classes/Engineering/MicroPs/HMC-E155/lab/lab07/lab07_mcu/lib/STM32L432KC_USART.c \
+Output/Debug/Obj/Camera/qoi.o: \
+  /Users/neilchulani/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/Camera/qoi.c \
   /Users/neilchulani/Documents/Polarbear/College/Classes/Engineering/MicroPs/HMC-E155/lab/lab07/lab07_mcu/lib/STM32L432KC.h \
   /Applications/SEGGER\ Embedded\ Studio\ for\ ARM\ 7.32/include/stdio.h \
   /Applications/SEGGER\ Embedded\ Studio\ for\ ARM\ 7.32/include/__SEGGER_RTL.h \

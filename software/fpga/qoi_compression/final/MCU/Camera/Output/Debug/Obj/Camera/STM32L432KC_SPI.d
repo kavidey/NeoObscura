@@ -20,4 +20,5 @@ Output/Debug/Obj/Camera/STM32L432KC_SPI.o: \
   /Users/neilchulani/Documents/Polarbear/College/Classes/Engineering/MicroPs/HMC-E155/lab/lab07/lab07_mcu/lib/STM32L432KC_TIM.h \
   /Users/neilchulani/Documents/Polarbear/College/Classes/Engineering/MicroPs/HMC-E155/lab/lab07/lab07_mcu/lib/STM32L432KC_FLASH.h \
   /Users/neilchulani/Documents/Polarbear/College/Classes/Engineering/MicroPs/HMC-E155/lab/lab07/lab07_mcu/lib/STM32L432KC_USART.h \
-  /Users/neilchulani/Documents/Polarbear/College/Classes/Engineering/MicroPs/HMC-E155/lab/lab07/lab07_mcu/lib/STM32L432KC_SPI.h
+  /Users/neilchulani/Documents/Polarbear/College/Classes/Engineering/MicroPs/HMC-E155/lab/lab07/lab07_mcu/lib/STM32L432KC_SPI.h \
+  /Users/neilchulani/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/Camera/qoi.h
