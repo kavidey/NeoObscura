@@ -1,0 +1,8 @@
+---------------------------------------------------
+Report for cell decoder
+   Instance path: decoder
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	          4        100.0
+                               LUTGATE	          4        100.0
+                                 IOBUF	          6        100.0
