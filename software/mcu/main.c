@@ -55,7 +55,7 @@ void ADC1_IRQHandler(void) {
     frame_done = 1;
     return;
   }
-  selectPixel(&sensor_cfg, x_coord, y_coord);
+  selectPixel(&sensor_cfg, col_mapping[x_coord], y_coord);
   ADC1->CR |= ADC_CR_ADSTART;
 }
 
@@ -92,19 +92,21 @@ int main(void) {
   NVIC->ISER[0] |= (1 << 18);
   ADC1->IER |= ADC_IER_EOCIE;
 
-  // Start the first conversion 
+  // Start the first conversion
   ADC1->CR |= ADC_CR_ADSTART;
 
   // while (1) {
-  //   for (int i = 0; i < 29; i++) {
-  //     selectPixel(&sensor_cfg, i, i);
+  //   for (int x = 0; x < 39; x++) {
+  //     for (int y = 0; y < 29; y++) {
+  //       selectPixel(&sensor_cfg, col_mapping[x], y);
 
-  //     sprintf(tempString, "%i\n", i);
-  //     sendString(USART_LAPTOP, tempString);
+  //       sprintf(tempString, "%i %i %i\n", x, col_mapping[x], y);
+  //       sendString(USART_LAPTOP, tempString);
 
-  //     volatile int x = 1000000;
-  //     while (x-- > 0)
-  //       __asm("nop");
+  //       volatile int i = 50000;
+  //       while (i-- > 0)
+  //         __asm("nop");
+  //     }
   //   }
   // }
 
@@ -117,9 +119,9 @@ int main(void) {
   // digitalWrite(COL_1, 1);
   // digitalWrite(COL_2, 1);
   // digitalWrite(COL_3, 1);
-  // digitalWrite(COL_4, 1);
+  // digitalWrite(COL_4, 0);
   // digitalWrite(COL_5, 1);
-  // selectPixel(&sensor_cfg, 0, 0);
+  // selectPixel(&sensor_cfg, col_mapping[39], 13);
 
   while (1) {
     if (frame_done) {
@@ -127,12 +129,11 @@ int main(void) {
       curr_buff ^= 1;
       pixel_buf_Type *pixel_buf = (!curr_buff ? &pixel_buf_a : &pixel_buf_b);
 
-
       // Get ready for the next conversion
       frame_done = 0;
       ADC1->CR |= ADC_CR_ADSTART;
 
-      for (int j = VERTICAL_RESOLUTION-1; j >= 0; j--) {
+      for (int j = VERTICAL_RESOLUTION - 1; j >= 0; j--) {
         for (int i = 0; i < HORIZONTAL_RESOLUTION; i++) {
           sprintf(tempString, "%02X", (*pixel_buf)[i][j]);
           sendString(USART_LAPTOP, tempString);

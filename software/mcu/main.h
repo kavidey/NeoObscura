@@ -23,5 +23,10 @@ Main header file for NeoObscura
 #define COL_1 PB0
 #define COL_2 PB6
 #define COL_3 PA8
-#define COL_4 PC14 // replace this later, will connect to the MCU (also PC14 doesn't work for some reason)
-#define COL_5 PA6 // replace this later, will connect to the MCU
+#define COL_4 PB4
+#define COL_5 PA6
+
+const int col_mapping[40] = {0,  1,  2,  3,  4,  5,  6,  7,  8,  9,
+                             10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
+                             20, 21, 22, 23, 24, 25, 46, 45, 44, 43,
+                             42, 41, 40, 39, 38, 37, 36, 35, 34, 33};
