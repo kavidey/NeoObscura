@@ -5,8 +5,9 @@ permalink: /resources/
 ---
 
 # References
-[1] http://szsgir.com/data/PT0805CS.pdf
-[2] https://qoiformat.org/
+[1] [http://szsgir.com/data/PT0805CS.pdf](http://szsgir.com/data/PT0805CS.pdf)
+
+[2] [https://qoiformat.org/](https://qoiformat.org/)
 
 # Inspiration
 The inspiration for this project came from a simlar project found [here](https://www.youtube.com/watch?v=PaXweP73NT4).
