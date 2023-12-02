@@ -2,6 +2,7 @@
 <session>
  <Bookmarks/>
  <Breakpoints groups="Breakpoints" active_group="Breakpoints">
+  <BreakpointListItem trigger="" line="67" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="2" filename="main2.c" useHWbreakpoint="false"/>
   <Exceptions set="MemManage;UsageFault_Coprocessor;UsageFault_CheckingError;UsageFault_StateError;BusFault;ExceptionEntryReturnFault;HardFault"/>
  </Breakpoints>
  <ExecutionProfileWindow/>
@@ -9,7 +10,7 @@
   <FrameBufferWindow width="0" keepAspectRatio="0" zoomToFitWindow="0" addressSpace="" format="0" height="0" autoEvaluate="0" scaleFactor="1" refreshPeriod="0" name="Camera_Debug" addressText="" accessByDisplayWidth="0"/>
  </FrameBuffer>
  <Memory1>
-  <MemoryWindow addressSpace="" dataSize="1" autoEvaluate="0" viewMode="1" viewType="4" addressOrder="0" columnsText="" refreshPeriod="0" name="Camera_Debug" sizeText="sizeof(recieved2)" addressText="&amp;bytes"/>
+  <MemoryWindow addressSpace="" dataSize="1" autoEvaluate="0" viewMode="1" viewType="4" addressOrder="0" columnsText="" refreshPeriod="0" name="Camera_Debug" sizeText="firstEncodedImage.size" addressText="firstEncodedImage.imageData"/>
  </Memory1>
  <Memory2>
   <MemoryWindow addressSpace="" dataSize="1" autoEvaluate="0" viewMode="0" viewType="4" addressOrder="0" columnsText="" refreshPeriod="0" name="Camera_Debug" sizeText="" addressText=""/>
@@ -46,18 +47,8 @@
  </TraceWindow>
  <Watch1>
   <Watches active="1" update="Never">
-   <Watchpoint expression="*(char[6500] *) bytes" name="*(char[6500] *) bytes" radix="16" linenumber="0" filename="../Camera"/>
-   <Watchpoint expression="i" name="i" radix="16" linenumber="0" filename="../Camera"/>
-   <Watchpoint expression="j" name="j" radix="16" linenumber="0" filename="../Camera"/>
-   <Watchpoint expression="recieved" name="recieved" radix="16" linenumber="0" filename="../Camera"/>
-   <Watchpoint expression="recieved2" name="recieved2" radix="16" linenumber="0" filename="../Camera"/>
-   <Watchpoint expression="recieved3" name="recieved3" radix="16" linenumber="0" filename="../Camera"/>
-   <Watchpoint expression="i == numPixels" name="i == numPixels" radix="-1" linenumber="0" filename="../Camera"/>
-   <Watchpoint expression="pixels[i].a" name="pixels[i].a" radix="16" linenumber="0" filename="../Camera"/>
-   <Watchpoint expression="recievedByte" name="recievedByte" radix="-1" linenumber="0" filename="../Camera"/>
-   <Watchpoint expression="help" name="help" radix="-1" linenumber="0" filename="../Camera"/>
-   <Watchpoint expression="encodedBytes[lastByteIndex]" name="encodedBytes[lastByteIndex]" radix="16" linenumber="0" filename=""/>
-   <Watchpoint expression="c" name="c" radix="-1" linenumber="0" filename=""/>
+   <Watchpoint expression="firstEncodedImage.imageData[firstEncodedImage.size - 1]" name="firstEncodedImage.imageData[firstEncodedImage.size - 1]" radix="-1" linenumber="0" filename="../Camera"/>
+   <Watchpoint expression="firstEncodedImage.size" name="firstEncodedImage.size" radix="-1" linenumber="0" filename="../Camera"/>
   </Watches>
  </Watch1>
  <Watch2>
@@ -71,16 +62,20 @@
  </Watch4>
  <Files>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="186" useTextEdit="1" path="SEGGER_THUMB_Startup.s" left="0" top="151" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="219" useTextEdit="1" path="STM32L4xx/Source/STM32L4xx_Startup.s" left="0" top="187" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="14" useTextEdit="1" path="../../Polarbear/College/Classes/Engineering/MicroPs/HMC-E155/lab/lab07/lab07_mcu/lib/STM32L432KC_SPI.h" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="34" y="1306" useTextEdit="1" folds0="48" path="main.c" left="0" selected="1" top="62" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="219" useTextEdit="1" path="STM32L4xx/Source/STM32L4xx_Startup.s" left="0" top="178" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="32" useTextEdit="1" path="../../Polarbear/College/Classes/Engineering/MicroPs/HMC-E155/lab/lab07/lab07_mcu/lib/STM32L432KC_SPI.h" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="32" y="38" useTextEdit="1" folds0="48" path="main.c" left="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="27" useTextEdit="1" path="../../Polarbear/College/Classes/Engineering/MicroPs/HMC-E155/lab/lab07/lab07_mcu/lib/STM32L432KC_GPIO.c" left="0" top="27" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="52" useTextEdit="1" path="../../Polarbear/College/Classes/Engineering/MicroPs/HMC-E155/lab/lab07/lab07_mcu/lib/STM32L432KC_SPI.c" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="20" y="10" useTextEdit="1" path="../../Polarbear/College/Classes/Engineering/MicroPs/HMC-E155/lab/lab07/lab07_mcu/lib/STM32L432KC_SPI.c" left="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="8" y="47" useTextEdit="1" path="spi_test.c" left="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="../../Polarbear/College/Classes/Engineering/MicroPs/HMC-E155/lab/lab07/lab07_mcu/lib/STM32L432KC_FLASH.c" left="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="../../Polarbear/College/Classes/Engineering/MicroPs/HMC-E155/lab/lab07/lab07_mcu/lib/STM32L432KC_GPIO.h" left="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="9" y="14" useTextEdit="1" openedFrom="/Users/neilchulani/Documents/Polarbear/College/Classes/Engineering/MicroPs/HMC-E155/lab/lab07/lab07_mcu/lib/STM32L432KC_RCC.c" path="../../Polarbear/College/Classes/Engineering/MicroPs/HMC-E155/lab/lab07/lab07_mcu/lib/STM32L432KC_RCC.h" left="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="15" y="27" useTextEdit="1" path="../../Polarbear/College/Classes/Engineering/MicroPs/HMC-E155/lab/lab07/lab07_mcu/lib/STM32L432KC_RCC.c" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="5" y="23" useTextEdit="1" path="qoi.h" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="15" y="132" useTextEdit="1" path="qoi.c" left="0" top="59" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="91" y="20" useTextEdit="1" path="../../Polarbear/College/Classes/Engineering/MicroPs/HMC-E155/lab/lab07/lab07_mcu/lib/STM32L432KC.h" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="26" y="36" useTextEdit="1" path="main2.c" left="0" selected="1" top="0" codecName="Default"/>
  </Files>
- <EMStudioWindow activeProject="Camera" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3711"/>
+ <EMStudioWindow activeProject="Camera" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>
