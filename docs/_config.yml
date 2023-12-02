@@ -7,6 +7,8 @@ header-pages:
   - documentation.html
   - resources.html
 
+baseurl: /NeoObscura
+
 
 # Github Pages settings that cannot be changed
 # lsi: false

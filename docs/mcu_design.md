@@ -7,4 +7,4 @@ permalink: /mcu_design/
 # MCU Design
 
 ## MCU Block Diagram
-![MCU Block Diagram](/assets/diagrams/mcu.png)
+![MCU Block Diagram]({{ site.baseurl }}/assets/diagrams/mcu.png)

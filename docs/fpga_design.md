@@ -7,4 +7,4 @@ permalink: /fpga_design/
 # FPGA Design
 
 ## FPGA Block Diagram
-![FPGA Block Diagram](./assets/diagrams/mcu.png)
+![FPGA Block Diagram]({{ site.baseurl }}/assets/diagrams/mcu.png)

@@ -6,12 +6,12 @@ permalink: /doc/
 
 # Schematics
 <!-- Include images of the schematics for your system. They should follow best practices for schematic drawings with all parts and pins clearly labeled. You may draw your schematics either with a software tool or neatly by hand. -->
-## Breadboard
-
-## Sensor PCB
-Here is a screenshot of the schematic for the design.
-
-<embed src="https://kavidey.github.io/NeoObscura/assets/schematics/sensor.pdf" type="application/pdf" />
+#### Breadboard
+<embed src="{{ site.baseurl }}/assets/schematics/breadboard.pdf" type="application/pdf" width="100%" height="500em"/>
+<br>
+#### Sensor PCB
+Here is the schematic of the sensor PCB. It contains the array of 1200 phototransistors, 32:1 analog mux, and mezzanine connectors. See the [bill of materials](#bill-of-materials) for more information on the parts used and links to the source files for the PCB.
+<embed src="{{ site.baseurl }}/assets/schematics/sensor.pdf" type="application/pdf" width="100%" height="500em"/>
 
 # Source Code Overview
 <!-- This section should include information to describe the organization of the code base and highlight how the code connects. -->
