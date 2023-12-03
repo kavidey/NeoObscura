@@ -2,9 +2,9 @@
 <session>
  <Bookmarks/>
  <Breakpoints groups="Breakpoints" active_group="Breakpoints">
-  <BreakpointListItem trigger="" line="127" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="2" filename="main.c" useHWbreakpoint="false"/>
-  <BreakpointListItem trigger="" line="133" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="2" filename="main.c" useHWbreakpoint="false"/>
-  <BreakpointListItem trigger="" line="141" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="2" filename="main.c" useHWbreakpoint="false"/>
+  <BreakpointListItem trigger="" line="127" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="4" filename="main.c" useHWbreakpoint="false"/>
+  <BreakpointListItem trigger="" line="133" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="4" filename="main.c" useHWbreakpoint="false"/>
+  <BreakpointListItem trigger="" line="141" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="4" filename="main.c" useHWbreakpoint="false"/>
   <BreakpointListItem trigger="" line="95" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="4" filename="main.c" useHWbreakpoint="false"/>
   <BreakpointListItem trigger="" line="25" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="4" filename="lib/STM32L432KC_ADC.c" useHWbreakpoint="false"/>
  </Breakpoints>
@@ -95,7 +95,7 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="34" y="104" useTextEdit="1" path="main.c" left="0" selected="1" top="68" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="28" y="99" useTextEdit="1" path="main.c" left="0" selected="1" top="68" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="1" y="36" useTextEdit="1" path="lib/STM32L432KC_RCC.c" left="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="7" y="117" useTextEdit="1" openedFrom="/Users/kavidey/github/NeoObscura/software/mcu/main.c" path="/Applications/SEGGER Embedded Studio for ARM 7.32/include/stdio.h" left="0" top="80" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="21" y="20" useTextEdit="1" path="lib/STM32L432KC_ADC.c" left="0" top="0" codecName="Default"/>
@@ -106,7 +106,6 @@
   <SessionOpenFile windowGroup="DockEditLeft" x="19" y="13" useTextEdit="1" path="lib/STM32L432KC_FLASH.h" left="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="17" y="13" useTextEdit="1" path="lib/STM32L432KC_RCC.h" left="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="75" useTextEdit="1" path="lib/STM32L432KC_USART.c" left="0" top="2" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="219" useTextEdit="1" path="STM32L4xx/Source/STM32L4xx_Startup.s" left="0" top="190" codecName="Default"/>
  </Files>
  <EMStudioWindow activeProject="NeoObscura" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="/Users/kavidey/github/NeoObscura/software/mcu/lib" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>

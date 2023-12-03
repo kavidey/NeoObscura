@@ -7,17 +7,22 @@ Date: 10/30/23
 Main file for NeoObscura
 */
 
-#include "main.h"
+#include <stdint.h>
+#include <stdio.h>
+
+#include <stm32l432xx.h>
+
 #include "lib/STM32L432KC.h"
 #include "lib/STM32L432KC_ADC.h"
 #include "lib/STM32L432KC_FLASH.h"
 #include "lib/STM32L432KC_GPIO.h"
 #include "lib/STM32L432KC_RCC.h"
 #include "lib/STM32L432KC_USART.h"
+
+#include "lib/debayer.h"
 #include "lib/sensor.h"
-#include <stdint.h>
-#include <stdio.h>
-#include <stm32l432xx.h>
+
+#include "main.h"
 
 SENSOR_CFG_TypeDef sensor_cfg = {{ROW_0, ROW_1, ROW_2, ROW_3, ROW_4},
                                  {COL_0, COL_1, COL_2, COL_3, COL_4, COL_5},
@@ -27,11 +32,11 @@ int x_coord = 0;
 int y_coord = 0;
 int frame_done = 0;
 
-typedef uint8_t pixel_buf_Type[HORIZONTAL_RESOLUTION][VERTICAL_RESOLUTION];
-
 pixel_buf_Type pixel_buf_a;
 pixel_buf_Type pixel_buf_b;
 int curr_buff = 0;
+
+color_pixel_buf_Type color_pixel_buf;
 
 char tempString[32];
 USART_TypeDef *USART_LAPTOP;
@@ -42,7 +47,7 @@ void ADC1_IRQHandler(void) {
 
   // Read the ADC value
   pixel_buf_Type *pixel_buf = (curr_buff ? &pixel_buf_a : &pixel_buf_b);
-  (*pixel_buf)[x_coord][y_coord] = ADC1->DR / 256;
+  (*pixel_buf)[y_coord][x_coord] = ADC1->DR / 256;
 
   // Start the next conversion
   x_coord++;
@@ -133,9 +138,13 @@ int main(void) {
       frame_done = 0;
       ADC1->CR |= ADC_CR_ADSTART;
 
+      // Debayer the image
+      debayer(pixel_buf, &color_pixel_buf);
+
       for (int j = VERTICAL_RESOLUTION - 1; j >= 0; j--) {
         for (int i = 0; i < HORIZONTAL_RESOLUTION; i++) {
-          sprintf(tempString, "%02X", (*pixel_buf)[i][j]);
+          rgba_t px = color_pixel_buf[j][i];
+          sprintf(tempString, "%02hhx%02hhx%02hhx", px.r, px.g, px.b);
           sendString(USART_LAPTOP, tempString);
         }
       }

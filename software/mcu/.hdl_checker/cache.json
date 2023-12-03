@@ -27,63 +27,6 @@
   "design_units": [
    {
     "owner": {
-     "name": "/Users/kavidey/github/NeoObscura/software/fpga/address_decoder/source/impl_1/top.sv",
-     "__class__": "Path"
-    },
-    "type_": "entity",
-    "name": {
-     "name": "decoder",
-     "case_sensitive": true,
-     "__class__": "VerilogIdentifier"
-    },
-    "locations": [
-     [
-      0,
-      6
-     ]
-    ],
-    "__class__": "VerilogDesignUnit"
-   },
-   {
-    "owner": {
-     "name": "/Users/kavidey/github/NeoObscura/software/fpga/qoi_compression/midpoint/top.sv",
-     "__class__": "Path"
-    },
-    "type_": "entity",
-    "name": {
-     "name": "qoi_encoder_new",
-     "case_sensitive": true,
-     "__class__": "VerilogIdentifier"
-    },
-    "locations": [
-     [
-      20,
-      7
-     ]
-    ],
-    "__class__": "VerilogDesignUnit"
-   },
-   {
-    "owner": {
-     "name": "/Users/kavidey/Sync/Mudd/FA23/uPs/Labs/lab_1/lab_1/source/impl_1/seven_segment_display.sv",
-     "__class__": "Path"
-    },
-    "type_": "entity",
-    "name": {
-     "name": "seven_segment_display",
-     "case_sensitive": true,
-     "__class__": "VerilogIdentifier"
-    },
-    "locations": [
-     [
-      32,
-      7
-     ]
-    ],
-    "__class__": "VerilogDesignUnit"
-   },
-   {
-    "owner": {
      "name": "/Users/kavidey/github/NeoObscura/software/fpga/qoi_compression/midpoint/top.sv",
      "__class__": "Path"
     },
@@ -122,18 +65,94 @@
    },
    {
     "owner": {
-     "name": "/Users/kavidey/Sync/Mudd/FA23/uPs/Labs/lab_1/lab_1/source/impl_1/lab1_top.sv",
+     "name": "/Users/kavidey/Sync/Mudd/FA23/uPs/Labs/lab_1/lab_1/source/impl_1/seven_segment_display.sv",
      "__class__": "Path"
     },
     "type_": "entity",
     "name": {
-     "name": "lab1",
+     "name": "seven_segment_display",
      "case_sensitive": true,
      "__class__": "VerilogIdentifier"
     },
     "locations": [
      [
-      28,
+      32,
+      7
+     ]
+    ],
+    "__class__": "VerilogDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/Users/kavidey/github/NeoObscura/software/fpga/qoi_compression/final/FPGA/top.sv",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "qoi_spi",
+     "case_sensitive": true,
+     "__class__": "VerilogIdentifier"
+    },
+    "locations": [
+     [
+      0,
+      6
+     ]
+    ],
+    "__class__": "VerilogDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/Users/kavidey/github/NeoObscura/software/fpga/address_decoder/source/impl_1/top.sv",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "decoder",
+     "case_sensitive": true,
+     "__class__": "VerilogIdentifier"
+    },
+    "locations": [
+     [
+      0,
+      6
+     ]
+    ],
+    "__class__": "VerilogDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/Users/kavidey/github/NeoObscura/software/fpga/qoi_compression/midpoint/top.sv",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "qoi_encoder_new",
+     "case_sensitive": true,
+     "__class__": "VerilogIdentifier"
+    },
+    "locations": [
+     [
+      20,
+      7
+     ]
+    ],
+    "__class__": "VerilogDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/Users/kavidey/github/NeoObscura/software/fpga/qoi_compression/final/FPGA/top.sv",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "qoi_encoder_new",
+     "case_sensitive": true,
+     "__class__": "VerilogIdentifier"
+    },
+    "locations": [
+     [
+      20,
       7
      ]
     ],
@@ -153,6 +172,25 @@
     "locations": [
      [
       61,
+      7
+     ]
+    ],
+    "__class__": "VerilogDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/Users/kavidey/Sync/Mudd/FA23/uPs/Labs/lab_1/lab_1/source/impl_1/lab1_top.sv",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "lab1",
+     "case_sensitive": true,
+     "__class__": "VerilogIdentifier"
+    },
+    "locations": [
+     [
+      28,
       7
      ]
     ],

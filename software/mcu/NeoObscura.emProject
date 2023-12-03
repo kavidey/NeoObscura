@@ -69,6 +69,7 @@
     </folder>
     <folder Name="Source Files">
       <configuration Name="Common" filter="c;cpp;cxx;cc;h;s;asm;inc" />
+      <file file_name="lib/debayer.c" />
       <file file_name="main.c" />
       <file file_name="lib/sensor.c" />
       <file file_name="lib/STM32L432KC_ADC.c" />
