@@ -4,6 +4,7 @@ import numpy as np
 import cv2
 import time
 import argparse
+from pathlib import Path
 
 
 def split_into_groups(data, n):
@@ -68,6 +69,12 @@ def display_image():
 
         time.sleep(1 / 60)
 
+        if cv2.waitKey(1) & 0xFF == ord("s"):
+            i = 0
+            while (OUTPUT_DIR / f"image_{i}.png").exists():
+                i += 1
+            cv2.imwrite(str(OUTPUT_DIR / f"image_{i}.png"), image)
+            print("saved image")
         if cv2.waitKey(1) & 0xFF == ord("q"):
             break
 
@@ -106,13 +113,19 @@ if __name__ == "__main__":
         const=False,
         default=True,
     )
+    parser.add_argument(
+        "-o", "--output", help="Output file directory", type=str, default="snapshots"
+    )
 
     args = parser.parse_args()
-    
+
     # Parameters
     SERIAL_PORT = args.serialport
     BAUDRATE = args.baudrate
     SHOW_FPS = args.showfps
+    OUTPUT_DIR = Path(args.output)
+
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     # Constants
     BYTES_PER_CHANNEL = 2
