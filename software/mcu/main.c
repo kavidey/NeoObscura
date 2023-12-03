@@ -24,6 +24,8 @@ Main file for NeoObscura
 
 #include "main.h"
 
+// #define COLOR_MODE
+
 SENSOR_CFG_TypeDef sensor_cfg = {{ROW_0, ROW_1, ROW_2, ROW_3, ROW_4},
                                  {COL_0, COL_1, COL_2, COL_3, COL_4, COL_5},
                                  0,
@@ -138,13 +140,19 @@ int main(void) {
       frame_done = 0;
       ADC1->CR |= ADC_CR_ADSTART;
 
+#ifdef COLOR_MODE
       // Debayer the image
       debayer(pixel_buf, &color_pixel_buf);
+#endif
 
       for (int j = VERTICAL_RESOLUTION - 1; j >= 0; j--) {
         for (int i = 0; i < HORIZONTAL_RESOLUTION; i++) {
+#ifdef COLOR_MODE
           rgba_t px = color_pixel_buf[j][i];
           sprintf(tempString, "%02hhx%02hhx%02hhx", px.r, px.g, px.b);
+#else
+          sprintf(tempString, "%02hhx", (*pixel_buf)[j][i]);
+#endif
           sendString(USART_LAPTOP, tempString);
         }
       }
