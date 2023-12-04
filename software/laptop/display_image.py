@@ -33,15 +33,14 @@ def read_serial():
                             (VERTICAL_RESOLUTION, HORIZONTAL_RESOLUTION, NUM_CHANNELS)
                         )
                         image = pixels
-                        fps = 1 / (time.time() - start_time)
                     else:
                         print(f"Recieved invalid image with {len(data)} bytes")
                 elif COMPRESSION == "qoi":
-                    print(str(data))
                     try:
-                        image = qoi.decode(qoi.decode(bytearray.fromhex(str(data))))
+                        image = qoi.decode(bytearray.fromhex(data.decode('ascii')))
                     except Exception as e:
                         print(f"Recieved invalid image qoi image: {e}")
+                fps = 1 / (time.time() - start_time)
         except OSError or ValueError:
             # print("Connection failed, reconnecting")
             time.sleep(1)
