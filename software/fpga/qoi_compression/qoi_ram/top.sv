@@ -2,10 +2,7 @@ module qoi2top (
 	input logic sck,
 	input logic sdi,
 	input logic reset,
-	input logic cs,
-	output logic sdo,
-	output helper1,
-	output helper2
+	output logic sdo
 );
 	
 	logic spiControllingRam;
@@ -21,9 +18,6 @@ module qoi2top (
 	logic encoderRamWE;
 	logic [15:0] encoderRamOut;
 	
-	assign helper1 = pixelsReady;
-	assign helper2 = doneEncoding;
-	
 	logic high_clk;
 	HSOSC #()
 		 hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(high_clk));
@@ -35,8 +29,8 @@ module qoi2top (
 	always_ff @(negedge high_clk) begin
 		new_clk = new_clk + 1;
 	end
-		 
-	spi spiInstance (sck, sdi, cs, sdo, reset, spiControllingRam, spiRamIn, spiRamAddress, spiRamWE, spiRamOut, pixelsReady, doneEncoding);
+	
+	spi spiInstance (sck, sdi, sdo, reset, spiControllingRam, spiRamIn, spiRamAddress, spiRamWE, spiRamOut, pixelsReady, doneEncoding);
 	encoder encoderInstance(new_clk[1], reset, pixelsReady, doneEncoding, encoderControllingRam, encoderRamIn, encoderRamAddress, encoderRamWE, encoderRamOut);
 	ram ramInstance (high_clk, spiControllingRam, spiRamIn, spiRamAddress, spiRamWE, spiRamOut, encoderControllingRam, encoderRamIn, encoderRamAddress, encoderRamWE, encoderRamOut);
 endmodule
@@ -449,7 +443,6 @@ endmodule
 module spi (
 	input logic sck,
 	input logic sdi,
-	input logic cs,
 	output logic sdo,
 	
 	input logic reset,
@@ -484,7 +477,6 @@ module spi (
 			spiRamIn = 0;
 		end
 		else begin
-			if (cs || !cs) begin
 				if (!pixelsReady) begin
 					if (firstIn) begin
 						if (spiInCounter == 15) begin
@@ -552,7 +544,6 @@ module spi (
 				else begin
 					spiCounterNew = 0;
 				end
-			end
 		end
 	end
 	
@@ -564,7 +555,6 @@ module spi (
 			dataOut = 0;
 		end
 		else begin
-			if (cs || !cs) begin
 				if (!pixelsReady) begin
 					dataIn = {dataIn[14:0], sdi};
 					spiInCounter = spiInCounter + 1;
@@ -580,12 +570,6 @@ module spi (
 					spiOutCounter = 0;
 				end
 			end
-			else begin
-				spiInCounter = 0;
-				spiOutCounter = 0;
-			end
-		end
-			
 	end
 endmodule
 
