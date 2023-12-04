@@ -1,0 +1,539 @@
+<HTML>
+<HEAD>
+<TITLE>Map Report</TITLE>
+<link href="file:///C:/lscc/radiant/2023.1/data/theme/css/light/report.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="file:///C:/lscc/radiant/2023.1/data/theme/css/print/report.css" rel="stylesheet" type="text/css" media="print"/>
+<style type="text/css">
+#toc {
+  position: fixed;
+  right: 2px;
+  top: 2px;
+  padding: 2px 5px 2px 5px;
+  background-color:rgba(210,210,210,0.1);
+  border-style: solid;
+  border-color: rgba(192,192,192,0.8);
+  border-width:1px;
+}
+#toc_list {
+  display: none;
+  }
+</style>
+
+<script type="text/javascript">
+<!--
+function showTocList() {
+var a = document.getElementById("toc_list");
+a.style.display = "block";
+}
+
+function hideTocList() {
+var a = document.getElementById("toc_list");
+if (a)
+    a.style.display = "none";
+}
+
+//-->
+</script>
+
+</HEAD>
+
+<BODY>
+
+<DIV id="content" onclick="hideTocList()"><PRE>
+<A name="Mrp"></A>                         Lattice Mapping Report File
+Design:  neo_obscura_top
+Family:  iCE40UP
+Device:  iCE40UP5K
+Package: SG48
+Performance Grade:  High-Performance_1.2V
+
+Mapper:    version Radiant Software (64-bit) 2023.1.1.200.1
+Mapped on: Sun Dec  3 16:53:04 2023
+
+
+<A name="mrp_di"></A><B><U><big>Design Information</big></U></B>
+
+Command line:   map -i NeoObscura_impl_1_syn.udb -pdc
+     Z:/github/NeoObscura/software/fpga/combined/pinout.pdc -o
+     NeoObscura_impl_1_map.udb -mp NeoObscura_impl_1.mrp -hierrpt -gui
+
+<A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
+   Number of slice registers: 2333 out of  5280 (44%)
+   Number of I/O registers:      0 out of   117 (0%)
+   Number of LUT4s:           4405 out of  5280 (83%)
+      Number of logic LUT4s:             2046
+      Number of inserted feedthru LUT4s: 2188
+      Number of replicated LUT4s:          1
+      Number of ripple logic:             85 (170 LUT4s)
+   Number of IO sites used:   10 out of 39 (26%)
+      Number of IO sites used for general PIO: 10
+      Number of IO sites used for I3C: 0 out of 2 (0%)
+      (note: If I3C is not used, its site can be used as general PIO)
+      Number of IO sites used for PIO+I3C: 10 out of 36 (28%)
+      Number of IO sites used for OD+RGB IO buffers: 0 out of 3 (0%)
+      (note: If RGB LED drivers are not used, sites can be used as OD outputs,
+       see TN1288 iCE40 LED Driver Usage Guide)
+      Number of IO sites used for PIO+I3C+OD+RGB: 10 out of 39 (26%)
+   Number of DSPs:             4 out of 8 (50%)
+   Number of I2Cs:             0 out of 2 (0%)
+   Number of High Speed OSCs:  1 out of 1 (100%)
+   Number of Low Speed OSCs:   0 out of 1 (0%)
+   Number of RGB PWM:          0 out of 1 (0%)
+   Number of RGB Drivers:      0 out of 1 (0%)
+   Number of SCL FILTERs:      0 out of 2 (0%)
+   Number of SRAMs:            1 out of 4 (25%)
+   Number of WARMBOOTs:        0 out of 1 (0%)
+   Number of SPIs:             0 out of 2 (0%)
+   Number of EBRs:             0 out of 30 (0%)
+   Number of PLLs:             0 out of 1 (0%)
+   Number of Clocks:  3
+      Net sck_c: 92 loads, 49 rising, 43 falling (Driver: Port sck)
+      Net high_clk: 42 loads, 40 rising, 2 falling (Driver: Pin
+     qoi.hf_osc/CLKHF)
+      Net qoi.new_clk[1]: 2181 loads, 2181 rising, 0 falling (Driver: Pin
+     qoi.new_clk_1__I_0/Q)
+   Number of Clock Enables:  95
+      Net VCC_net: 5 loads, 0 SLICEs
+      Net jumpBack_3__N_728: 1 loads, 1 SLICEs
+      Net n9410: 32 loads, 32 SLICEs
+      Net dataIn_0__N_139: 32 loads, 32 SLICEs
+      Net n8660: 32 loads, 32 SLICEs
+      Net n8596: 32 loads, 32 SLICEs
+
+      Net n8532: 32 loads, 32 SLICEs
+      Net n8468: 32 loads, 32 SLICEs
+      Net n8404: 32 loads, 32 SLICEs
+      Net n8340: 32 loads, 32 SLICEs
+      Net n8276: 32 loads, 32 SLICEs
+      Net n8212: 32 loads, 32 SLICEs
+      Net n8148: 32 loads, 32 SLICEs
+      Net dataOut_0__N_171: 8 loads, 8 SLICEs
+      Net spiRamIn_0__N_16: 8 loads, 8 SLICEs
+      Net n8084: 32 loads, 32 SLICEs
+      Net n8020: 32 loads, 32 SLICEs
+      Net n7956: 32 loads, 32 SLICEs
+      Net n7884: 32 loads, 32 SLICEs
+      Net n7814: 32 loads, 32 SLICEs
+      Net n7764: 32 loads, 32 SLICEs
+      Net n7638: 32 loads, 32 SLICEs
+      Net n7604: 32 loads, 32 SLICEs
+      Net n7550: 32 loads, 32 SLICEs
+      Net n7508: 32 loads, 32 SLICEs
+      Net n7444: 32 loads, 32 SLICEs
+      Net n6935: 32 loads, 32 SLICEs
+      Net n6805: 32 loads, 32 SLICEs
+      Net n6869: 32 loads, 32 SLICEs
+      Net n6925: 32 loads, 32 SLICEs
+      Net n7003: 32 loads, 32 SLICEs
+      Net n7023: 32 loads, 32 SLICEs
+      Net n7178: 32 loads, 32 SLICEs
+      Net n7256: 32 loads, 32 SLICEs
+      Net n6953: 32 loads, 32 SLICEs
+      Net n7025: 32 loads, 32 SLICEs
+      Net n6999: 32 loads, 32 SLICEs
+      Net qoi.spiInstance.tempInfoCode_0__N_156: 16 loads, 16 SLICEs
+      Net qoi.spiInstance.tempDataOut_0__N_180: 8 loads, 8 SLICEs
+      Net qoi.spiInstance.spiRamWE_N_783: 1 loads, 1 SLICEs
+      Net qoi.spiInstance.cipo_c_N_780: 1 loads, 1 SLICEs
+      Net qoi.ramInstance.WE_N_797: 23 loads, 23 SLICEs
+      Net qoi.ramInstance.WE: 1 loads, 0 SLICEs
+      Net qoi.encoderInstance.doneEncoding_N_786: 1 loads, 1 SLICEs
+      Net qoi.encoderInstance.encoderControllingRam_N_788: 1 loads, 1 SLICEs
+      Net qoi.encoderInstance.doneEncoding_N_794: 1 loads, 1 SLICEs
+      Net qoi.encoderInstance.finalPixel_N_795: 1 loads, 1 SLICEs
+      Net qoi.encoderInstance.curPixel_0__N_276: 8 loads, 8 SLICEs
+      Net qoi.encoderInstance.n6751: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.encoderRamAddress_0__N_83: 14 loads, 14 SLICEs
+      Net qoi.encoderInstance.encoderRamWE_N_790: 1 loads, 1 SLICEs
+      Net qoi.encoderInstance.encoderRamIn_0__N_54: 8 loads, 8 SLICEs
+      Net qoi.encoderInstance.encodedByte_0__N_359: 8 loads, 8 SLICEs
+      Net qoi.encoderInstance.jumpBack_1__N_733: 3 loads, 3 SLICEs
+      Net qoi.encoderInstance.runCount_3__N_284: 1 loads, 1 SLICEs
+      Net qoi.encoderInstance.runCount_0__N_293: 4 loads, 4 SLICEs
+      Net qoi.encoderInstance.writeAddress_0__N_699: 8 loads, 8 SLICEs
+      Net qoi.encoderInstance.readAddress_0__N_657: 8 loads, 8 SLICEs
+      Net qoi.encoderInstance.state_2__N_701: 1 loads, 1 SLICEs
+      Net qoi.encoderInstance.state_1__N_702: 1 loads, 1 SLICEs
+      Net qoi.encoderInstance.curPixel_16__N_260: 8 loads, 8 SLICEs
+      Net qoi.encoderInstance.curPixel_8__N_268: 8 loads, 8 SLICEs
+      Net qoi.encoderInstance.lastPixel_0__N_243: 32 loads, 32 SLICEs
+
+      Net qoi.encoderInstance.curPixel_24__N_252: 8 loads, 8 SLICEs
+      Net qoi.encoderInstance.n10708: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n10644: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n10580: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n10516: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n10452: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n10388: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n10324: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n10260: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n10196: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n10132: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n10068: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n10004: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n9940: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n9876: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n9812: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n9748: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n9684: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n9620: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n9556: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n9492: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n9364: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n9300: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n9236: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n9172: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n9108: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n9044: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n8980: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n8916: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n8852: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n8788: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n8724: 32 loads, 32 SLICEs
+   Number of LSRs:  78
+      Net n12858: 32 loads, 32 SLICEs
+      Pin reset: 68 loads, 68 SLICEs (Net: reset_c)
+      Net n12462: 32 loads, 32 SLICEs
+      Net n12429: 32 loads, 32 SLICEs
+      Net n12396: 32 loads, 32 SLICEs
+      Net n12363: 32 loads, 32 SLICEs
+      Net n12330: 32 loads, 32 SLICEs
+      Net n12297: 32 loads, 32 SLICEs
+      Net n12264: 32 loads, 32 SLICEs
+      Net n12231: 32 loads, 32 SLICEs
+      Net n12198: 32 loads, 32 SLICEs
+      Net n12165: 32 loads, 32 SLICEs
+      Net n12132: 32 loads, 32 SLICEs
+      Net n12099: 32 loads, 32 SLICEs
+      Net n12066: 32 loads, 32 SLICEs
+      Net n12033: 32 loads, 32 SLICEs
+      Net n12000: 32 loads, 32 SLICEs
+      Net n11967: 32 loads, 32 SLICEs
+      Net n11934: 32 loads, 32 SLICEs
+      Net n11901: 32 loads, 32 SLICEs
+      Net n11868: 32 loads, 32 SLICEs
+      Net n11835: 32 loads, 32 SLICEs
+      Net n11435: 32 loads, 32 SLICEs
+      Net n11459: 32 loads, 32 SLICEs
+
+      Net n11545: 32 loads, 32 SLICEs
+      Net n11504: 32 loads, 32 SLICEs
+      Net n11444: 32 loads, 32 SLICEs
+      Net n11646: 32 loads, 32 SLICEs
+      Net n11696: 32 loads, 32 SLICEs
+      Net n11737: 32 loads, 32 SLICEs
+      Net n11464: 32 loads, 32 SLICEs
+      Net n11620: 32 loads, 32 SLICEs
+      Net n11455: 32 loads, 32 SLICEs
+      Net qoi.spiInstance.spiRamWE_N_784: 1 loads, 1 SLICEs
+      Net qoi.spiInstance.spiCounterNew_0__N_108: 6 loads, 6 SLICEs
+      Net qoi.encoderInstance.n11429: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.encoderRamIn_0__N_55: 1 loads, 1 SLICEs
+      Net qoi.encoderInstance.encoderRamIn_1__N_52: 7 loads, 7 SLICEs
+      Net qoi.encoderInstance.encodedByte_0__N_360: 8 loads, 8 SLICEs
+      Net qoi.encoderInstance.jumpBack_3__N_729: 1 loads, 1 SLICEs
+      Net qoi.encoderInstance.jumpBack_5__N_725: 1 loads, 1 SLICEs
+      Net qoi.encoderInstance.runCount_3__N_285: 1 loads, 1 SLICEs
+      Net qoi.encoderInstance.writeAddress_0__N_700: 8 loads, 8 SLICEs
+      Net qoi.encoderInstance.lastPixel_0__N_244: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.readAddress_0__N_658: 8 loads, 8 SLICEs
+      Net qoi.encoderInstance.runCount_0__N_294: 4 loads, 4 SLICEs
+      Net qoi.encoderInstance.n13518: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n13485: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n13452: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n13419: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n13386: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n13353: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n13320: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n13287: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n13254: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n13221: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n13188: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n13155: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n13122: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n13089: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n13056: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n13023: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n12990: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n12957: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n12924: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n12891: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n12825: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n12792: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n12759: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n12726: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n12693: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n12660: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n12627: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n12594: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n12561: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n12528: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.n12495: 32 loads, 32 SLICEs
+      Net qoi.encoderInstance.encoderRamWE_N_791: 1 loads, 1 SLICEs
+   Top 10 highest fanout non-clock nets:
+      Net qoi.encoderInstance.index[1]_2: 1002 loads
+      Net index[0]: 542 loads
+
+      Net index[3]: 260 loads
+      Net index[5]: 190 loads
+      Net index[2]: 168 loads
+      Net index[4]: 166 loads
+      Net n21532: 128 loads
+      Net qoi.encoderInstance.state[2]_2: 116 loads
+      Net state[0]: 112 loads
+      Net qoi.encoderInstance.state[1]_2: 104 loads
+
+
+
+
+   Number of warnings:  0
+   Number of errors:    0
+
+
+   Number of warnings:  0
+   Number of errors:    0
+
+
+
+<A name="mrp_dwe"></A><B><U><big>Design Errors/Warnings</big></U></B>
+
+   No errors or warnings present.
+
+
+
+<A name="mrp_ioa"></A><B><U><big>IO (PIO) Attributes</big></U></B>
+
++---------------------+-----------+-----------+-------+-------+-----------+
+| IO Name             | Direction | Levelmode |  IO   |  IO   | Special   |
+|                     |           |  IO_TYPE  |  REG  |  DDR  | IO Buffer |
++---------------------+-----------+-----------+-------+-------+-----------+
+| addr[0]             | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| reset               | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| sel[1]              | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| sel[2]              | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| sel[0]              | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| sel[3]              | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| cipo                | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| sck                 | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| copi                | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| addr[1]             | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+
+
+
+<A name="mrp_rm"></A><B><U><big>Removed logic</big></U></B>
+
+Block qoi/encoderInstance/index_2__I_0_lut_buf_1 was optimized away.
+Block qoi/encoderInstance/index_2__I_0_lut_buf_2 was optimized away.
+Block i4_1_lut was optimized away.
+Block i116_1_lut was optimized away.
+Block i1 was optimized away.
+
+
+OSC Summary
+-----------
+
+OSC 1:                                 Pin/Node Value
+  OSC Instance Name:                            qoi/hf_osc
+  Power UP:                            NODE     VCC_net
+  Enable Signal:                       NODE     VCC_net
+  OSC Output:                          NODE     high_clk
+  DIV Setting:                                  00
+
+
+
+<A name="mrp_asic"></A><B><U><big>ASIC Components</big></U></B>
+---------------
+
+Instance Name: qoi/ramInstance/ram
+         Type: SRAM
+Instance Name: qoi/encoderInstance/mult_15
+         Type: DSP
+Instance Name: qoi/encoderInstance/mult_16
+         Type: DSP
+Instance Name: qoi/encoderInstance/mult_18
+         Type: DSP
+Instance Name: qoi/encoderInstance/mult_20
+         Type: DSP
+Instance Name: qoi/hf_osc
+         Type: HFOSC
+
+
+
+<A name="mrp_consum"></A><B><U><big>Constraint Summary</big></U></B>
+------------------
+
+   Total number of constraints: 11
+   Total number of constraints dropped: 0
+
+
+
+<A name="mrp_runtime"></A><B><U><big>Run Time and Memory Usage</big></U></B>
+-------------------------
+
+   Total CPU Time: 4 secs
+   Total REAL Time: 5 secs
+   Peak Memory Usage: 142 MB
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995
+     AT&amp;T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent
+     Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems
+     All rights reserved.
+Copyright (c) 2002-2023 Lattice Semiconductor
+     Corporation,  All rights reserved.
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></DIV>
+
+<DIV id="toc" class="radiant"><span onmousemove="showTocList()">Contents</span>
+<UL id="toc_list">
+<LI><A href=#mrp_di>Design Information</A></LI>
+<LI><A href=#mrp_ds>Design Summary</A></LI>
+<LI><A href=#mrp_dwe>Design Errors/Warnings</A></LI>
+<LI><A href=#mrp_ioa>IO (PIO) Attributes</A></LI>
+<LI><A href=#mrp_rm>Removed logic</A></LI>
+<LI><A href=#mrp_asic>ASIC Components</A></LI>
+<LI><A href=#mrp_consum>Constraint Summary</A></LI>
+<LI><A href=#mrp_runtime>Run Time and Memory Usage</A></LI>
+</UL>
+</DIV>
+
+<button id="back_to_top" class="radiant" onclick="scrollToTop()">&lt;</button>
+<script type="text/javascript">
+<!--
+var scrollStep = 0;
+function scrollToTop(){
+  var funScroll = function() {
+    var top = document.body.scrollTop;
+    if (top == 0) {
+      scrollStep = 0;
+      return;
+    }
+    if (scrollStep == 0)
+      scrollStep = top/20 + 1;
+    top -= scrollStep;
+    if (top < 0)
+      top = 0;
+    document.body.scrollTop = top;
+    requestAnimationFrame(funScroll);
+  };
+  funScroll();
+}
+
+window.addEventListener('scroll', function(e) {
+  var backToTop = document.getElementById('back_to_top')
+  if (document.body.scrollTop > 0) {
+    backToTop.style.display = 'block';
+  } else {	backToTop.style.display = 'none'  }});
+
+//-->
+</script>
+
+<style type="text/css">
+#back_to_top {
+  bottom:20px; right:20px;
+  width:30px; height:30px;
+  font-size: 20px;
+  padding: 2px 5px 2px 5px;
+  position:fixed;
+  background-color:rgba(210,210,210,0.1);
+  border-style: solid;
+  border-color: rgba(192,192,192,0.8);
+  border-width:1px;
+  display:none;
+  -webkit-transform: rotate(90deg);
+  -webkit-transform-origin:50% 50%;
+}
+#back_to_top:focus {
+  outline-width:0px;
+}
+</style>
+
+</BODY>
+

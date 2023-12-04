@@ -1,0 +1,76 @@
+----------------------------------------------------------------------
+Report for cell neo_obscura_top.TECH
+Register bits:  2333 of 5280 (44.186%)
+I/O cells:      8
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               CCU2        85          100.0
+                            FD1P3XZ      2333          100.0
+                         HSOSC_CORE         1          100.0
+                                 IB         5          100.0
+                                INV         2          100.0
+                               LUT4      2048          100.0
+                              MAC16         4          100.0
+                                 OB         5          100.0
+                              VFB_B         1          100.0
+SUB MODULES
+                            decoder         1
+                            encoder         1
+                            qoi2top         1
+                                ram         1
+                                spi         1
+                              TOTAL      4489
+----------------------------------------------------------------------
+Report for cell decoder.v1
+Instance Path : address_decoder
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                 IB         1           20.0
+                               LUT4         4            0.2
+                              TOTAL         5
+----------------------------------------------------------------------
+Report for cell qoi2top.v1
+Instance Path : qoi
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        85          100.0
+                            FD1P3XZ      2333          100.0
+                         HSOSC_CORE         1          100.0
+                                 IB         1           20.0
+                               LUT4      1940           94.7
+                              MAC16         4          100.0
+                              VFB_B         1          100.0
+SUB MODULES
+                            encoder         1
+                                ram         1
+                                spi         1
+                              TOTAL      4368
+----------------------------------------------------------------------
+Report for cell spi.v1
+Instance Path : qoi.spiInstance
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        16           18.8
+                            FD1P3XZ        98            4.2
+                                 IB         1           20.0
+                               LUT4        51            2.5
+                              TOTAL       166
+----------------------------------------------------------------------
+Report for cell ram.v1
+Instance Path : qoi.ramInstance
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3XZ        39            1.7
+                               LUT4        24            1.2
+                              VFB_B         1          100.0
+                              TOTAL        64
+----------------------------------------------------------------------
+Report for cell encoder.v1
+Instance Path : qoi.encoderInstance
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        69           81.2
+                            FD1P3XZ      2194           94.0
+                               LUT4      1863           91.0
+                              MAC16         4          100.0
+                              TOTAL      4130

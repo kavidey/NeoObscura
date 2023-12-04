@@ -1,0 +1,239 @@
+
+Lattice Place and Route Report for Design "NeoObscura_impl_1_map.udb"
+Sun Dec  3 16:53:08 2023
+
+PAR: Place And Route Radiant Software (64-bit) 2023.1.1.200.1.
+Command Line: par -w -t 1 -cores 1 -exp parPathBased=ON \
+	NeoObscura_impl_1_map.udb NeoObscura_impl_1_par.dir/5_1.udb 
+
+Loading NeoObscura_impl_1_map.udb ...
+Loading device for application GENERIC from file 'itpa08.nph' in environment: C:/lscc/radiant/2023.1/ispfpga.
+Package Status:                     Preliminary    Version 1.5.
+Performance Hardware Data Status:   Advanced       Version 1.0.
+
+
+
+Design:  neo_obscura_top
+Family:  iCE40UP
+Device:  iCE40UP5K
+Package: SG48
+Performance Grade:   High-Performance_1.2V
+CRITICAL <71003005> - par: The clock port [sck] is assigned to a non clock dedicated pin [21], which might affect the clock performance. Use dedicated clock resources for the port.
+Number of Signals: 6906
+Number of Connections: 19619
+Device utilization summary:
+
+   SLICE (est.)    2305/2640         87% used
+     LUT           4405/5280         83% used
+     REG           2333/5280         44% used
+   PIO               10/56           18% used
+                     10/36           27% bonded
+   IOLOGIC            0/56            0% used
+   DSP                4/8            50% used
+   I2C                0/2             0% used
+   HFOSC              1/1           100% used
+   LFOSC              0/1             0% used
+   LEDDA_IP           0/1             0% used
+   RGBA_DRV           0/1             0% used
+   FILTER             0/2             0% used
+   SRAM               1/4            25% used
+   WARMBOOT           0/1             0% used
+   SPI                0/2             0% used
+   EBR                0/30            0% used
+   PLL                0/1             0% used
+   RGBOUTBUF          0/3             0% used
+   I3C                0/2             0% used
+   OPENDRAIN          0/3             0% used
+
+Pin Constraint Summary:
+   10 out of 10 pins locked (100% locked).
+
+Finished Placer Phase 0 (HIER). CPU time: 1 mins 29 secs , REAL time: 1 mins 31 secs 
+
+
+..............................
+Finished Placer Phase 0 (AP).  CPU time: 1 mins 53 secs , REAL time: 1 mins 55 secs 
+
+Starting Placer Phase 1. CPU time: 1 mins 53 secs , REAL time: 1 mins 55 secs 
+..  ..
+....................
+
+Placer score = 1039706.
+
+Device SLICE utilization summary after final SLICE packing:
+   SLICE           2313/2640         87% used
+
+Finished Placer Phase 1. CPU time: 2 mins 38 secs , REAL time: 2 mins 40 secs 
+
+Starting Placer Phase 2.
+.
+
+Placer score =  1223794
+Finished Placer Phase 2.  CPU time: 2 mins 41 secs , REAL time: 2 mins 43 secs 
+
+
+------------------ Clock Report ------------------
+
+Global Clocks :
+  PRIMARY "high_clk" from comp "qoi.hf_osc" on site "HFOSC_R1C32", clk load = 22, ce load = 0, sr load = 0
+  PRIMARY "qoi.new_clk[1]" from Q1 on comp "qoi.SLICE_85" on site "R13C2B", clk load = 1110, ce load = 0, sr load = 0
+  PRIMARY "sck_c" from comp "sck" on PIO site "21 (PL19B)", clk load = 54, ce load = 0, sr load = 0
+
+  PRIMARY  : 3 out of 8 (37%)
+
+--------------- End of Clock Report ---------------
+
+
+I/O Usage Summary (final):
+   10 out of 56 (17.9%) I/O sites used.
+   10 out of 36 (27.8%) bonded I/O sites used.
+   Number of I/O components: 10; differential: 0
+   Number of Vref pins used: 0
+
+I/O Bank Usage Summary:
++----------+---------------+------------+------------+------------+
+| I/O Bank | Usage         | Bank Vccio | Bank Vref1 | Bank Vref2 |
++----------+---------------+------------+------------+------------+
+| 0        | 0 / 14 (  0%) | OFF        |            |            |
+| 1        | 6 / 14 ( 42%) | 3.3V       |            |            |
+| 2        | 4 / 8 ( 50%)  | 3.3V       |            |            |
++----------+---------------+------------+------------+------------+
+
+Total Placer CPU time: 2 mins 41 secs , REAL time: 2 mins 43 secs 
+
+Writing design to file NeoObscura_impl_1_par.dir/5_1.udb ...
+
+
+Start NBR router at 16:55:52 12/03/23
+
+*****************************************************************
+Info: NBR allows conflicts(one node used by more than one signal)
+      in the earlier iterations. In each iteration, it tries to  
+      solve the conflicts while keeping the critical connections 
+      routed as short as possible. The routing process is said to
+      be completed when no conflicts exist and all connections   
+      are routed.                                                
+Note: NBR uses a different method to calculate timing slacks. The
+      worst slack and total negative slack may not be the same as
+      that in timing report. You should always run the timing    
+      tool to verify your design.                                
+*****************************************************************
+
+Starting routing resource preassignment
+Preassignment Summary:
+--------------------------------------------------------------------------------
+2478 connections routed with dedicated routing resources
+3 global clock signals routed
+3664 connections routed (of 16300 total) (22.48%)
+---------------------------------------------------------
+Clock routing summary:
+Primary clocks (3 used out of 8 available):
+#4  Signal "high_clk"
+       Clock   loads: 22    out of    22 routed (100.00%)
+#5  Signal "qoi.new_clk[1]"
+       Clock   loads: 1110  out of  1110 routed (100.00%)
+       Data    loads: 0     out of     1 routed (  0.00%)
+#7  Signal "sck_c"
+       Clock   loads: 54    out of    54 routed (100.00%)
+---------------------------------------------------------
+--------------------------------------------------------------------------------
+Completed routing resource preassignment
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Routing in Serial Mode ......
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Start NBR section for initial routing at 16:55:54 12/03/23
+Level 4, iteration 1
+923(0.35%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 13.742ns/0.000ns; real time: 28 secs 
+
+Info: Initial congestion level at 75.00% usage is 0
+Info: Initial congestion area  at 75.00% usage is 0 (0.00%)
+
+Start NBR section for normal routing at 16:56:20 12/03/23
+Level 4, iteration 1
+129(0.05%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 13.742ns/0.000ns; real time: 32 secs 
+Level 4, iteration 2
+57(0.02%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 13.742ns/0.000ns; real time: 34 secs 
+Level 4, iteration 3
+24(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 13.742ns/0.000ns; real time: 35 secs 
+Level 4, iteration 4
+13(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 13.742ns/0.000ns; real time: 35 secs 
+Level 4, iteration 5
+3(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 13.742ns/0.000ns; real time: 35 secs 
+Level 4, iteration 6
+1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 13.742ns/0.000ns; real time: 35 secs 
+Level 4, iteration 7
+1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 13.742ns/0.000ns; real time: 36 secs 
+Level 4, iteration 8
+1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 13.742ns/0.000ns; real time: 36 secs 
+Level 4, iteration 9
+1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 13.742ns/0.000ns; real time: 36 secs 
+Level 4, iteration 10
+0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 13.742ns/0.000ns; real time: 36 secs 
+
+Start NBR section for setup/hold timing optimization with effort level 3 at 16:56:28 12/03/23
+
+Starting full timing analysis...
+
+Start NBR section for post-routing at 16:56:33 12/03/23
+
+End NBR router with 0 unrouted connection
+
+Starting full timing analysis...
+
+NBR Summary
+-----------
+  Number of unrouted connections : 0 (0.00%)
+  Estimated worst slack<setup> : 14.240ns
+  Estimated worst slack<hold > : 1.414ns
+  Timing score<setup> : 0
+  Timing score<hold > : 0
+  Number of connections with timing violations<setup> : 0 (0.00%)
+  Number of connections with timing violations<hold > : 0 (0.00%)
+-----------
+
+
+Total CPU time 50 secs 
+Total REAL time: 50 secs 
+Completely routed.
+End of route.  16300 routed (100.00%); 0 unrouted.
+
+Writing design to file NeoObscura_impl_1_par.dir/5_1.udb ...
+
+
+All signals are completely routed.
+
+
+PAR_SUMMARY::Run status = Completed
+PAR_SUMMARY::Number of unrouted conns = 0
+PAR_SUMMARY::Worst  slack<setup/<ns>> = 14.240
+PAR_SUMMARY::Timing score<setup/<ns>> = 0.000
+PAR_SUMMARY::Worst  slack<hold /<ns>> = 1.414
+PAR_SUMMARY::Timing score<hold /<ns>> = 0.000
+PAR_SUMMARY::Number of errors = 0
+
+Total CPU  Time: 3 mins 33 secs 
+Total REAL Time: 3 mins 36 secs 
+Peak Memory Usage: 252.58 MB
+
+
+par done!
+
+Note: user must run 'timing' for timing closure signoff.
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.

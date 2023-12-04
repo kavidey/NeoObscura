@@ -1,0 +1,501 @@
+<HTML>
+<HEAD>
+<TITLE>Synthesis Report</TITLE>
+<link href="file:///C:/lscc/radiant/2023.1/data/theme/css/light/report.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="file:///C:/lscc/radiant/2023.1/data/theme/css/print/report.css" rel="stylesheet" type="text/css" media="print"/>
+<style type="text/css">
+#toc {
+  position: fixed;
+  right: 2px;
+  top: 2px;
+  padding: 2px 5px 2px 5px;
+  background-color:rgba(210,210,210,0.1);
+  border-style: solid;
+  border-color: rgba(192,192,192,0.8);
+  border-width:1px;
+}
+#toc_list {
+  display: none;
+  }
+</style>
+
+<script type="text/javascript">
+<!--
+function showTocList() {
+var a = document.getElementById("toc_list");
+a.style.display = "block";
+}
+
+function hideTocList() {
+var a = document.getElementById("toc_list");
+if (a)
+    a.style.display = "none";
+}
+
+//-->
+</script>
+
+</HEAD>
+
+<BODY>
+
+<DIV id="content" onclick="hideTocList()"><PRE>
+<A name="Syn"></A><B><U><big>Synthesis Report</big></U></B>
+synthesis:  version Radiant Software (64-bit) 2023.1.1.200.1
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
+Sun Dec  3 16:52:31 2023
+
+
+Command Line:  C:\lscc\radiant\2023.1\ispfpga\bin\nt64\synthesis.exe -f NeoObscura_impl_1_lattice.synproj -gui -msgset Z:/github/NeoObscura/software/fpga/combined/promote.xml 
+
+Synthesis options:
+The -a option is iCE40UP.
+The -t option is SG48.
+The -sp option is High-Performance_1.2V.
+The -p option is iCE40UP5K.
+                                                          
+
+
+##########################################################
+
+
+### Lattice Family     : iCE40UP
+
+
+### Device             : iCE40UP5K
+
+
+### Package            : SG48
+
+
+### Performance Grade  : High-Performance_1.2V
+
+
+                                                         
+
+
+INFO <35001786> - synthesis: User-Selected Strategy Settings
+Optimization goal = Area
+Top-level module name = neo_obscura_top.
+Target frequency = 200.000000 MHz.
+Maximum fanout = 1000.
+Timing path count = 3 (default)
+RWCheckOnRam = 0
+
+BRAM utilization = 100.000000 %
+DSP usage = true
+DSP utilization = 100.000000 %
+fsm_encoding_style = auto
+resolve_mixed_drivers = 0
+fix_gated_clocks = 1
+
+
+Mux style = auto (Default)
+Use Carry Chain = true
+carry_chain_length = 0
+Loop Limit = 1950.
+Use IO Insertion = TRUE
+Use IO Reg = AUTO
+
+Resource Sharing = TRUE
+Propagate Constants = TRUE
+Remove Duplicate Registers = TRUE
+Output HDL file name = NeoObscura_impl_1.vm.
+ROM style = auto
+RAM style = auto
+The -comp option is FALSE.
+The -syn option is FALSE.
+-path C:/lscc/radiant/2023.1/ispfpga/ice40tp/data (searchpath added)
+-path Z:/github/NeoObscura/software/fpga/combined (searchpath added)
+-path Z:/github/NeoObscura/software/fpga/combined/impl_1 (searchpath added)
+Mixed language design
+Verilog design file = C:/lscc/radiant/2023.1/ip/pmi/pmi_iCE40UP.v
+Verilog design file = Z:/github/NeoObscura/software/fpga/combined/source/impl_1/neo_obscura_top.sv
+Verilog design file = Z:/github/NeoObscura/software/fpga/combined/source/impl_1/qoi.sv
+Verilog design file = Z:/github/NeoObscura/software/fpga/combined/source/impl_1/decoder.sv
+VHDL library = pmi
+VHDL design file = C:/lscc/radiant/2023.1/ip/pmi/pmi_iCE40UP.vhd
+The -r option is OFF. [ Remove LOC Properties is OFF. ]
+WARNING <35935050> - synthesis: input port TRIM9 is not connected on this instance. VDB-5050
+WARNING <35935050> - synthesis: input port TRIM8 is not connected on this instance. VDB-5050
+WARNING <35935050> - synthesis: input port TRIM7 is not connected on this instance. VDB-5050
+WARNING <35935050> - synthesis: input port TRIM6 is not connected on this instance. VDB-5050
+WARNING <35935050> - synthesis: input port TRIM5 is not connected on this instance. VDB-5050
+WARNING <35935050> - synthesis: input port TRIM4 is not connected on this instance. VDB-5050
+WARNING <35935050> - synthesis: input port TRIM3 is not connected on this instance. VDB-5050
+WARNING <35935050> - synthesis: input port TRIM2 is not connected on this instance. VDB-5050
+WARNING <35935050> - synthesis: input port TRIM1 is not connected on this instance. VDB-5050
+WARNING <35935050> - synthesis: input port TRIM0 is not connected on this instance. VDB-5050
+WARNING <35935050> - synthesis: input port I is not connected on this instance. VDB-5050
+Compile design.
+Compile Design Begin
+Analyzing Verilog file c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v. VERI-1482
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(1): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_addsub.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_addsub.v(40): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../common/adder_subtractor/rtl/lscc_add_sub.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(2): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_add.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_add.v(50): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../common/adder/rtl/lscc_adder.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(3): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_complex_mult.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_complex_mult.v(52): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../common/complex_mult/rtl/lscc_complex_mult.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(4): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_counter.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_counter.v(39): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../common/counter/rtl/lscc_cntr.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(5): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_fifo.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_fifo.v(44): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../avant/fifo/rtl/lscc_fifo.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(6): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_fifo_dc.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_fifo_dc.v(47): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../avant/fifo_dc/rtl/lscc_fifo_dc.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(7): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_mac.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_mac.v(52): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../common/mult_accumulate/rtl/lscc_mult_accumulate.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(8): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_multaddsubsum.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_multaddsubsum.v(53): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../common/mult_add_sub_sum/rtl/lscc_mult_add_sub_sum.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(9): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_multaddsub.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_multaddsub.v(52): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../common/mult_add_sub/rtl/lscc_mult_add_sub.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(10): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_mult.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_mult.v(51): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../common/multiplier/rtl/lscc_multiplier.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(11): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_ram_dp.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_ram_dp.v(48): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../avant/ram_dp/rtl/lscc_ram_dp.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(12): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_ram_dq.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_ram_dq.v(45): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../avant/ram_dq/rtl/lscc_ram_dq.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(13): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_rom.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_rom.v(45): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../avant/rom/rtl/lscc_rom.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(14): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_sub.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_sub.v(50): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../common/subtractor/rtl/lscc_subtractor.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(15): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_ram_dp_be.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_ram_dp_be.v(49): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../avant/ram_dp/rtl/lscc_ram_dp.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(16): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_ram_dq_be.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_ram_dq_be.v(45): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../avant/ram_dq/rtl/lscc_ram_dq.v. VERI-1328
+INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(17): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_dsp.v. VERI-1328
+Analyzing Verilog file z:/github/neoobscura/software/fpga/combined/source/impl_1/neo_obscura_top.sv. VERI-1482
+Analyzing Verilog file z:/github/neoobscura/software/fpga/combined/source/impl_1/qoi.sv. VERI-1482
+Analyzing Verilog file z:/github/neoobscura/software/fpga/combined/source/impl_1/decoder.sv. VERI-1482
+Analyzing VHDL file c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.vhd. VHDL-1481
+Analyzing VHDL file c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.vhd
+
+INFO <35921014> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.vhd(4): analyzing package components. VHDL-1014
+INFO <35921504> - synthesis: The default VHDL library search path is now "Z:/github/NeoObscura/software/fpga/combined/impl_1". VHDL-1504
+Top module language type = Verilog.
+Top module name (Verilog, mixed language): neo_obscura_top
+INFO <35901018> - synthesis: z:/github/neoobscura/software/fpga/combined/source/impl_1/neo_obscura_top.sv(21): compiling module neo_obscura_top. VERI-1018
+INFO <35901018> - synthesis: z:/github/neoobscura/software/fpga/combined/source/impl_1/decoder.sv(20): compiling module decoder. VERI-1018
+INFO <35901018> - synthesis: z:/github/neoobscura/software/fpga/combined/source/impl_1/qoi.sv(9): compiling module qoi2top. VERI-1018
+INFO <35901018> - synthesis: C:/lscc/radiant/2023.1/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(756): compiling module HSOSC. VERI-1018
+INFO <35901018> - synthesis: C:/lscc/radiant/2023.1/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(764): compiling module LSOSC. VERI-1018
+WARNING <35901209> - synthesis: z:/github/neoobscura/software/fpga/combined/source/impl_1/qoi.sv(38): expression size 32 truncated to fit in target size 5. VERI-1209
+INFO <35901018> - synthesis: z:/github/neoobscura/software/fpga/combined/source/impl_1/qoi.sv(451): compiling module spi. VERI-1018
+WARNING <35901209> - synthesis: z:/github/neoobscura/software/fpga/combined/source/impl_1/qoi.sv(514): expression size 32 truncated to fit in target size 14. VERI-1209
+WARNING <35901209> - synthesis: z:/github/neoobscura/software/fpga/combined/source/impl_1/qoi.sv(524): expression size 32 truncated to fit in target size 3. VERI-1209
+WARNING <35901209> - synthesis: z:/github/neoobscura/software/fpga/combined/source/impl_1/qoi.sv(549): expression size 32 truncated to fit in target size 14. VERI-1209
+WARNING <35901209> - synthesis: z:/github/neoobscura/software/fpga/combined/source/impl_1/qoi.sv(568): expression size 32 truncated to fit in target size 4. VERI-1209
+WARNING <35901209> - synthesis: z:/github/neoobscura/software/fpga/combined/source/impl_1/qoi.sv(571): expression size 32 truncated to fit in target size 3. VERI-1209
+INFO <35901018> - synthesis: z:/github/neoobscura/software/fpga/combined/source/impl_1/qoi.sv(45): compiling module encoder. VERI-1018
+WARNING <35901209> - synthesis: z:/github/neoobscura/software/fpga/combined/source/impl_1/qoi.sv(108): expression size 32 truncated to fit in target size 6. VERI-1209
+WARNING <35901209> - synthesis: z:/github/neoobscura/software/fpga/combined/source/impl_1/qoi.sv(256): expression size 32 truncated to fit in target size 14. VERI-1209
+WARNING <35901209> - synthesis: z:/github/neoobscura/software/fpga/combined/source/impl_1/qoi.sv(262): expression size 32 truncated to fit in target size 14. VERI-1209
+WARNING <35901209> - synthesis: z:/github/neoobscura/software/fpga/combined/source/impl_1/qoi.sv(268): expression size 32 truncated to fit in target size 14. VERI-1209
+WARNING <35901209> - synthesis: z:/github/neoobscura/software/fpga/combined/source/impl_1/qoi.sv(274): expression size 32 truncated to fit in target size 14. VERI-1209
+WARNING <35901209> - synthesis: z:/github/neoobscura/software/fpga/combined/source/impl_1/qoi.sv(287): expression size 32 truncated to fit in target size 14. VERI-1209
+WARNING <35901209> - synthesis: z:/github/neoobscura/software/fpga/combined/source/impl_1/qoi.sv(292): expression size 32 truncated to fit in target size 6. VERI-1209
+WARNING <35901209> - synthesis: z:/github/neoobscura/software/fpga/combined/source/impl_1/qoi.sv(387): expression size 32 truncated to fit in target size 14. VERI-1209
+WARNING <35901209> - synthesis: z:/github/neoobscura/software/fpga/combined/source/impl_1/qoi.sv(396): expression size 32 truncated to fit in target size 14. VERI-1209
+WARNING <35901209> - synthesis: z:/github/neoobscura/software/fpga/combined/source/impl_1/qoi.sv(405): expression size 32 truncated to fit in target size 14. VERI-1209
+WARNING <35901209> - synthesis: z:/github/neoobscura/software/fpga/combined/source/impl_1/qoi.sv(412): expression size 32 truncated to fit in target size 14. VERI-1209
+WARNING <35901209> - synthesis: z:/github/neoobscura/software/fpga/combined/source/impl_1/qoi.sv(419): expression size 32 truncated to fit in target size 14. VERI-1209
+WARNING <35901209> - synthesis: z:/github/neoobscura/software/fpga/combined/source/impl_1/qoi.sv(426): expression size 32 truncated to fit in target size 14. VERI-1209
+WARNING <35901209> - synthesis: z:/github/neoobscura/software/fpga/combined/source/impl_1/qoi.sv(433): expression size 32 truncated to fit in target size 14. VERI-1209
+INFO <35901018> - synthesis: z:/github/neoobscura/software/fpga/combined/source/impl_1/qoi.sv(584): compiling module ram. VERI-1018
+INFO <35901018> - synthesis: C:/lscc/radiant/2023.1/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(742): compiling module SP256K. VERI-1018
+                                                         
+
+
+### Number of Logic Cells: 5280
+
+
+### Number of RAM Blocks: 30
+
+
+### Number of DSP Blocks: 8
+
+
+### Number of PLLs: 1
+
+
+### Number of IO Pins: 56
+
+
+##########################################################
+
+
+                                                         
+
+
+WARNING <35931002> - synthesis: z:/github/neoobscura/software/fpga/combined/source/impl_1/qoi.sv(24): net \qoi/encoderRamIn[15] does not have a driver. VDB-1002
+######## Missing driver on net \qoi/encoderRamIn[15]. Patching with GND.
+######## Missing driver on net \qoi/encoderRamIn[14]. Patching with GND.
+######## Missing driver on net \qoi/encoderRamIn[13]. Patching with GND.
+######## Missing driver on net \qoi/encoderRamIn[12]. Patching with GND.
+######## Missing driver on net \qoi/encoderRamIn[11]. Patching with GND.
+######## Missing driver on net \qoi/encoderRamIn[10]. Patching with GND.
+######## Missing driver on net \qoi/encoderRamIn[9]. Patching with GND.
+######## Missing driver on net \qoi/encoderRamIn[8]. Patching with GND.
+INFO <35001774> - synthesis: Extracted state machine for register '\qoi/spiInstance/spiInCounter' with one-hot encoding
+State machine has 16 reachable states with original encodings of:
+
+ 0000 
+
+ 0001 
+
+ 0010 
+
+ 0011 
+
+ 0100 
+
+ 0101 
+
+ 0110 
+
+ 0111 
+
+ 1000 
+
+ 1001 
+
+ 1010 
+
+ 1011 
+
+ 1100 
+
+ 1101 
+
+ 1110 
+
+ 1111 
+
+original encoding -> new encoding (one-hot encoding)
+
+ 0000 -> 0000000000000001
+
+ 0001 -> 0000000000000010
+
+ 0010 -> 0000000000000100
+
+ 0011 -> 0000000000001000
+
+ 0100 -> 0000000000010000
+
+ 0101 -> 0000000000100000
+
+ 0110 -> 0000000001000000
+
+ 0111 -> 0000000010000000
+
+ 1000 -> 0000000100000000
+
+ 1001 -> 0000001000000000
+
+ 1010 -> 0000010000000000
+
+ 1011 -> 0000100000000000
+
+ 1100 -> 0001000000000000
+
+ 1101 -> 0010000000000000
+
+ 1110 -> 0100000000000000
+
+ 1111 -> 1000000000000000
+
+
+
+
+Mapped 4 multiplier(s)
+
+
+WARNING <35935040> - synthesis: Register \qoi/spiInstance/spiRamIn__i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \qoi/spiInstance/spiRamIn__i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \qoi/spiInstance/spiRamIn__i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \qoi/spiInstance/spiRamIn__i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \qoi/spiInstance/spiRamIn__i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \qoi/spiInstance/spiRamIn__i13 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \qoi/spiInstance/spiRamIn__i14 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \qoi/spiInstance/spiRamIn__i15 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \qoi/ramInstance/DI_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \qoi/ramInstance/DI_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \qoi/ramInstance/DI_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \qoi/ramInstance/DI_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \qoi/ramInstance/DI_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \qoi/ramInstance/DI_i13 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \qoi/ramInstance/DI_i14 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \qoi/ramInstance/DI_i15 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \qoi/encoderInstance/jumpBack_i6 clock is stuck at Zero. VDB-5040
+INFO <35001701> - synthesis: Net \qoi/encoderInstance/index[1] with fanout 1002 was buffered for fixing max_fanout violation.
+INFO <35001701> - synthesis: Net \qoi/encoderInstance/index[1] with fanout 1002 was buffered for fixing max_fanout violation.
+
+
+<A name="lse_area"></A><B><U><big>Area Report</big></U></B>
+
+################### Begin Area Report (neo_obscura_top)######################
+Number of register bits => 2333 of 5280 (44 % )
+CCU2 => 85
+FD1P3XZ => 2333
+HSOSC_CORE => 1
+IB => 5
+INV => 2
+LUT4 => 2048
+MAC16 => 4
+OB => 5
+VFB_B => 1
+################### End Area Report ##################
+Number of odd-length carry chains : 5
+Number of even-length carry chains : 10
+
+
+<A name="lse_clock"></A><B><U><big>Clock Report</big></U></B>
+
+################### Begin Clock Report ######################
+Clock Nets
+Number of Clocks: 2
+  Net : sck_c, loads : 0
+  Net : qoi/high_clk, loads : 0
+Clock Enable Nets
+Number of Clock Enables: 0
+Highest fanout non-clock nets
+Top 10 highest fanout non-clock nets:
+  Net : qoi/new_clk[1], loads : 2195
+  Net : qoi/encoderInstance/n31002, loads : 998
+  Net : qoi/encoderInstance/index[0], loads : 540
+  Net : qoi/encoderInstance/index[3], loads : 258
+  Net : qoi/encoderInstance/index[5], loads : 188
+  Net : qoi/encoderInstance/index[2], loads : 166
+  Net : qoi/encoderInstance/index[4], loads : 164
+  Net : qoi/encoderInstance/n21532, loads : 126
+  Net : qoi/encoderInstance/state[2], loads : 113
+  Net : qoi/encoderInstance/state[0], loads : 109
+################### End Clock Report ##################
+
+Peak Memory Usage: 169 MB
+
+--------------------------------------------------------------
+Total CPU Time: 27 secs 
+Total REAL Time: 29 secs 
+--------------------------------------------------------------
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></DIV>
+
+<DIV id="toc" class="radiant"><span onmousemove="showTocList()">Contents</span>
+<UL id="toc_list">
+<LI><A href=#Syn>Top</A></LI>
+<LI><A href=#lse_area>Area Report</A></LI>
+<LI><A href=#lse_clock>Clock Report</A></LI>
+</UL>
+</DIV>
+
+<button id="back_to_top" class="radiant" onclick="scrollToTop()">&lt;</button>
+<script type="text/javascript">
+<!--
+var scrollStep = 0;
+function scrollToTop(){
+  var funScroll = function() {
+    var top = document.body.scrollTop;
+    if (top == 0) {
+      scrollStep = 0;
+      return;
+    }
+    if (scrollStep == 0)
+      scrollStep = top/20 + 1;
+    top -= scrollStep;
+    if (top < 0)
+      top = 0;
+    document.body.scrollTop = top;
+    requestAnimationFrame(funScroll);
+  };
+  funScroll();
+}
+
+window.addEventListener('scroll', function(e) {
+  var backToTop = document.getElementById('back_to_top')
+  if (document.body.scrollTop > 0) {
+    backToTop.style.display = 'block';
+  } else {	backToTop.style.display = 'none'  }});
+
+//-->
+</script>
+
+<style type="text/css">
+#back_to_top {
+  bottom:20px; right:20px;
+  width:30px; height:30px;
+  font-size: 20px;
+  padding: 2px 5px 2px 5px;
+  position:fixed;
+  background-color:rgba(210,210,210,0.1);
+  border-style: solid;
+  border-color: rgba(192,192,192,0.8);
+  border-width:1px;
+  display:none;
+  -webkit-transform: rotate(90deg);
+  -webkit-transform-origin:50% 50%;
+}
+#back_to_top:focus {
+  outline-width:0px;
+}
+</style>
+
+</BODY>
+

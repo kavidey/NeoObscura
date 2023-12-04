@@ -1,0 +1,5099 @@
+<HTML>
+<HEAD>
+<TITLE>Timing Report</TITLE>
+<link href="file:///C:/lscc/radiant/2023.1/data/theme/css/light/report.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="file:///C:/lscc/radiant/2023.1/data/theme/css/print/report.css" rel="stylesheet" type="text/css" media="print"/>
+<style type="text/css">
+#toc {
+  position: fixed;
+  right: 2px;
+  top: 2px;
+  padding: 2px 5px 2px 5px;
+  background-color:rgba(210,210,210,0.1);
+  border-style: solid;
+  border-color: rgba(192,192,192,0.8);
+  border-width:1px;
+}
+#toc_list {
+  display: none;
+  }
+tapath {
+  display: none;
+}
+</style>
+
+<script type="text/javascript">
+<!--
+function showTocList() {
+var a = document.getElementById("toc_list");
+a.style.display = "block";
+}
+
+function hideTocList() {
+var a = document.getElementById("toc_list");
+if (a)
+    a.style.display = "none";
+}
+
+//-->
+</script>
+
+</HEAD>
+
+<BODY>
+
+<DIV id="content" class="Child" onclick="hideTocList()"><PRE>
+<A name="Timing_rpt_top">Timing Report</A><B><U><big></big></U></B>
+Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2023.1.1.200.1
+
+Sun Dec  3 16:57:00 2023
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
+
+Command line:    timing -sethld -v 10 -u 10 -endpoints 10 -nperend 1 -sp High-Performance_1.2V -hsp m -pwrprd -html -rpt NeoObscura_impl_1.twr NeoObscura_impl_1.udb -gui
+
+-----------------------------------------
+Design:          neo_obscura_top
+Family:          iCE40UP
+Device:          iCE40UP5K
+Package:         SG48
+Performance:     High-Performance_1.2V
+Package Status:                     Preliminary    Version 1.5
+**Performance Hardware Data Status :   Advanced Version 1.0
+-----------------------------------------
+
+
+=====================================================================
+                    Table of Contents
+=====================================================================
+<LI>    <A href=#Timing_rpt_DesignChecking>1  DESIGN CHECKING</A></LI>
+<LI>        <A href=#Timing_rpt_SDCConstraints>1.1  SDC Constraints</A></LI>
+<LI>        <A href=#Timing_rpt_ConstraintCoverage>1.2  Constraint Coverage</A></LI>
+<LI>        <A href=#Timing_rpt_OverallSummary>1.3  Overall Summary</A></LI>
+<LI>        <A href=#Timing_rpt_UnconstrainedReport>1.4  Unconstrained Report</A></LI>
+<LI>        <A href=#Timing_rpt_CombinationalLoop>1.5  Combinational Loop</A></LI>
+<LI>    <A href=#Timing_rpt_SetupSlowCornerMaxDegree>2  Setup at Speed Grade High-Performance_1.2V Corner at 100 Degrees</A></LI>
+<LI>        <A href=#Timing_rpt_ClockSummarySetupSlowCornerMaxDegree>2.1  Clock Summary</A></LI>
+<LI>        <A href=#Timing_rpt_EndpointSlackSetupSlowCornerMaxDegree>2.2  Endpoint slacks</A></LI>
+<LI>        <A href=#Timing_rpt_DetailReportSetupSlowCornerMaxDegree>2.3  Detailed Report</A></LI>
+<LI>    <A href=#Timing_rpt_HoldFastCornerMinDegreeNoAV>3  Hold at Speed Grade m Corner at -40 Degrees</A></LI>
+<LI>        <A href=#Timing_rpt_EndpointSlackHoldFastCornerMinDegreeNoAV>3.1  Endpoint slacks</A></LI>
+<LI>        <A href=#Timing_rpt_DetailReportHoldFastCornerMinDegreeNoAV>3.2  Detailed Report</A></LI>
+
+=====================================================================
+                    End of Table of Contents
+=====================================================================
+
+
+<A name="Timing_rpt_DesignChecking"></A><B><U><big>1  DESIGN CHECKING</big></U></B>
+
+<A name="Timing_rpt_SDCConstraints"></A><B><U><big>1.1  SDC Constraints</big></U></B>
+
+create_clock -name {high_clk} -period 20.8333 [get_pins {qoi/hf_osc/CLKHF }] 
+
+<A name="Timing_rpt_ConstraintCoverage"></A><B><U><big>1.2  Constraint Coverage</big></U></B>
+
+Constraint Coverage: 0.552965%
+
+<A name="Timing_rpt_OverallSummary"></A><B><U><big>1.3  Overall Summary</big></U></B>
+
+ Setup at Speed Grade High-Performance_1.2V Corner at 100 Degrees     Timing Errors: 0 endpoints;  Total Negative Slack: 0.000 ns 
+ Hold at Speed Grade m Corner at -40 Degrees                          Timing Errors: 0 endpoints;  Total Negative Slack: 0.000 ns 
+
+<A name="Timing_rpt_UnconstrainedReport"></A><B><U><big>1.4  Unconstrained Report</big></U></B>
+
+<A name="Timing_rpt_UnconstrainedEndpoints"></A><B><U><big>1.4.1  Unconstrained Start/End Points</big></U></B>
+
+Clocked but unconstrained timing start points
+--------------------------------------------------
+There is no start point satisfying reporting criteria
+
+
+Clocked but unconstrained timing end points
+-------------------------------------------------------------------
+         Listing 10 End Points          |           Type           
+-------------------------------------------------------------------
+qoi/ramInstance/AD_13__I_93/D           |           No arrival time
+qoi/ramInstance/AD_13__I_94/D           |           No arrival time
+{qoi/ramInstance/AD_13__I_94/SP   qoi/ramInstance/AD_13__I_93/SP}                           
+                                        |           No arrival time
+qoi/ramInstance/DI_7__I_101/D           |           No arrival time
+qoi/ramInstance/DI_7__I_100/D           |           No arrival time
+{qoi/ramInstance/DI_7__I_100/SP   qoi/ramInstance/DI_7__I_101/SP}                           
+                                        |           No arrival time
+qoi/ramInstance/DI_7__I_98/D            |           No arrival time
+qoi/ramInstance/DI_7__I_99/D            |           No arrival time
+{qoi/ramInstance/DI_7__I_99/SP   qoi/ramInstance/DI_7__I_98/SP}                           
+                                        |           No arrival time
+qoi/ramInstance/DI_7__I_96/D            |           No arrival time
+-------------------------------------------------------------------
+                                        |                          
+Number of unconstrained timing end poin |                          
+ts                                      |                        35
+                                        |                          
+-------------------------------------------------------------------
+
+<A name="Timing_rpt_StartEndPointsWithoutTimingConstraints"></A><B><U><big>1.4.2  Start/End Points Without Timing Constraints</big></U></B>
+
+I/O ports without constraint
+----------------------------
+Possible constraints to use on I/O ports are:
+set_input_delay,
+set_output_delay,
+set_max_delay,
+create_clock,
+create_generated_clock,
+...
+
+-------------------------------------------------------------------
+     Listing 10 Start or End Points     |           Type           
+-------------------------------------------------------------------
+addr[0]                                 |                     input
+reset                                   |                     input
+sck                                     |                     input
+copi                                    |                     input
+addr[1]                                 |                     input
+sel[1]                                  |                    output
+sel[2]                                  |                    output
+sel[0]                                  |                    output
+sel[3]                                  |                    output
+cipo                                    |                    output
+-------------------------------------------------------------------
+                                        |                          
+Number of I/O ports without constraint  |                        10
+                                        |                          
+-------------------------------------------------------------------
+
+Nets without clock definition
+Define a clock on a top level port or a generated clock on a clock divider pin associated with this net(s).
+-------------------------------------------------------------------
+            Listing 2 Net(s)            |        Source pin        
+-------------------------------------------------------------------
+sck_c                                   |         sck_pad.bb_inst/O
+qoi.new_clk[1]                          |      qoi/new_clk_1__I_0/Q
+-------------------------------------------------------------------
+                                        |                          
+Number of clock nets without clock defi |                          
+nition                                  |                         2
+                                        |                          
+-------------------------------------------------------------------
+
+
+<A name="Timing_rpt_CombinationalLoop"></A><B><U><big>1.5  Combinational Loop</big></U></B>
+
+None
+
+
+<A name="Timing_rpt_SetupSlowCornerMaxDegree"></A><B><U><big>2  Setup at Speed Grade High-Performance_1.2V Corner at 100 Degrees</big></U></B>
+<A name="Timing_rpt_ClockSummarySetupSlowCornerMaxDegree"></A><B><U><big>2.1  Clock Summary</big></U></B>
+<A name="Timing_rpt_Clk_1"></A><B><U><big>2.1.1 Clock "high_clk"</big></U></B>
+
+create_clock -name {high_clk} -period 20.8333 [get_pins {qoi/hf_osc/CLKHF }] 
+
+Single Clock Domain
+-------------------------------------------------------------------------------------------------------
+             Clock high_clk             |                    |       Period       |     Frequency      
+-------------------------------------------------------------------------------------------------------
+ From high_clk                          |             Target |          20.833 ns |         48.000 MHz 
+                                        | Actual (all paths) |          20.792 ns |         48.095 MHz 
+qoi/hf_osc/CLKHF (MPW)                  |   (50% duty cycle) |          20.792 ns |         48.095 MHz 
+-------------------------------------------------------------------------------------------------------
+
+Clock Domain Crossing
+
+<A name="Timing_rpt_EndpointSlackSetupSlowCornerMaxDegree"></A><B><U><big>2.2  Endpoint slacks</big></U></B>
+-------------------------------------------------------
+          Listing 10 End Points          |    Slack    
+-------------------------------------------------------
+qoi/ramInstance/encoderRamOut_1__I_0_2/D |   13.742 ns 
+qoi/ramInstance/encoderRamOut_0__I_0_2/D |   13.742 ns 
+qoi/ramInstance/encoderRamOut_6__I_0_2/D |   13.742 ns 
+qoi/ramInstance/spiRamOut_6__I_0_2/D     |   13.742 ns 
+qoi/ramInstance/encoderRamOut_3__I_0_2/D |   13.795 ns 
+qoi/ramInstance/spiRamOut_3__I_0_2/D     |   13.795 ns 
+qoi/ramInstance/spiRamOut_1__I_0_2/D     |   13.821 ns 
+qoi/ramInstance/spiRamOut_0__I_0_2/D     |   13.821 ns 
+qoi/ramInstance/spiRamOut_2__I_0_2/D     |   13.821 ns 
+qoi/ramInstance/spiRamOut_7__I_0_2/D     |   13.821 ns 
+-------------------------------------------------------
+                                         |             
+Setup # of endpoints with negative slack:|           0 
+                                         |             
+-------------------------------------------------------
+
+<A name="Timing_rpt_DetailReportSetupSlowCornerMaxDegree"></A><B><U><big>2.3  Detailed Report</big></U></B>
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+Detail report of critical paths
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                    Detailed Report for timing paths 
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ ++++Path 1  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Path Begin       : qoi/ramInstance/ram/DATAOUT1  (SRAM_SRAM_R1C1B)
+Path End         : qoi/ramInstance/encoderRamOut_1__I_0_2/D  (SLICE_R6C6C)
+Source Clock     : high_clk (R)
+Destination Clock: high_clk (R)
+Logic Level      : 2
+Delay Ratio      : 66.7% (route), 33.3% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 13.742 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/CLOCK",
+        "phy_name":"qoi.ramInstance.ram/CLOCK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":5.499,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":5.499,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY              0.000                  0.000  23      
+qoi/ramInstance/high_clk                                     NET DELAY                  5.499                  5.499  23      
+qoi/ramInstance/ram/CLOCK                                                               0.000                  5.499  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/DATAOUT1",
+        "phy_name":"qoi.ramInstance.ram/DATAOUT1"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/encoderRamOut_1__I_0_2/D",
+        "phy_name":"SLICE_206/DI0"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"qoi/ramInstance/ram/CLOCK",
+            "phy_name":"qoi.ramInstance.ram/CLOCK"
+        },
+        "pin1":
+        {
+            "log_name":"qoi/ramInstance/ram/DATAOUT1",
+            "phy_name":"qoi.ramInstance.ram/DATAOUT1"
+        },
+        "arrive":7.316,
+        "delay":1.817
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/DO[1]",
+            "phy_name":"DO[1]"
+        },
+        "arrive":11.916,
+        "delay":4.600
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"i13145_3_lut/B",
+            "phy_name":"SLICE_206/D0"
+        },
+        "pin1":
+        {
+            "log_name":"i13145_3_lut/Z",
+            "phy_name":"SLICE_206/F0"
+        },
+        "arrive":12.392,
+        "delay":0.476
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/encoderRamOut_1__N_90",
+            "phy_name":"encoderRamOut_1__N_90"
+        },
+        "arrive":12.392,
+        "delay":0.000
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":12.392,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+qoi/ramInstance/ram/CLOCK->qoi/ramInstance/ram/DATAOUT1
+                                          SRAM_SRAM_R1C1B    CLOCK_TO_DATAOUT_DELAY     1.817                  7.316  2       
+qoi/ramInstance/DO[1]                                        NET DELAY                  4.600                 11.916  2       
+i13145_3_lut/B->i13145_3_lut/Z            SLICE_R6C6C        D0_TO_F0_DELAY             0.476                 12.392  1       
+qoi/ramInstance/encoderRamOut_1__N_90                        NET DELAY                  0.000                 12.392  1       
+qoi/ramInstance/encoderRamOut_1__I_0_2/D                                                0.000                 12.392  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/encoderRamOut_1__I_0_2/CK",
+        "phy_name":"SLICE_206/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":20.833,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":26.332,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":26.332,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+                                                             CONSTRAINT                 0.000                 20.833  1       
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY              0.000                 20.833  23      
+qoi/ramInstance/high_clk                                     NET DELAY                  5.499                 26.332  23      
+{qoi/ramInstance/encoderRamOut_1__I_0_2/CK   qoi/ramInstance/encoderRamOut_0__I_0_2/CK}
+                                                                                        0.000                 26.332  1       
+                                                             Uncertainty             -(0.000)                 26.332  
+                                                             Setup time              -(0.198)                 26.134  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+Required Time                                                                                                 26.134  
+Arrival Time                                                                                               -(12.391)  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                          13.742  
+
+
+
+
+++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : qoi/ramInstance/ram/DATAOUT0  (SRAM_SRAM_R1C1B)
+Path End         : qoi/ramInstance/encoderRamOut_0__I_0_2/D  (SLICE_R6C6C)
+Source Clock     : high_clk (R)
+Destination Clock: high_clk (R)
+Logic Level      : 2
+Delay Ratio      : 66.7% (route), 33.3% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 13.742 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/CLOCK",
+        "phy_name":"qoi.ramInstance.ram/CLOCK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":5.499,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":5.499,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY              0.000                  0.000  23      
+qoi/ramInstance/high_clk                                     NET DELAY                  5.499                  5.499  23      
+qoi/ramInstance/ram/CLOCK                                                               0.000                  5.499  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/DATAOUT0",
+        "phy_name":"qoi.ramInstance.ram/DATAOUT0"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/encoderRamOut_0__I_0_2/D",
+        "phy_name":"SLICE_206/DI1"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"qoi/ramInstance/ram/CLOCK",
+            "phy_name":"qoi.ramInstance.ram/CLOCK"
+        },
+        "pin1":
+        {
+            "log_name":"qoi/ramInstance/ram/DATAOUT0",
+            "phy_name":"qoi.ramInstance.ram/DATAOUT0"
+        },
+        "arrive":7.316,
+        "delay":1.817
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/DO[0]",
+            "phy_name":"DO[0]"
+        },
+        "arrive":11.916,
+        "delay":4.600
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"i13140_3_lut/B",
+            "phy_name":"SLICE_206/D1"
+        },
+        "pin1":
+        {
+            "log_name":"i13140_3_lut/Z",
+            "phy_name":"SLICE_206/F1"
+        },
+        "arrive":12.392,
+        "delay":0.476
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/encoderRamOut_0__N_91",
+            "phy_name":"encoderRamOut_0__N_91"
+        },
+        "arrive":12.392,
+        "delay":0.000
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":12.392,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+qoi/ramInstance/ram/CLOCK->qoi/ramInstance/ram/DATAOUT0
+                                          SRAM_SRAM_R1C1B    CLOCK_TO_DATAOUT_DELAY     1.817                  7.316  2       
+qoi/ramInstance/DO[0]                                        NET DELAY                  4.600                 11.916  2       
+i13140_3_lut/B->i13140_3_lut/Z            SLICE_R6C6C        D1_TO_F1_DELAY             0.476                 12.392  1       
+qoi/ramInstance/encoderRamOut_0__N_91                        NET DELAY                  0.000                 12.392  1       
+qoi/ramInstance/encoderRamOut_0__I_0_2/D                                                0.000                 12.392  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/encoderRamOut_1__I_0_2/CK",
+        "phy_name":"SLICE_206/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":20.833,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":26.332,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":26.332,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+                                                             CONSTRAINT                 0.000                 20.833  1       
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY              0.000                 20.833  23      
+qoi/ramInstance/high_clk                                     NET DELAY                  5.499                 26.332  23      
+{qoi/ramInstance/encoderRamOut_1__I_0_2/CK   qoi/ramInstance/encoderRamOut_0__I_0_2/CK}
+                                                                                        0.000                 26.332  1       
+                                                             Uncertainty             -(0.000)                 26.332  
+                                                             Setup time              -(0.198)                 26.134  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+Required Time                                                                                                 26.134  
+Arrival Time                                                                                               -(12.391)  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                          13.742  
+
+
+
+
+++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : qoi/ramInstance/ram/DATAOUT6  (SRAM_SRAM_R1C1B)
+Path End         : qoi/ramInstance/encoderRamOut_6__I_0_2/D  (SLICE_R6C6B)
+Source Clock     : high_clk (R)
+Destination Clock: high_clk (R)
+Logic Level      : 2
+Delay Ratio      : 66.7% (route), 33.3% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 13.742 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/CLOCK",
+        "phy_name":"qoi.ramInstance.ram/CLOCK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":5.499,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":5.499,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY              0.000                  0.000  23      
+qoi/ramInstance/high_clk                                     NET DELAY                  5.499                  5.499  23      
+qoi/ramInstance/ram/CLOCK                                                               0.000                  5.499  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/DATAOUT6",
+        "phy_name":"qoi.ramInstance.ram/DATAOUT6"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/encoderRamOut_6__I_0_2/D",
+        "phy_name":"SLICE_200/DI1"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"qoi/ramInstance/ram/CLOCK",
+            "phy_name":"qoi.ramInstance.ram/CLOCK"
+        },
+        "pin1":
+        {
+            "log_name":"qoi/ramInstance/ram/DATAOUT6",
+            "phy_name":"qoi.ramInstance.ram/DATAOUT6"
+        },
+        "arrive":7.316,
+        "delay":1.817
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/DO[6]",
+            "phy_name":"DO[6]"
+        },
+        "arrive":11.916,
+        "delay":4.600
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"i13150_3_lut/B",
+            "phy_name":"SLICE_200/D1"
+        },
+        "pin1":
+        {
+            "log_name":"i13150_3_lut/Z",
+            "phy_name":"SLICE_200/F1"
+        },
+        "arrive":12.392,
+        "delay":0.476
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/encoderRamOut_6__N_85",
+            "phy_name":"encoderRamOut_6__N_85"
+        },
+        "arrive":12.392,
+        "delay":0.000
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":12.392,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+qoi/ramInstance/ram/CLOCK->qoi/ramInstance/ram/DATAOUT6
+                                          SRAM_SRAM_R1C1B    CLOCK_TO_DATAOUT_DELAY     1.817                  7.316  2       
+qoi/ramInstance/DO[6]                                        NET DELAY                  4.600                 11.916  2       
+i13150_3_lut/B->i13150_3_lut/Z            SLICE_R6C6B        D1_TO_F1_DELAY             0.476                 12.392  1       
+qoi/ramInstance/encoderRamOut_6__N_85                        NET DELAY                  0.000                 12.392  1       
+qoi/ramInstance/encoderRamOut_6__I_0_2/D                                                0.000                 12.392  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/encoderRamOut_7__I_0_2/CK",
+        "phy_name":"SLICE_200/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":20.833,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":26.332,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":26.332,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+                                                             CONSTRAINT                 0.000                 20.833  1       
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY              0.000                 20.833  23      
+qoi/ramInstance/high_clk                                     NET DELAY                  5.499                 26.332  23      
+{qoi/ramInstance/encoderRamOut_7__I_0_2/CK   qoi/ramInstance/encoderRamOut_6__I_0_2/CK}
+                                                                                        0.000                 26.332  1       
+                                                             Uncertainty             -(0.000)                 26.332  
+                                                             Setup time              -(0.198)                 26.134  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+Required Time                                                                                                 26.134  
+Arrival Time                                                                                               -(12.391)  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                          13.742  
+
+
+
+
+++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : qoi/ramInstance/ram/DATAOUT6  (SRAM_SRAM_R1C1B)
+Path End         : qoi/ramInstance/spiRamOut_6__I_0_2/D  (SLICE_R6C6D)
+Source Clock     : high_clk (R)
+Destination Clock: high_clk (R)
+Logic Level      : 2
+Delay Ratio      : 66.7% (route), 33.3% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 13.742 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/CLOCK",
+        "phy_name":"qoi.ramInstance.ram/CLOCK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":5.499,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":5.499,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY              0.000                  0.000  23      
+qoi/ramInstance/high_clk                                     NET DELAY                  5.499                  5.499  23      
+qoi/ramInstance/ram/CLOCK                                                               0.000                  5.499  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/DATAOUT6",
+        "phy_name":"qoi.ramInstance.ram/DATAOUT6"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/spiRamOut_6__I_0_2/D",
+        "phy_name":"SLICE_193/DI1"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"qoi/ramInstance/ram/CLOCK",
+            "phy_name":"qoi.ramInstance.ram/CLOCK"
+        },
+        "pin1":
+        {
+            "log_name":"qoi/ramInstance/ram/DATAOUT6",
+            "phy_name":"qoi.ramInstance.ram/DATAOUT6"
+        },
+        "arrive":7.316,
+        "delay":1.817
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/DO[6]",
+            "phy_name":"DO[6]"
+        },
+        "arrive":11.916,
+        "delay":4.600
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"i13157_3_lut/B",
+            "phy_name":"SLICE_193/D1"
+        },
+        "pin1":
+        {
+            "log_name":"i13157_3_lut/Z",
+            "phy_name":"SLICE_193/F1"
+        },
+        "arrive":12.392,
+        "delay":0.476
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/spiRamOut_6__N_32",
+            "phy_name":"spiRamOut_6__N_32"
+        },
+        "arrive":12.392,
+        "delay":0.000
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":12.392,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+qoi/ramInstance/ram/CLOCK->qoi/ramInstance/ram/DATAOUT6
+                                          SRAM_SRAM_R1C1B    CLOCK_TO_DATAOUT_DELAY     1.817                  7.316  2       
+qoi/ramInstance/DO[6]                                        NET DELAY                  4.600                 11.916  2       
+i13157_3_lut/B->i13157_3_lut/Z            SLICE_R6C6D        D1_TO_F1_DELAY             0.476                 12.392  1       
+qoi/ramInstance/spiRamOut_6__N_32                            NET DELAY                  0.000                 12.392  1       
+qoi/ramInstance/spiRamOut_6__I_0_2/D                                                    0.000                 12.392  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/spiRamOut_7__I_0_2/CK",
+        "phy_name":"SLICE_193/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":20.833,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":26.332,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":26.332,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+                                                             CONSTRAINT                 0.000                 20.833  1       
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY              0.000                 20.833  23      
+qoi/ramInstance/high_clk                                     NET DELAY                  5.499                 26.332  23      
+{qoi/ramInstance/spiRamOut_7__I_0_2/CK   qoi/ramInstance/spiRamOut_6__I_0_2/CK}
+                                                                                        0.000                 26.332  1       
+                                                             Uncertainty             -(0.000)                 26.332  
+                                                             Setup time              -(0.198)                 26.134  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+Required Time                                                                                                 26.134  
+Arrival Time                                                                                               -(12.391)  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                          13.742  
+
+
+
+
+++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : qoi/ramInstance/ram/DATAOUT3  (SRAM_SRAM_R1C1B)
+Path End         : qoi/ramInstance/encoderRamOut_3__I_0_2/D  (SLICE_R6C5D)
+Source Clock     : high_clk (R)
+Destination Clock: high_clk (R)
+Logic Level      : 2
+Delay Ratio      : 66.5% (route), 33.5% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 13.795 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/CLOCK",
+        "phy_name":"qoi.ramInstance.ram/CLOCK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":5.499,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":5.499,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY              0.000                  0.000  23      
+qoi/ramInstance/high_clk                                     NET DELAY                  5.499                  5.499  23      
+qoi/ramInstance/ram/CLOCK                                                               0.000                  5.499  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/DATAOUT3",
+        "phy_name":"qoi.ramInstance.ram/DATAOUT3"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/encoderRamOut_3__I_0_2/D",
+        "phy_name":"SLICE_204/DI0"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"qoi/ramInstance/ram/CLOCK",
+            "phy_name":"qoi.ramInstance.ram/CLOCK"
+        },
+        "pin1":
+        {
+            "log_name":"qoi/ramInstance/ram/DATAOUT3",
+            "phy_name":"qoi.ramInstance.ram/DATAOUT3"
+        },
+        "arrive":7.316,
+        "delay":1.817
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/DO[3]",
+            "phy_name":"DO[3]"
+        },
+        "arrive":11.863,
+        "delay":4.547
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"i13147_3_lut/B",
+            "phy_name":"SLICE_204/D0"
+        },
+        "pin1":
+        {
+            "log_name":"i13147_3_lut/Z",
+            "phy_name":"SLICE_204/F0"
+        },
+        "arrive":12.339,
+        "delay":0.476
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/encoderRamOut_3__N_88",
+            "phy_name":"encoderRamOut_3__N_88"
+        },
+        "arrive":12.339,
+        "delay":0.000
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":12.339,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+qoi/ramInstance/ram/CLOCK->qoi/ramInstance/ram/DATAOUT3
+                                          SRAM_SRAM_R1C1B    CLOCK_TO_DATAOUT_DELAY     1.817                  7.316  2       
+qoi/ramInstance/DO[3]                                        NET DELAY                  4.547                 11.863  2       
+i13147_3_lut/B->i13147_3_lut/Z            SLICE_R6C5D        D0_TO_F0_DELAY             0.476                 12.339  1       
+qoi/ramInstance/encoderRamOut_3__N_88                        NET DELAY                  0.000                 12.339  1       
+qoi/ramInstance/encoderRamOut_3__I_0_2/D                                                0.000                 12.339  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/encoderRamOut_3__I_0_2/CK",
+        "phy_name":"SLICE_204/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":20.833,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":26.332,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":26.332,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+                                                             CONSTRAINT                 0.000                 20.833  1       
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY              0.000                 20.833  23      
+qoi/ramInstance/high_clk                                     NET DELAY                  5.499                 26.332  23      
+{qoi/ramInstance/encoderRamOut_3__I_0_2/CK   qoi/ramInstance/encoderRamOut_2__I_0_2/CK}
+                                                                                        0.000                 26.332  1       
+                                                             Uncertainty             -(0.000)                 26.332  
+                                                             Setup time              -(0.198)                 26.134  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+Required Time                                                                                                 26.134  
+Arrival Time                                                                                               -(12.338)  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                          13.795  
+
+
+
+
+++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : qoi/ramInstance/ram/DATAOUT3  (SRAM_SRAM_R1C1B)
+Path End         : qoi/ramInstance/spiRamOut_3__I_0_2/D  (SLICE_R6C5C)
+Source Clock     : high_clk (R)
+Destination Clock: high_clk (R)
+Logic Level      : 2
+Delay Ratio      : 66.5% (route), 33.5% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 13.795 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/CLOCK",
+        "phy_name":"qoi.ramInstance.ram/CLOCK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":5.499,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":5.499,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY              0.000                  0.000  23      
+qoi/ramInstance/high_clk                                     NET DELAY                  5.499                  5.499  23      
+qoi/ramInstance/ram/CLOCK                                                               0.000                  5.499  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/DATAOUT3",
+        "phy_name":"qoi.ramInstance.ram/DATAOUT3"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/spiRamOut_3__I_0_2/D",
+        "phy_name":"SLICE_197/DI0"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"qoi/ramInstance/ram/CLOCK",
+            "phy_name":"qoi.ramInstance.ram/CLOCK"
+        },
+        "pin1":
+        {
+            "log_name":"qoi/ramInstance/ram/DATAOUT3",
+            "phy_name":"qoi.ramInstance.ram/DATAOUT3"
+        },
+        "arrive":7.316,
+        "delay":1.817
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/DO[3]",
+            "phy_name":"DO[3]"
+        },
+        "arrive":11.863,
+        "delay":4.547
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"i13154_3_lut/B",
+            "phy_name":"SLICE_197/D0"
+        },
+        "pin1":
+        {
+            "log_name":"i13154_3_lut/Z",
+            "phy_name":"SLICE_197/F0"
+        },
+        "arrive":12.339,
+        "delay":0.476
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/spiRamOut_3__N_35",
+            "phy_name":"spiRamOut_3__N_35"
+        },
+        "arrive":12.339,
+        "delay":0.000
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":12.339,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+qoi/ramInstance/ram/CLOCK->qoi/ramInstance/ram/DATAOUT3
+                                          SRAM_SRAM_R1C1B    CLOCK_TO_DATAOUT_DELAY     1.817                  7.316  2       
+qoi/ramInstance/DO[3]                                        NET DELAY                  4.547                 11.863  2       
+i13154_3_lut/B->i13154_3_lut/Z            SLICE_R6C5C        D0_TO_F0_DELAY             0.476                 12.339  1       
+qoi/ramInstance/spiRamOut_3__N_35                            NET DELAY                  0.000                 12.339  1       
+qoi/ramInstance/spiRamOut_3__I_0_2/D                                                    0.000                 12.339  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/spiRamOut_3__I_0_2/CK",
+        "phy_name":"SLICE_197/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":20.833,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":26.332,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":26.332,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+                                                             CONSTRAINT                 0.000                 20.833  1       
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY              0.000                 20.833  23      
+qoi/ramInstance/high_clk                                     NET DELAY                  5.499                 26.332  23      
+{qoi/ramInstance/spiRamOut_3__I_0_2/CK   qoi/ramInstance/spiRamOut_2__I_0_2/CK}
+                                                                                        0.000                 26.332  1       
+                                                             Uncertainty             -(0.000)                 26.332  
+                                                             Setup time              -(0.198)                 26.134  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+Required Time                                                                                                 26.134  
+Arrival Time                                                                                               -(12.338)  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                          13.795  
+
+
+
+
+++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : qoi/ramInstance/ram/DATAOUT1  (SRAM_SRAM_R1C1B)
+Path End         : qoi/ramInstance/spiRamOut_1__I_0_2/D  (SLICE_R6C5A)
+Source Clock     : high_clk (R)
+Destination Clock: high_clk (R)
+Logic Level      : 2
+Delay Ratio      : 66.3% (route), 33.7% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 13.821 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/CLOCK",
+        "phy_name":"qoi.ramInstance.ram/CLOCK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":5.499,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":5.499,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY              0.000                  0.000  23      
+qoi/ramInstance/high_clk                                     NET DELAY                  5.499                  5.499  23      
+qoi/ramInstance/ram/CLOCK                                                               0.000                  5.499  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/DATAOUT1",
+        "phy_name":"qoi.ramInstance.ram/DATAOUT1"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/spiRamOut_1__I_0_2/D",
+        "phy_name":"SLICE_199/DI0"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"qoi/ramInstance/ram/CLOCK",
+            "phy_name":"qoi.ramInstance.ram/CLOCK"
+        },
+        "pin1":
+        {
+            "log_name":"qoi/ramInstance/ram/DATAOUT1",
+            "phy_name":"qoi.ramInstance.ram/DATAOUT1"
+        },
+        "arrive":7.316,
+        "delay":1.817
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/DO[1]",
+            "phy_name":"DO[1]"
+        },
+        "arrive":11.837,
+        "delay":4.521
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"i13152_3_lut/B",
+            "phy_name":"SLICE_199/D0"
+        },
+        "pin1":
+        {
+            "log_name":"i13152_3_lut/Z",
+            "phy_name":"SLICE_199/F0"
+        },
+        "arrive":12.313,
+        "delay":0.476
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/spiRamOut_1__N_37",
+            "phy_name":"spiRamOut_1__N_37"
+        },
+        "arrive":12.313,
+        "delay":0.000
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":12.313,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+qoi/ramInstance/ram/CLOCK->qoi/ramInstance/ram/DATAOUT1
+                                          SRAM_SRAM_R1C1B    CLOCK_TO_DATAOUT_DELAY     1.817                  7.316  2       
+qoi/ramInstance/DO[1]                                        NET DELAY                  4.521                 11.837  2       
+i13152_3_lut/B->i13152_3_lut/Z            SLICE_R6C5A        D0_TO_F0_DELAY             0.476                 12.313  1       
+qoi/ramInstance/spiRamOut_1__N_37                            NET DELAY                  0.000                 12.313  1       
+qoi/ramInstance/spiRamOut_1__I_0_2/D                                                    0.000                 12.313  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/spiRamOut_1__I_0_2/CK",
+        "phy_name":"SLICE_199/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":20.833,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":26.332,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":26.332,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+                                                             CONSTRAINT                 0.000                 20.833  1       
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY              0.000                 20.833  23      
+qoi/ramInstance/high_clk                                     NET DELAY                  5.499                 26.332  23      
+{qoi/ramInstance/spiRamOut_1__I_0_2/CK   qoi/ramInstance/spiRamOut_0__I_0_2/CK}
+                                                                                        0.000                 26.332  1       
+                                                             Uncertainty             -(0.000)                 26.332  
+                                                             Setup time              -(0.198)                 26.134  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+Required Time                                                                                                 26.134  
+Arrival Time                                                                                               -(12.312)  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                          13.821  
+
+
+
+
+++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : qoi/ramInstance/ram/DATAOUT0  (SRAM_SRAM_R1C1B)
+Path End         : qoi/ramInstance/spiRamOut_0__I_0_2/D  (SLICE_R6C5A)
+Source Clock     : high_clk (R)
+Destination Clock: high_clk (R)
+Logic Level      : 2
+Delay Ratio      : 66.3% (route), 33.7% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 13.821 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/CLOCK",
+        "phy_name":"qoi.ramInstance.ram/CLOCK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":5.499,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":5.499,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY              0.000                  0.000  23      
+qoi/ramInstance/high_clk                                     NET DELAY                  5.499                  5.499  23      
+qoi/ramInstance/ram/CLOCK                                                               0.000                  5.499  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/DATAOUT0",
+        "phy_name":"qoi.ramInstance.ram/DATAOUT0"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/spiRamOut_0__I_0_2/D",
+        "phy_name":"SLICE_199/DI1"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"qoi/ramInstance/ram/CLOCK",
+            "phy_name":"qoi.ramInstance.ram/CLOCK"
+        },
+        "pin1":
+        {
+            "log_name":"qoi/ramInstance/ram/DATAOUT0",
+            "phy_name":"qoi.ramInstance.ram/DATAOUT0"
+        },
+        "arrive":7.316,
+        "delay":1.817
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/DO[0]",
+            "phy_name":"DO[0]"
+        },
+        "arrive":11.837,
+        "delay":4.521
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"i13141_3_lut/B",
+            "phy_name":"SLICE_199/D1"
+        },
+        "pin1":
+        {
+            "log_name":"i13141_3_lut/Z",
+            "phy_name":"SLICE_199/F1"
+        },
+        "arrive":12.313,
+        "delay":0.476
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/spiRamOut_0__N_38",
+            "phy_name":"spiRamOut_0__N_38"
+        },
+        "arrive":12.313,
+        "delay":0.000
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":12.313,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+qoi/ramInstance/ram/CLOCK->qoi/ramInstance/ram/DATAOUT0
+                                          SRAM_SRAM_R1C1B    CLOCK_TO_DATAOUT_DELAY     1.817                  7.316  2       
+qoi/ramInstance/DO[0]                                        NET DELAY                  4.521                 11.837  2       
+i13141_3_lut/B->i13141_3_lut/Z            SLICE_R6C5A        D1_TO_F1_DELAY             0.476                 12.313  1       
+qoi/ramInstance/spiRamOut_0__N_38                            NET DELAY                  0.000                 12.313  1       
+qoi/ramInstance/spiRamOut_0__I_0_2/D                                                    0.000                 12.313  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/spiRamOut_1__I_0_2/CK",
+        "phy_name":"SLICE_199/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":20.833,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":26.332,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":26.332,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+                                                             CONSTRAINT                 0.000                 20.833  1       
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY              0.000                 20.833  23      
+qoi/ramInstance/high_clk                                     NET DELAY                  5.499                 26.332  23      
+{qoi/ramInstance/spiRamOut_1__I_0_2/CK   qoi/ramInstance/spiRamOut_0__I_0_2/CK}
+                                                                                        0.000                 26.332  1       
+                                                             Uncertainty             -(0.000)                 26.332  
+                                                             Setup time              -(0.198)                 26.134  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+Required Time                                                                                                 26.134  
+Arrival Time                                                                                               -(12.312)  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                          13.821  
+
+
+
+
+++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : qoi/ramInstance/ram/DATAOUT2  (SRAM_SRAM_R1C1B)
+Path End         : qoi/ramInstance/spiRamOut_2__I_0_2/D  (SLICE_R6C5C)
+Source Clock     : high_clk (R)
+Destination Clock: high_clk (R)
+Logic Level      : 2
+Delay Ratio      : 66.3% (route), 33.7% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 13.821 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/CLOCK",
+        "phy_name":"qoi.ramInstance.ram/CLOCK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":5.499,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":5.499,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY              0.000                  0.000  23      
+qoi/ramInstance/high_clk                                     NET DELAY                  5.499                  5.499  23      
+qoi/ramInstance/ram/CLOCK                                                               0.000                  5.499  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/DATAOUT2",
+        "phy_name":"qoi.ramInstance.ram/DATAOUT2"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/spiRamOut_2__I_0_2/D",
+        "phy_name":"SLICE_197/DI1"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"qoi/ramInstance/ram/CLOCK",
+            "phy_name":"qoi.ramInstance.ram/CLOCK"
+        },
+        "pin1":
+        {
+            "log_name":"qoi/ramInstance/ram/DATAOUT2",
+            "phy_name":"qoi.ramInstance.ram/DATAOUT2"
+        },
+        "arrive":7.316,
+        "delay":1.817
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/DO[2]",
+            "phy_name":"DO[2]"
+        },
+        "arrive":11.837,
+        "delay":4.521
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"i13153_3_lut/B",
+            "phy_name":"SLICE_197/D1"
+        },
+        "pin1":
+        {
+            "log_name":"i13153_3_lut/Z",
+            "phy_name":"SLICE_197/F1"
+        },
+        "arrive":12.313,
+        "delay":0.476
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/spiRamOut_2__N_36",
+            "phy_name":"spiRamOut_2__N_36"
+        },
+        "arrive":12.313,
+        "delay":0.000
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":12.313,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+qoi/ramInstance/ram/CLOCK->qoi/ramInstance/ram/DATAOUT2
+                                          SRAM_SRAM_R1C1B    CLOCK_TO_DATAOUT_DELAY     1.817                  7.316  2       
+qoi/ramInstance/DO[2]                                        NET DELAY                  4.521                 11.837  2       
+i13153_3_lut/B->i13153_3_lut/Z            SLICE_R6C5C        D1_TO_F1_DELAY             0.476                 12.313  1       
+qoi/ramInstance/spiRamOut_2__N_36                            NET DELAY                  0.000                 12.313  1       
+qoi/ramInstance/spiRamOut_2__I_0_2/D                                                    0.000                 12.313  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/spiRamOut_3__I_0_2/CK",
+        "phy_name":"SLICE_197/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":20.833,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":26.332,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":26.332,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+                                                             CONSTRAINT                 0.000                 20.833  1       
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY              0.000                 20.833  23      
+qoi/ramInstance/high_clk                                     NET DELAY                  5.499                 26.332  23      
+{qoi/ramInstance/spiRamOut_3__I_0_2/CK   qoi/ramInstance/spiRamOut_2__I_0_2/CK}
+                                                                                        0.000                 26.332  1       
+                                                             Uncertainty             -(0.000)                 26.332  
+                                                             Setup time              -(0.198)                 26.134  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+Required Time                                                                                                 26.134  
+Arrival Time                                                                                               -(12.312)  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                          13.821  
+
+
+
+
+++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : qoi/ramInstance/ram/DATAOUT7  (SRAM_SRAM_R1C1B)
+Path End         : qoi/ramInstance/spiRamOut_7__I_0_2/D  (SLICE_R6C6D)
+Source Clock     : high_clk (R)
+Destination Clock: high_clk (R)
+Logic Level      : 2
+Delay Ratio      : 66.3% (route), 33.7% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 13.821 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/CLOCK",
+        "phy_name":"qoi.ramInstance.ram/CLOCK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":5.499,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":5.499,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY              0.000                  0.000  23      
+qoi/ramInstance/high_clk                                     NET DELAY                  5.499                  5.499  23      
+qoi/ramInstance/ram/CLOCK                                                               0.000                  5.499  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/DATAOUT7",
+        "phy_name":"qoi.ramInstance.ram/DATAOUT7"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/spiRamOut_7__I_0_2/D",
+        "phy_name":"SLICE_193/DI0"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"qoi/ramInstance/ram/CLOCK",
+            "phy_name":"qoi.ramInstance.ram/CLOCK"
+        },
+        "pin1":
+        {
+            "log_name":"qoi/ramInstance/ram/DATAOUT7",
+            "phy_name":"qoi.ramInstance.ram/DATAOUT7"
+        },
+        "arrive":7.316,
+        "delay":1.817
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/DO[7]",
+            "phy_name":"DO[7]"
+        },
+        "arrive":11.837,
+        "delay":4.521
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"i13158_3_lut/B",
+            "phy_name":"SLICE_193/D0"
+        },
+        "pin1":
+        {
+            "log_name":"i13158_3_lut/Z",
+            "phy_name":"SLICE_193/F0"
+        },
+        "arrive":12.313,
+        "delay":0.476
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/spiRamOut_7__N_31",
+            "phy_name":"spiRamOut_7__N_31"
+        },
+        "arrive":12.313,
+        "delay":0.000
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":12.313,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+qoi/ramInstance/ram/CLOCK->qoi/ramInstance/ram/DATAOUT7
+                                          SRAM_SRAM_R1C1B    CLOCK_TO_DATAOUT_DELAY     1.817                  7.316  2       
+qoi/ramInstance/DO[7]                                        NET DELAY                  4.521                 11.837  2       
+i13158_3_lut/B->i13158_3_lut/Z            SLICE_R6C6D        D0_TO_F0_DELAY             0.476                 12.313  1       
+qoi/ramInstance/spiRamOut_7__N_31                            NET DELAY                  0.000                 12.313  1       
+qoi/ramInstance/spiRamOut_7__I_0_2/D                                                    0.000                 12.313  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/spiRamOut_7__I_0_2/CK",
+        "phy_name":"SLICE_193/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":20.833,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":26.332,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":26.332,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name              Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+                                                             CONSTRAINT                 0.000                 20.833  1       
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY              0.000                 20.833  23      
+qoi/ramInstance/high_clk                                     NET DELAY                  5.499                 26.332  23      
+{qoi/ramInstance/spiRamOut_7__I_0_2/CK   qoi/ramInstance/spiRamOut_6__I_0_2/CK}
+                                                                                        0.000                 26.332  1       
+                                                             Uncertainty             -(0.000)                 26.332  
+                                                             Setup time              -(0.198)                 26.134  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+Required Time                                                                                                 26.134  
+Arrival Time                                                                                               -(12.312)  
+----------------------------------------  -----------------  ----------------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                          13.821  
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    End of Detailed Report for timing paths 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+
+##########################################################
+
+
+
+<A name="Timing_rpt_HoldFastCornerMinDegreeNoAV"></A><B><U><big>3  Hold at Speed Grade m Corner at -40 Degrees</big></U></B>
+<A name="Timing_rpt_EndpointSlackHoldFastCornerMinDegreeNoAV"></A><B><U><big>3.1  Endpoint slacks</big></U></B>
+-------------------------------------------------------
+          Listing 10 End Points          |    Slack    
+-------------------------------------------------------
+qoi/ramInstance/ram/ADDRESS0             |    1.414 ns 
+qoi/ramInstance/ram/ADDRESS2             |    1.414 ns 
+qoi/ramInstance/ram/ADDRESS3             |    1.414 ns 
+qoi/ramInstance/ram/ADDRESS5             |    1.414 ns 
+qoi/ramInstance/ram/ADDRESS10            |    1.414 ns 
+qoi/ramInstance/ram/ADDRESS11            |    1.414 ns 
+qoi/ramInstance/ram/ADDRESS12            |    1.414 ns 
+qoi/ramInstance/ram/ADDRESS13            |    1.414 ns 
+qoi/ramInstance/ram/DATAIN4              |    1.738 ns 
+qoi/ramInstance/ram/DATAIN5              |    1.738 ns 
+-------------------------------------------------------
+                                         |             
+Hold # of endpoints with negative slack: |           0 
+                                         |             
+-------------------------------------------------------
+
+<A name="Timing_rpt_DetailReportHoldFastCornerMinDegreeNoAV"></A><B><U><big>3.2  Detailed Report</big></U></B>
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+Detail report of critical paths
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                    Detailed Report for timing paths 
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ ++++Path 1  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Path Begin       : qoi/ramInstance/AD_13__I_94/Q  (SLICE_R2C3B)
+Path End         : qoi/ramInstance/ram/ADDRESS0  (SRAM_SRAM_R1C1B)
+Source Clock     : high_clk (R)
+Destination Clock: high_clk (R)
+Logic Level      : 1
+Delay Ratio      : 47.8% (route), 52.2% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.414 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/AD_13__I_94/CK",
+        "phy_name":"qoi.ramInstance.SLICE_171/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  24      
+qoi/ramInstance/high_clk                                     NET DELAY        3.084                  3.084  24      
+{qoi/ramInstance/AD_13__I_94/CK   qoi/ramInstance/AD_13__I_93/CK}
+                                                                              0.000                  3.084  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/AD_13__I_94/Q",
+        "phy_name":"qoi.ramInstance.SLICE_171/Q0"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/ADDRESS0",
+        "phy_name":"qoi.ramInstance.ram/ADDRESS0"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"qoi/ramInstance/AD_13__I_94/CK",
+            "phy_name":"qoi.ramInstance.SLICE_171/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"qoi/ramInstance/AD_13__I_94/Q",
+            "phy_name":"qoi.ramInstance.SLICE_171/Q0"
+        },
+        "arrive":3.863,
+        "delay":0.779
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/AD[0]",
+            "phy_name":"qoi.ramInstance.AD[0]"
+        },
+        "arrive":4.575,
+        "delay":0.712
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":4.575,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+qoi/ramInstance/AD_13__I_94/CK->qoi/ramInstance/AD_13__I_94/Q
+                                          SLICE_R2C3B        CLK_TO_Q0_DELAY  0.779                  3.863  1       
+qoi/ramInstance/AD[0]                                        NET DELAY        0.712                  4.575  1       
+qoi/ramInstance/ram/ADDRESS0                                                  0.000                  4.575  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/CLOCK",
+        "phy_name":"qoi.ramInstance.ram/CLOCK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":0.000,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  24      
+qoi/ramInstance/high_clk                                     NET DELAY        3.084                  3.084  24      
+qoi/ramInstance/ram/CLOCK                                                     0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.077                  3.161  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.161  
+Arrival Time                                                                                         4.575  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.414  
+
+
+
+
+++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : qoi/ramInstance/AD_13__I_92/Q  (SLICE_R2C5B)
+Path End         : qoi/ramInstance/ram/ADDRESS2  (SRAM_SRAM_R1C1B)
+Source Clock     : high_clk (R)
+Destination Clock: high_clk (R)
+Logic Level      : 1
+Delay Ratio      : 47.8% (route), 52.2% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.414 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/AD_13__I_92/CK",
+        "phy_name":"qoi.ramInstance.SLICE_181/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  24      
+qoi/ramInstance/high_clk                                     NET DELAY        3.084                  3.084  24      
+{qoi/ramInstance/AD_13__I_92/CK   qoi/ramInstance/AD_13__I_91/CK}
+                                                                              0.000                  3.084  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/AD_13__I_92/Q",
+        "phy_name":"qoi.ramInstance.SLICE_181/Q0"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/ADDRESS2",
+        "phy_name":"qoi.ramInstance.ram/ADDRESS2"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"qoi/ramInstance/AD_13__I_92/CK",
+            "phy_name":"qoi.ramInstance.SLICE_181/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"qoi/ramInstance/AD_13__I_92/Q",
+            "phy_name":"qoi.ramInstance.SLICE_181/Q0"
+        },
+        "arrive":3.863,
+        "delay":0.779
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/AD[2]",
+            "phy_name":"qoi.ramInstance.AD[2]"
+        },
+        "arrive":4.575,
+        "delay":0.712
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":4.575,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+qoi/ramInstance/AD_13__I_92/CK->qoi/ramInstance/AD_13__I_92/Q
+                                          SLICE_R2C5B        CLK_TO_Q0_DELAY  0.779                  3.863  1       
+qoi/ramInstance/AD[2]                                        NET DELAY        0.712                  4.575  1       
+qoi/ramInstance/ram/ADDRESS2                                                  0.000                  4.575  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/CLOCK",
+        "phy_name":"qoi.ramInstance.ram/CLOCK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":0.000,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  24      
+qoi/ramInstance/high_clk                                     NET DELAY        3.084                  3.084  24      
+qoi/ramInstance/ram/CLOCK                                                     0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.077                  3.161  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.161  
+Arrival Time                                                                                         4.575  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.414  
+
+
+
+
+++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : qoi/ramInstance/AD_13__I_91/Q  (SLICE_R2C5B)
+Path End         : qoi/ramInstance/ram/ADDRESS3  (SRAM_SRAM_R1C1B)
+Source Clock     : high_clk (R)
+Destination Clock: high_clk (R)
+Logic Level      : 1
+Delay Ratio      : 47.8% (route), 52.2% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.414 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/AD_13__I_92/CK",
+        "phy_name":"qoi.ramInstance.SLICE_181/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  24      
+qoi/ramInstance/high_clk                                     NET DELAY        3.084                  3.084  24      
+{qoi/ramInstance/AD_13__I_92/CK   qoi/ramInstance/AD_13__I_91/CK}
+                                                                              0.000                  3.084  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/AD_13__I_91/Q",
+        "phy_name":"qoi.ramInstance.SLICE_181/Q1"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/ADDRESS3",
+        "phy_name":"qoi.ramInstance.ram/ADDRESS3"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"qoi/ramInstance/AD_13__I_91/CK",
+            "phy_name":"qoi.ramInstance.SLICE_181/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"qoi/ramInstance/AD_13__I_91/Q",
+            "phy_name":"qoi.ramInstance.SLICE_181/Q1"
+        },
+        "arrive":3.863,
+        "delay":0.779
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/AD[3]",
+            "phy_name":"qoi.ramInstance.AD[3]"
+        },
+        "arrive":4.575,
+        "delay":0.712
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":4.575,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+qoi/ramInstance/AD_13__I_91/CK->qoi/ramInstance/AD_13__I_91/Q
+                                          SLICE_R2C5B        CLK_TO_Q1_DELAY  0.779                  3.863  1       
+qoi/ramInstance/AD[3]                                        NET DELAY        0.712                  4.575  1       
+qoi/ramInstance/ram/ADDRESS3                                                  0.000                  4.575  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/CLOCK",
+        "phy_name":"qoi.ramInstance.ram/CLOCK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":0.000,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  24      
+qoi/ramInstance/high_clk                                     NET DELAY        3.084                  3.084  24      
+qoi/ramInstance/ram/CLOCK                                                     0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.077                  3.161  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.161  
+Arrival Time                                                                                         4.575  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.414  
+
+
+
+
+++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : qoi/ramInstance/AD_13__I_89/Q  (SLICE_R2C3C)
+Path End         : qoi/ramInstance/ram/ADDRESS5  (SRAM_SRAM_R1C1B)
+Source Clock     : high_clk (R)
+Destination Clock: high_clk (R)
+Logic Level      : 1
+Delay Ratio      : 47.8% (route), 52.2% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.414 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/AD_13__I_90/CK",
+        "phy_name":"qoi.ramInstance.SLICE_183/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  24      
+qoi/ramInstance/high_clk                                     NET DELAY        3.084                  3.084  24      
+{qoi/ramInstance/AD_13__I_90/CK   qoi/ramInstance/AD_13__I_89/CK}
+                                                                              0.000                  3.084  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/AD_13__I_89/Q",
+        "phy_name":"qoi.ramInstance.SLICE_183/Q1"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/ADDRESS5",
+        "phy_name":"qoi.ramInstance.ram/ADDRESS5"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"qoi/ramInstance/AD_13__I_89/CK",
+            "phy_name":"qoi.ramInstance.SLICE_183/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"qoi/ramInstance/AD_13__I_89/Q",
+            "phy_name":"qoi.ramInstance.SLICE_183/Q1"
+        },
+        "arrive":3.863,
+        "delay":0.779
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/AD[5]",
+            "phy_name":"qoi.ramInstance.AD[5]"
+        },
+        "arrive":4.575,
+        "delay":0.712
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":4.575,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+qoi/ramInstance/AD_13__I_89/CK->qoi/ramInstance/AD_13__I_89/Q
+                                          SLICE_R2C3C        CLK_TO_Q1_DELAY  0.779                  3.863  1       
+qoi/ramInstance/AD[5]                                        NET DELAY        0.712                  4.575  1       
+qoi/ramInstance/ram/ADDRESS5                                                  0.000                  4.575  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/CLOCK",
+        "phy_name":"qoi.ramInstance.ram/CLOCK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":0.000,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  24      
+qoi/ramInstance/high_clk                                     NET DELAY        3.084                  3.084  24      
+qoi/ramInstance/ram/CLOCK                                                     0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.077                  3.161  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.161  
+Arrival Time                                                                                         4.575  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.414  
+
+
+
+
+++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : qoi/ramInstance/AD_13__I_84/Q  (SLICE_R2C5C)
+Path End         : qoi/ramInstance/ram/ADDRESS10  (SRAM_SRAM_R1C1B)
+Source Clock     : high_clk (R)
+Destination Clock: high_clk (R)
+Logic Level      : 1
+Delay Ratio      : 47.8% (route), 52.2% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.414 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/AD_13__I_84/CK",
+        "phy_name":"qoi.ramInstance.SLICE_189/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  24      
+qoi/ramInstance/high_clk                                     NET DELAY        3.084                  3.084  24      
+{qoi/ramInstance/AD_13__I_84/CK   qoi/ramInstance/AD_13__I_83/CK}
+                                                                              0.000                  3.084  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/AD_13__I_84/Q",
+        "phy_name":"qoi.ramInstance.SLICE_189/Q0"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/ADDRESS10",
+        "phy_name":"qoi.ramInstance.ram/ADDRESS10"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"qoi/ramInstance/AD_13__I_84/CK",
+            "phy_name":"qoi.ramInstance.SLICE_189/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"qoi/ramInstance/AD_13__I_84/Q",
+            "phy_name":"qoi.ramInstance.SLICE_189/Q0"
+        },
+        "arrive":3.863,
+        "delay":0.779
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/AD[10]",
+            "phy_name":"qoi.ramInstance.AD[10]"
+        },
+        "arrive":4.575,
+        "delay":0.712
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":4.575,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+qoi/ramInstance/AD_13__I_84/CK->qoi/ramInstance/AD_13__I_84/Q
+                                          SLICE_R2C5C        CLK_TO_Q0_DELAY  0.779                  3.863  1       
+qoi/ramInstance/AD[10]                                       NET DELAY        0.712                  4.575  1       
+qoi/ramInstance/ram/ADDRESS10                                                 0.000                  4.575  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/CLOCK",
+        "phy_name":"qoi.ramInstance.ram/CLOCK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":0.000,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  24      
+qoi/ramInstance/high_clk                                     NET DELAY        3.084                  3.084  24      
+qoi/ramInstance/ram/CLOCK                                                     0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.077                  3.161  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.161  
+Arrival Time                                                                                         4.575  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.414  
+
+
+
+
+++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : qoi/ramInstance/AD_13__I_83/Q  (SLICE_R2C5C)
+Path End         : qoi/ramInstance/ram/ADDRESS11  (SRAM_SRAM_R1C1B)
+Source Clock     : high_clk (R)
+Destination Clock: high_clk (R)
+Logic Level      : 1
+Delay Ratio      : 47.8% (route), 52.2% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.414 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/AD_13__I_84/CK",
+        "phy_name":"qoi.ramInstance.SLICE_189/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  24      
+qoi/ramInstance/high_clk                                     NET DELAY        3.084                  3.084  24      
+{qoi/ramInstance/AD_13__I_84/CK   qoi/ramInstance/AD_13__I_83/CK}
+                                                                              0.000                  3.084  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/AD_13__I_83/Q",
+        "phy_name":"qoi.ramInstance.SLICE_189/Q1"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/ADDRESS11",
+        "phy_name":"qoi.ramInstance.ram/ADDRESS11"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"qoi/ramInstance/AD_13__I_83/CK",
+            "phy_name":"qoi.ramInstance.SLICE_189/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"qoi/ramInstance/AD_13__I_83/Q",
+            "phy_name":"qoi.ramInstance.SLICE_189/Q1"
+        },
+        "arrive":3.863,
+        "delay":0.779
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/AD[11]",
+            "phy_name":"qoi.ramInstance.AD[11]"
+        },
+        "arrive":4.575,
+        "delay":0.712
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":4.575,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+qoi/ramInstance/AD_13__I_83/CK->qoi/ramInstance/AD_13__I_83/Q
+                                          SLICE_R2C5C        CLK_TO_Q1_DELAY  0.779                  3.863  1       
+qoi/ramInstance/AD[11]                                       NET DELAY        0.712                  4.575  1       
+qoi/ramInstance/ram/ADDRESS11                                                 0.000                  4.575  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/CLOCK",
+        "phy_name":"qoi.ramInstance.ram/CLOCK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":0.000,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  24      
+qoi/ramInstance/high_clk                                     NET DELAY        3.084                  3.084  24      
+qoi/ramInstance/ram/CLOCK                                                     0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.077                  3.161  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.161  
+Arrival Time                                                                                         4.575  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.414  
+
+
+
+
+++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : qoi/ramInstance/AD_13__I_82/Q  (SLICE_R2C4D)
+Path End         : qoi/ramInstance/ram/ADDRESS12  (SRAM_SRAM_R1C1B)
+Source Clock     : high_clk (R)
+Destination Clock: high_clk (R)
+Logic Level      : 1
+Delay Ratio      : 47.8% (route), 52.2% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.414 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/AD_13__I_82/CK",
+        "phy_name":"qoi.ramInstance.SLICE_191/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  24      
+qoi/ramInstance/high_clk                                     NET DELAY        3.084                  3.084  24      
+{qoi/ramInstance/AD_13__I_82/CK   qoi/ramInstance/AD_13__I_0/CK}
+                                                                              0.000                  3.084  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/AD_13__I_82/Q",
+        "phy_name":"qoi.ramInstance.SLICE_191/Q0"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/ADDRESS12",
+        "phy_name":"qoi.ramInstance.ram/ADDRESS12"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"qoi/ramInstance/AD_13__I_82/CK",
+            "phy_name":"qoi.ramInstance.SLICE_191/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"qoi/ramInstance/AD_13__I_82/Q",
+            "phy_name":"qoi.ramInstance.SLICE_191/Q0"
+        },
+        "arrive":3.863,
+        "delay":0.779
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/AD[12]",
+            "phy_name":"qoi.ramInstance.AD[12]"
+        },
+        "arrive":4.575,
+        "delay":0.712
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":4.575,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+qoi/ramInstance/AD_13__I_82/CK->qoi/ramInstance/AD_13__I_82/Q
+                                          SLICE_R2C4D        CLK_TO_Q0_DELAY  0.779                  3.863  1       
+qoi/ramInstance/AD[12]                                       NET DELAY        0.712                  4.575  1       
+qoi/ramInstance/ram/ADDRESS12                                                 0.000                  4.575  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/CLOCK",
+        "phy_name":"qoi.ramInstance.ram/CLOCK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":0.000,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  24      
+qoi/ramInstance/high_clk                                     NET DELAY        3.084                  3.084  24      
+qoi/ramInstance/ram/CLOCK                                                     0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.077                  3.161  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.161  
+Arrival Time                                                                                         4.575  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.414  
+
+
+
+
+++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : qoi/ramInstance/AD_13__I_0/Q  (SLICE_R2C4D)
+Path End         : qoi/ramInstance/ram/ADDRESS13  (SRAM_SRAM_R1C1B)
+Source Clock     : high_clk (R)
+Destination Clock: high_clk (R)
+Logic Level      : 1
+Delay Ratio      : 47.8% (route), 52.2% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.414 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/AD_13__I_82/CK",
+        "phy_name":"qoi.ramInstance.SLICE_191/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  24      
+qoi/ramInstance/high_clk                                     NET DELAY        3.084                  3.084  24      
+{qoi/ramInstance/AD_13__I_82/CK   qoi/ramInstance/AD_13__I_0/CK}
+                                                                              0.000                  3.084  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/AD_13__I_0/Q",
+        "phy_name":"qoi.ramInstance.SLICE_191/Q1"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/ADDRESS13",
+        "phy_name":"qoi.ramInstance.ram/ADDRESS13"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"qoi/ramInstance/AD_13__I_0/CK",
+            "phy_name":"qoi.ramInstance.SLICE_191/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"qoi/ramInstance/AD_13__I_0/Q",
+            "phy_name":"qoi.ramInstance.SLICE_191/Q1"
+        },
+        "arrive":3.863,
+        "delay":0.779
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/AD[13]",
+            "phy_name":"qoi.ramInstance.AD[13]"
+        },
+        "arrive":4.575,
+        "delay":0.712
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":4.575,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+qoi/ramInstance/AD_13__I_0/CK->qoi/ramInstance/AD_13__I_0/Q
+                                          SLICE_R2C4D        CLK_TO_Q1_DELAY  0.779                  3.863  1       
+qoi/ramInstance/AD[13]                                       NET DELAY        0.712                  4.575  1       
+qoi/ramInstance/ram/ADDRESS13                                                 0.000                  4.575  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/CLOCK",
+        "phy_name":"qoi.ramInstance.ram/CLOCK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":0.000,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  24      
+qoi/ramInstance/high_clk                                     NET DELAY        3.084                  3.084  24      
+qoi/ramInstance/ram/CLOCK                                                     0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.077                  3.161  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.161  
+Arrival Time                                                                                         4.575  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.414  
+
+
+
+
+++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : qoi/ramInstance/DI_7__I_97/Q  (SLICE_R4C2B)
+Path End         : qoi/ramInstance/ram/DATAIN4  (SRAM_SRAM_R1C1B)
+Source Clock     : high_clk (R)
+Destination Clock: high_clk (R)
+Logic Level      : 1
+Delay Ratio      : 58.0% (route), 42.0% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.738 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/DI_7__I_97/CK",
+        "phy_name":"qoi.ramInstance.SLICE_176/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  24      
+qoi/ramInstance/high_clk                                     NET DELAY        3.084                  3.084  24      
+{qoi/ramInstance/DI_7__I_97/CK   qoi/ramInstance/DI_7__I_96/CK}
+                                                                              0.000                  3.084  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/DI_7__I_97/Q",
+        "phy_name":"qoi.ramInstance.SLICE_176/Q0"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/DATAIN4",
+        "phy_name":"qoi.ramInstance.ram/DATAIN4"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"qoi/ramInstance/DI_7__I_97/CK",
+            "phy_name":"qoi.ramInstance.SLICE_176/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"qoi/ramInstance/DI_7__I_97/Q",
+            "phy_name":"qoi.ramInstance.SLICE_176/Q0"
+        },
+        "arrive":3.863,
+        "delay":0.779
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/DI[4]",
+            "phy_name":"qoi.ramInstance.DI[4]"
+        },
+        "arrive":4.938,
+        "delay":1.075
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":4.938,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+qoi/ramInstance/DI_7__I_97/CK->qoi/ramInstance/DI_7__I_97/Q
+                                          SLICE_R4C2B        CLK_TO_Q0_DELAY  0.779                  3.863  1       
+qoi/ramInstance/DI[4]                                        NET DELAY        1.075                  4.938  1       
+qoi/ramInstance/ram/DATAIN4                                                   0.000                  4.938  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/CLOCK",
+        "phy_name":"qoi.ramInstance.ram/CLOCK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":0.000,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  24      
+qoi/ramInstance/high_clk                                     NET DELAY        3.084                  3.084  24      
+qoi/ramInstance/ram/CLOCK                                                     0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.116                  3.200  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.200  
+Arrival Time                                                                                         4.938  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.738  
+
+
+
+
+++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : qoi/ramInstance/DI_7__I_96/Q  (SLICE_R4C2B)
+Path End         : qoi/ramInstance/ram/DATAIN5  (SRAM_SRAM_R1C1B)
+Source Clock     : high_clk (R)
+Destination Clock: high_clk (R)
+Logic Level      : 1
+Delay Ratio      : 58.0% (route), 42.0% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.738 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/DI_7__I_97/CK",
+        "phy_name":"qoi.ramInstance.SLICE_176/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  24      
+qoi/ramInstance/high_clk                                     NET DELAY        3.084                  3.084  24      
+{qoi/ramInstance/DI_7__I_97/CK   qoi/ramInstance/DI_7__I_96/CK}
+                                                                              0.000                  3.084  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/DI_7__I_96/Q",
+        "phy_name":"qoi.ramInstance.SLICE_176/Q1"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/DATAIN5",
+        "phy_name":"qoi.ramInstance.ram/DATAIN5"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"qoi/ramInstance/DI_7__I_96/CK",
+            "phy_name":"qoi.ramInstance.SLICE_176/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"qoi/ramInstance/DI_7__I_96/Q",
+            "phy_name":"qoi.ramInstance.SLICE_176/Q1"
+        },
+        "arrive":3.863,
+        "delay":0.779
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/DI[5]",
+            "phy_name":"qoi.ramInstance.DI[5]"
+        },
+        "arrive":4.938,
+        "delay":1.075
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":4.938,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+qoi/ramInstance/DI_7__I_96/CK->qoi/ramInstance/DI_7__I_96/Q
+                                          SLICE_R4C2B        CLK_TO_Q1_DELAY  0.779                  3.863  1       
+qoi/ramInstance/DI[5]                                        NET DELAY        1.075                  4.938  1       
+qoi/ramInstance/ram/DATAIN5                                                   0.000                  4.938  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"qoi/hf_osc/CLKHF",
+        "phy_name":"qoi.hf_osc/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"qoi/ramInstance/ram/CLOCK",
+        "phy_name":"qoi.ramInstance.ram/CLOCK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":0.000,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"qoi/ramInstance/high_clk",
+            "phy_name":"high_clk"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+qoi.hf_osc/CLKHF                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  24      
+qoi/ramInstance/high_clk                                     NET DELAY        3.084                  3.084  24      
+qoi/ramInstance/ram/CLOCK                                                     0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.116                  3.200  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.200  
+Arrival Time                                                                                         4.938  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.738  
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    End of Detailed Report for timing paths 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+
+##########################################################
+
+
+
+
+
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></DIV>
+
+<DIV id="toc" class="radiant"<span onmousemove="showTocList()">Contents</span>
+<UL id="toc_list">
+<LI><A href=#Timing_rpt_top>Timing Report</A></LI>
+<LI><A href=#Timing_rpt_DesignChecking>1  DESIGN CHECKING</A></LI>
+<UL>
+<LI><A href=#Timing_rpt_SDCConstraints>1.1  SDC Constraints</A></LI>
+<LI><A href=#Timing_rpt_ConstraintCoverage>1.2  Constraint Coverage</A></LI>
+<LI><A href=#Timing_rpt_OverallSummary>1.3  Overall Summary</A></LI>
+<LI><A href=#Timing_rpt_UnconstrainedReport>1.4  Unconstrained Report</A></LI>
+<LI><A href=#Timing_rpt_CombinationalLoop>1.5  Combinational Loop</A></LI>
+</UL>
+<LI><A href=#Timing_rpt_SetupSlowCornerMaxDegree>2  Setup at User Specified Speed Grade Corner at User Specified Degrees</A></LI>
+<UL>
+<LI><A href=#Timing_rpt_ClockSummarySetupSlowCornerMaxDegree>2.1  Clock Summary</A></LI>
+<LI><A href=#Timing_rpt_EndpointSlackSetupSlowCornerMaxDegree>2.2  Endpoint slacks</A></LI>
+<LI><A href=#Timing_rpt_DetailReportSetupSlowCornerMaxDegree>2.3  Detailed Report</A></LI>
+</UL>
+<LI><A href=#Timing_rpt_HoldFastCornerMinDegreeNoAV>3  Hold at User Specified Speed Grade Corner at Minimum Degrees</A></LI>
+<UL>
+<LI><A href=#Timing_rpt_EndpointSlackHoldFastCornerMinDegreeNoAV>3.1  Endpoint slacks</A></LI>
+<LI><A href=#Timing_rpt_DetailReportHoldFastCornerMinDegreeNoAV>3.2  Detailed Report</A></LI>
+</UL>
+</UL>
+</DIV>
+
+<button id="back_to_top" class="radiant" onclick="scrollToTop()">&lt;</button>
+<script type="text/javascript">
+<!--
+var scrollStep = 0;
+function scrollToTop(){
+   var funScroll = function() {
+      var top = document.body.scrollTop;
+      if (top == 0) {
+         scrollStep = 0;
+         return;
+      }
+      if (scrollStep == 0)
+         scrollStep = top/20 + 1;
+      top -= scrollStep;
+      if (top < 0)
+         top = 0;
+      document.body.scrollTop = top;
+      requestAnimationFrame(funScroll);
+   };
+   funScroll();
+}
+
+window.addEventListener('scroll', function(e) {
+   var backToTop = document.getElementById('back_to_top')
+   if (document.body.scrollTop > 0) {
+      backToTop.style.display = 'block';
+   } else {	backToTop.style.display = 'none'  }});
+
+//-->
+</script>
+
+<style type="text/css">
+#back_to_top {
+   bottom:20px; right:20px;
+   width:30px; height:30px;
+   font-size: 20px;
+   padding: 2px 5px 2px 5px;
+   position:fixed;
+   background-color:rgba(210,210,210,0.1);
+   border-style: solid;
+   border-color: rgba(192,192,192,0.8);
+   border-width:1px;
+   display:none;
+   -webkit-transform: rotate(90deg);
+   -webkit-transform-origin:50% 50%;
+}
+#back_to_top:focus {
+   outline-width:0px;
+}
+</style>
+
+<style type='text/css'>
+pre {
+  margin-left: 2em;
+}
+tapath {
+  display: none;
+}
+.tools {
+  font-family: arial;
+  font-size: 0.8em;
+  text-align: center;
+  display: inline-block;
+}
+.tools:before{
+  content: "Shown in: ";
+  color: #1c79ec;
+  text-align: center;
+  padding-left: 0.5em;
+}
+.tools a {
+  color: rgb(192, 192, 192);
+  cursor: pointer;
+}
+.tools a:link {
+  text-decoration: none;
+}
+.tools a:hover {
+  color: #1c79ec;
+}
+.tools a:before {
+  content: " ";
+  width: 20px;
+  display: inline-block;
+  text-align: center;
+  padding-right: 5px;
+  padding-left: 2px;
+}
+.tools a:after {
+  text-align: center;
+  padding-right: 5px;
+}
+.na:before {
+  background: url("qrc:///report-view-html/images/netlist_analyzer_16.png") no-repeat center;
+}
+.na:after {
+  content: "Netlist Analyzer";
+}
+.fp:before {
+  background: url("qrc:///report-view-html/images/floorplanview_16.png") no-repeat center;
+}
+.fp:after {
+  content: "Physical Designer Placement Mode";
+}
+.phv:before {
+  background: url("qrc:///report-view-html/images/epic_16.png") no-repeat center;
+}
+.phv:after {
+  content: "Physical Designer Routing Mode";
+}
+</style>
+<script type='text/javascript'>
+<!--
+var show_log = 1; var show_phy = 1;
+function createTool(cls, path_obj) {
+  var tool = document.createElement('a');
+  tool.className = cls;
+  tool.onclick = (function(tool, path) {
+    return function() {
+      var tool_name;
+      var logical = false;
+      if (typeof path !== 'string' || path === null || path.length == 0)
+        return;
+      switch (cls) {
+        case 'na':
+          tool_name = 'SCHEMATIC_VIEW';
+          logical = true;
+          break;
+        case 'fp':
+          tool_name = 'FLOORPLANNER';
+          break;
+        case 'phv':
+          tool_name = 'PHYSICAL_VIEW';
+          break;
+      }
+      var url = 'NGView://' + tool_name + '/tapath?' + (logical?'view_type=tech&':'') + 'path=' +
+                encodeURIComponent(path);
+      this.href = url;
+    }
+  })(cls, path_obj).bind(tool);
+  return tool;
+}
+function createTools(path_element) {
+  var tools = document.createElement('span');
+  tools.className = 'tools';
+  var path = path_element.textContent;
+  if (show_log) 
+    tools.appendChild(createTool('na', path));
+  if (show_phy) {
+    tools.appendChild(createTool('fp', path));
+    tools.appendChild(createTool('phv', path));
+  }
+  var p = path_element.parentNode;
+  p.insertBefore(tools, path_element);
+}
+function handleLeftpaths(left_paths, index) {
+    if (left_paths.length > index) {
+      setTimeout(function(paths, i) {
+        return function() {
+          var path = paths[i];
+          createTools(path);
+          handleLeftpaths(paths, i+1);
+        }
+      }(left_paths, index));
+    }
+}
+window.onload = function() {
+  if (!show_log && !show_phy) return; 
+  if (typeof window._$radiant !== 'undefined') {
+    var all_paths = document.getElementsByTagName('tapath');
+    handleLeftpaths(all_paths, 0);
+  }
+}
+//-->
+</script>
+</BODY>
+
