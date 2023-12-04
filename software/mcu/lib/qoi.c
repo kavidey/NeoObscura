@@ -7,8 +7,13 @@
 
 void initQOI(int reset_pin) {
   pinMode(reset_pin, GPIO_OUTPUT);
+  
+  // System Clock: 80 MHz
+  // Desired SPI Clock: 5 MHz
+  // 80 / 5 = 16 = 2^4
+
   // polarity = 0, phase = 1
-  initSPI(0, 0, 1);
+  initSPI(0b111, 0, 1);
 }
 
 void encodeImage(color_pixel_buf_Type *image, encoded_image_Type *encoded_image,
@@ -17,7 +22,7 @@ void encodeImage(color_pixel_buf_Type *image, encoded_image_Type *encoded_image,
 
   // Wait for FPGA to reset
   volatile int q = 0;
-  while (q < 10000) {
+  while (q < 2000000) {
     q++;
   }
   spiSendReceive(0xAF);
@@ -41,10 +46,12 @@ void encodeImage(color_pixel_buf_Type *image, encoded_image_Type *encoded_image,
   // Tell the FPGA that we're done sending pixels
   spiSendReceive(0x08);
   spiSendReceive(0x08);
+  spiSendReceive(0x08);
+  spiSendReceive(0x08);
 
   // Wait for compression to finish
   volatile int delay = 0;
-  while (delay < 10000) {
+  while (delay < 2000000) {
     delay++;
   }
   uint8_t recievedByte = 0xBB;

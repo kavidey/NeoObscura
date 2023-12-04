@@ -155,7 +155,6 @@ int main(void) {
 #ifdef COLOR_MODE
       // Debayer the image
       debayer(pixel_buf, &color_pixel_buf);
-
 #ifdef QOI
       // Compress the image
       encodeImage(&color_pixel_buf, &encoded_image_buf, FPGA_RESET);
