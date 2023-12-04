@@ -20,16 +20,18 @@ Main file for NeoObscura
 #include "lib/STM32L432KC_USART.h"
 
 #include "lib/debayer.h"
+#include "lib/qoi.h"
 #include "lib/sensor.h"
 
 #include "main.h"
 
-// #define COLOR_MODE
+#define COLOR_MODE
+#define QOI // (requires color mode)
 
 SENSOR_CFG_TypeDef sensor_cfg = {{ROW_0, ROW_1, ROW_2, ROW_3, ROW_4},
                                  {COL_0, COL_1, COL_2, COL_3, COL_4, COL_5},
-                                 0,
-                                 1000};
+                                 0.2,
+                                 -0.2};
 int x_coord = 0;
 int y_coord = 0;
 int frame_done = 0;
@@ -38,7 +40,12 @@ pixel_buf_Type pixel_buf_a;
 pixel_buf_Type pixel_buf_b;
 int curr_buff = 0;
 
+#ifdef COLOR_MODE
 color_pixel_buf_Type color_pixel_buf;
+#ifdef QOI
+encoded_image_Type encoded_image_buf;
+#endif
+#endif
 
 char tempString[32];
 USART_TypeDef *USART_LAPTOP;
@@ -49,7 +56,7 @@ void ADC1_IRQHandler(void) {
 
   // Read the ADC value
   pixel_buf_Type *pixel_buf = (curr_buff ? &pixel_buf_a : &pixel_buf_b);
-  (*pixel_buf)[y_coord][x_coord] = ADC1->DR / 256;
+  (*pixel_buf)[y_coord][x_coord] = adcToBrightness(&sensor_cfg, ADC1->DR);
 
   // Start the next conversion
   x_coord++;
@@ -87,6 +94,11 @@ int main(void) {
   /// Setup Peripherals ///`
   // Setup sensor
   setupSensor(&sensor_cfg);
+
+#ifdef QOI
+  // Setup FPGA
+  initQOI(FPGA_RESET);
+#endif
 
   // Setup UART
   USART_LAPTOP = initUSART(USART2_ID, 115200);
@@ -143,19 +155,30 @@ int main(void) {
 #ifdef COLOR_MODE
       // Debayer the image
       debayer(pixel_buf, &color_pixel_buf);
+
+#ifdef QOI
+      // Compress the image
+      encodeImage(&color_pixel_buf, &encoded_image_buf, FPGA_RESET);
+#endif
 #endif
 
-      for (int j = VERTICAL_RESOLUTION - 1; j >= 0; j--) {
-        for (int i = 0; i < HORIZONTAL_RESOLUTION; i++) {
+#ifndef QOI
+      for (int i = VERTICAL_RESOLUTION - 1; i >= 0; i--) {
+        for (int j = 0; j < HORIZONTAL_RESOLUTION; j++) {
 #ifdef COLOR_MODE
-          rgba_t px = color_pixel_buf[j][i];
+          rgba_t px = color_pixel_buf[i][j];
           sprintf(tempString, "%02hhx%02hhx%02hhx", px.r, px.g, px.b);
 #else
-          sprintf(tempString, "%02hhx", (*pixel_buf)[j][i]);
+          sprintf(tempString, "%02hhx", (*pixel_buf)[i][j]);
 #endif
           sendString(USART_LAPTOP, tempString);
         }
       }
+#else
+      for (int i = 0; i < encoded_image_buf.size; i++) {
+        sprintf(tempString, "%02hhx", encoded_image_buf.imageData[i]);
+      }
+#endif
       sendString(USART_LAPTOP, "\n");
     }
   }

@@ -5,8 +5,7 @@
 #include "STM32L432KC_ADC.h"
 #include "STM32L432KC_GPIO.h"
 
-long map_range(long x, long in_min, long in_max, long out_min, long out_max)
-{
+long map_range(long x, long in_min, long in_max, long out_min, long out_max) {
   return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
 
@@ -33,5 +32,12 @@ void selectPixel(SENSOR_CFG_TypeDef *sensor_cfg, int x, int y) {
 }
 
 uint8_t adcToBrightness(SENSOR_CFG_TypeDef *sensor_cfg, uint16_t adcVal) {
-    return map_range(adcVal, 0, 65536, sensor_cfg->min_light, sensor_cfg->max_light);
+  float val = ((float)adcVal) / 65536.0;
+  val = (val * (1 + sensor_cfg->alpha) + sensor_cfg->beta);
+  if (val < 0) {
+    val = 0;
+  } else if (val > 1) {
+    val = 1;
+  }
+  return (uint8_t)(val * 255.0);
 }

@@ -27,6 +27,25 @@
   "design_units": [
    {
     "owner": {
+     "name": "/Users/kavidey/github/NeoObscura/software/fpga/qoi_compression/qoi_ram/top.sv",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "qoi2top",
+     "case_sensitive": true,
+     "__class__": "VerilogIdentifier"
+    },
+    "locations": [
+     [
+      0,
+      6
+     ]
+    ],
+    "__class__": "VerilogDesignUnit"
+   },
+   {
+    "owner": {
      "name": "/Users/kavidey/github/NeoObscura/software/fpga/qoi_compression/midpoint/top.sv",
      "__class__": "Path"
     },
@@ -77,6 +96,25 @@
     "locations": [
      [
       32,
+      7
+     ]
+    ],
+    "__class__": "VerilogDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/Users/kavidey/github/NeoObscura/software/fpga/qoi_compression/qoi_ram/top.sv",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "encoder",
+     "case_sensitive": true,
+     "__class__": "VerilogIdentifier"
+    },
+    "locations": [
+     [
+      42,
       7
      ]
     ],
@@ -160,6 +198,25 @@
    },
    {
     "owner": {
+     "name": "/Users/kavidey/github/NeoObscura/software/fpga/qoi_compression/qoi_ram/top.sv",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "ram",
+     "case_sensitive": true,
+     "__class__": "VerilogIdentifier"
+    },
+    "locations": [
+     [
+      591,
+      7
+     ]
+    ],
+    "__class__": "VerilogDesignUnit"
+   },
+   {
+    "owner": {
      "name": "/Users/kavidey/Sync/Mudd/FA23/uPs/Labs/lab_1/lab_1/source/impl_1/lab1_top.sv",
      "__class__": "Path"
     },
@@ -172,6 +229,25 @@
     "locations": [
      [
       61,
+      7
+     ]
+    ],
+    "__class__": "VerilogDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/Users/kavidey/github/NeoObscura/software/fpga/qoi_compression/qoi_ram/top.sv",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "spi",
+     "case_sensitive": true,
+     "__class__": "VerilogIdentifier"
+    },
+    "locations": [
+     [
+      448,
       7
      ]
     ],

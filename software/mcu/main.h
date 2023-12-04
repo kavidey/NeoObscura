@@ -15,16 +15,19 @@ Main header file for NeoObscura
 #define ROW_0 PB1
 #define ROW_1 PB7
 #define ROW_2 PA12
-#define ROW_3 PB5
-#define ROW_4 PB3
+#define ROW_3 PA5
+#define ROW_4 PA9
 
 // Column Address Pins
 #define COL_0 PA10
 #define COL_1 PB0
 #define COL_2 PB6
 #define COL_3 PA8
-#define COL_4 PB4
+#define COL_4 PA7
 #define COL_5 PA6
+
+// SPI Communication Pins
+#define FPGA_RESET PA11
 
 const int col_mapping[40] = {0,  1,  2,  3,  4,  5,  6,  7,  8,  9,
                              10, 11, 12, 13, 14, 15, 16, 17, 18, 19,

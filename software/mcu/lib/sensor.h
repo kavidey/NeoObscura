@@ -20,8 +20,8 @@
 typedef struct {
     int row_pins[VERTICAL_BITS];
     int col_pins[HORIZONTAL_BITS];
-    int min_light;
-    int max_light;
+    float alpha;
+    float beta;
 } SENSOR_CFG_TypeDef;
 
 ///////////////////////////////////////////////////////////////////////////////
