@@ -1,0 +1,14 @@
+#Start recording tcl command: 11/29/2023 17:28:17
+#Project Location: Z:/github/NeoObscura/software/fpga/address_decoder; Project name: address_decoder
+prj_create -name "address_decoder" -impl "impl_1" -dev iCE40UP5K-SG48I -performance "High-Performance_1.2V" -synthesis "lse"
+prj_save 
+prj_add_source "Z:/github/NeoObscura/software/fpga/address_decoder/source/impl_1/top.sv"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_add_source "Z:/github/NeoObscura/software/fpga/address_decoder/pinout.pdc"
+prj_enable_source "Z:/github/NeoObscura/software/fpga/address_decoder/pinout.pdc"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+#Stop recording: 11/30/2023 12:44:54
