@@ -5,6 +5,7 @@ import cv2
 import time
 import argparse
 from pathlib import Path
+import qoi
 
 
 def split_into_groups(data, n):
@@ -24,16 +25,23 @@ def read_serial():
             while running:
                 start_time = time.time()
                 data = ser.readline()[:-1]
-                if len(data) == IMAGE_BYTES:
-                    pixels_strings = split_into_groups(data, BYTES_PER_CHANNEL)
-                    pixels = [int(pixel, 16) for pixel in pixels_strings]
-                    pixels = np.array(pixels, dtype=np.uint8).reshape(
-                        (VERTICAL_RESOLUTION, HORIZONTAL_RESOLUTION, NUM_CHANNELS)
-                    )
-                    image = pixels
-                    fps = 1 / (time.time() - start_time)
-                else:
-                    print(f"Recieved invalid image with {len(data)} bytes")
+                if COMPRESSION == "none":
+                    if len(data) == IMAGE_BYTES:
+                        pixels_strings = split_into_groups(data, BYTES_PER_CHANNEL)
+                        pixels = [int(pixel, 16) for pixel in pixels_strings]
+                        pixels = np.array(pixels, dtype=np.uint8).reshape(
+                            (VERTICAL_RESOLUTION, HORIZONTAL_RESOLUTION, NUM_CHANNELS)
+                        )
+                        image = pixels
+                        fps = 1 / (time.time() - start_time)
+                    else:
+                        print(f"Recieved invalid image with {len(data)} bytes")
+                elif COMPRESSION == "qoi":
+                    print(str(data))
+                    try:
+                        image = qoi.decode(qoi.decode(bytearray.fromhex(str(data))))
+                    except Exception as e:
+                        print(f"Recieved invalid image qoi image: {e}")
         except OSError or ValueError:
             # print("Connection failed, reconnecting")
             time.sleep(1)
@@ -114,6 +122,13 @@ if __name__ == "__main__":
         default=True,
     )
     parser.add_argument(
+        "-cmp",
+        "--compression",
+        help="Decompress the image before displaying",
+        type=str,
+        default="none",
+    )
+    parser.add_argument(
         "-o", "--output", help="Output file directory", type=str, default="snapshots"
     )
 
@@ -124,8 +139,8 @@ if __name__ == "__main__":
     BAUDRATE = args.baudrate
     SHOW_FPS = args.showfps
     OUTPUT_DIR = Path(args.output)
-
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    COMPRESSION = args.compression
 
     # Constants
     BYTES_PER_CHANNEL = 2

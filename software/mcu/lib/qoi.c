@@ -22,7 +22,7 @@ void encodeImage(color_pixel_buf_Type *image, encoded_image_Type *encoded_image,
 
   // Wait for FPGA to reset
   volatile int q = 0;
-  while (q < 2000000) {
+  while (q < QOI_DELAY) {
     q++;
   }
   spiSendReceive(0xAF);
@@ -51,7 +51,7 @@ void encodeImage(color_pixel_buf_Type *image, encoded_image_Type *encoded_image,
 
   // Wait for compression to finish
   volatile int delay = 0;
-  while (delay < 2000000) {
+  while (delay < QOI_DELAY) {
     delay++;
   }
   uint8_t recievedByte = 0xBB;

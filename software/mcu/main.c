@@ -176,6 +176,7 @@ int main(void) {
 #else
       for (int i = 0; i < encoded_image_buf.size; i++) {
         sprintf(tempString, "%02hhx", encoded_image_buf.imageData[i]);
+        sendString(USART_LAPTOP, tempString);
       }
 #endif
       sendString(USART_LAPTOP, "\n");
