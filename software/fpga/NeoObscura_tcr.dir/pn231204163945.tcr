@@ -1,0 +1,17 @@
+#Start recording tcl command: 12/3/2023 13:16:41
+#Project Location: Z:/github/NeoObscura/software/fpga/combined; Project name: NeoObscura
+prj_create -name "NeoObscura" -impl "impl_1" -dev iCE40UP5K-SG48I -performance "High-Performance_1.2V" -synthesis "lse"
+prj_save 
+prj_add_source "Z:/github/NeoObscura/software/fpga/combined/source/impl_1/neo_obscura_top.sv"
+prj_add_source "Z:/github/NeoObscura/software/fpga/combined/source/impl_1/qoi.sv" "Z:/github/NeoObscura/software/fpga/combined/source/impl_1/decoder.sv"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_add_source "Z:/github/NeoObscura/software/fpga/combined/pinout.pdc"
+prj_enable_source "Z:/github/NeoObscura/software/fpga/combined/pinout.pdc"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+#Stop recording: 12/4/2023 16:39:45
