@@ -32,6 +32,9 @@ Each time the ADC interrupt handler is triggered it saves the current pixel into
 <!-- TODO: move color correction code from the ADC interrupt to the main loop -->
 
 #### ADC Peripheral
+The ADC is setup to read the voltage output of a single pixel on one of its 16 external channels. We are using the ADC at its maximum resolution of 12 bits and maximum sampling rate of 5.33 Msps (Note: the ADC sampling rate is not the limiting factor in our FPS, see [results]({{ site.baseurl }}/results/) for more details). Nonetheless, the ADC is driven using the system clock at the maximum speed of 80 MHz to reduce sampling time as much as possible.
+
+There are several ways to start an ADC conversion (single conversion mode, continuous conversion mode, and hardware or software triggers). We chose to use software triggers to start all of our conversions because we want the highest possible sampling speed but also need to change the state of the analog muxes between each sample. As shown in the [MCU Block Diagram](#mcu-block-diagram), conversions are started in software from the main loop (at the beginning of a new frame) or in the ADC Handler Interrupt after the muxes have been setup for the next pixel.
 
 #### Debayering
 
@@ -40,6 +43,9 @@ Each time the ADC interrupt handler is triggered it saves the current pixel into
 #### Compression & SPI Peripheral
 
 #### USART Peripheral
+The primary goal for this project is to build a functioning camera not to drive a display, so we chose USART as simple protocol for sending images to a laptop. 
+
+After the image is captured, color corrected, debayered, and compressed, it is converted to hex and sent over USART to the laptop. We chose specifically to use USART_2, which transmits through the built in Micro-USB port on the Nucleo board for simplicity. We are transitting at 115200 bits/s which was the highest we could go without running into signal integrity issues and dropping a significant number of frames.
 
 See [results]({{ site.baseurl }}/results/) for more information the maximum frame rate we were able to achieve.
 
