@@ -6,7 +6,6 @@ permalink: /team/
 
 # Kavi Dey
 
-
 #### Contact
 <!-- Personal Website -->
 

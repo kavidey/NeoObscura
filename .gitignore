@@ -36,4 +36,5 @@ scripts/__pycache__/
 *.dwl2
 
 # Segger
-*.emSession
+**/*.emSession
+software/mcu/NeoObscura.emSession

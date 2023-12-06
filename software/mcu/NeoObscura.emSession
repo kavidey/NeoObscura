@@ -96,7 +96,7 @@
   <SessionOpenFile windowGroup="DockEditLeft" x="17" y="26" useTextEdit="1" path="main.h" left="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="105" useTextEdit="1" path="lib/debayer.c" left="0" top="80" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="44" y="119" useTextEdit="1" path="lib/qoi.c" left="0" top="47" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="5" y="175" useTextEdit="1" path="main.c" left="0" selected="1" top="109" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="151" useTextEdit="1" path="main.c" left="0" selected="1" top="109" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="4" y="17" useTextEdit="1" path="lib/STM32L432KC_SPI.c" left="0" top="13" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="80" useTextEdit="1" path="lib/STM32L432KC_USART.c" left="0" top="24" codecName="Default"/>
  </Files>
