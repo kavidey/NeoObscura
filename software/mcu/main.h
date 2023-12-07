@@ -29,6 +29,8 @@ Main header file for NeoObscura
 // SPI Communication Pins
 #define FPGA_RESET PA11
 
+// Mapping between what column the MCU wants to access and what number that actually is
+// The column wires are not plugged in in order due to wire length issues
 const int col_mapping[40] = {0,  1,  2,  3,  4,  5,  6,  7,  8,  9,
                              10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
                              20, 21, 22, 23, 24, 25, 46, 45, 44, 43,

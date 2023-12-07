@@ -1,5 +1,11 @@
-// STM32F401RE_ADC.c
-// ADC functions
+/*
+File: STM32F401RE_ADC.c
+Author(s): Kavi Dey
+Email(s): kdey@hmc.edu
+Date: 11/9/23
+
+Source code for ADC functions
+*/
 
 #include "STM32L432KC_ADC.h"
 #include "STM32L432KC_RCC.h"

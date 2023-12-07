@@ -114,34 +114,6 @@ int main(void) {
   // Start the first conversion
   ADC1->CR |= ADC_CR_ADSTART;
 
-  // while (1) {
-  //   for (int x = 0; x < 39; x++) {
-  //     for (int y = 0; y < 29; y++) {
-  //       selectPixel(&sensor_cfg, col_mapping[x], y);
-
-  //       sprintf(tempString, "%i %i %i\n", x, col_mapping[x], y);
-  //       sendString(USART_LAPTOP, tempString);
-
-  //       volatile int i = 50000;
-  //       while (i-- > 0)
-  //         __asm("nop");
-  //     }
-  //   }
-  // }
-
-  // digitalWrite(ROW_0, 1);
-  // digitalWrite(ROW_1, 1);
-  // digitalWrite(ROW_2, 1);
-  // digitalWrite(ROW_3, 1);
-  // digitalWrite(ROW_4, 1);
-  // digitalWrite(COL_0, 1);
-  // digitalWrite(COL_1, 1);
-  // digitalWrite(COL_2, 1);
-  // digitalWrite(COL_3, 1);
-  // digitalWrite(COL_4, 0);
-  // digitalWrite(COL_5, 1);
-  // selectPixel(&sensor_cfg, col_mapping[39], 13);
-
   while (1) {
     if (frame_done) {
       // Switch to the other buffer

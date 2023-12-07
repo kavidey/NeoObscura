@@ -1,5 +1,11 @@
-// debayer.h
-// Header for debayer functions
+/*
+File: debayer.h
+Author(s): Henry Merrilees, Kavi Dey
+Email(s): hmerrilees@hmc.edu, kdey@hmc.edu
+Date: 12/7/23
+
+Header for debayer functions
+*/
 
 #include "sensor.h"
 #include <stdint.h> // Include stdint header
@@ -27,15 +33,30 @@ typedef enum { Top, Middle, Bottom } vertical_t;
 // Function prototypes
 ///////////////////////////////////////////////////////////////////////////////
 
-// handle out of bounds cases
+/* Handles debayering of pixels on the boundary of the image
+ *    -- pixels_in: 3 by 3 array of pixels centered to debayer
+ *    -- lateral: what kind of vertical boundary this is (if any)
+ *    -- vertical: what kind of horizontal boundary this is (if any)
+ *    -- pixels_out: 3 by 3 array of debayered pixels
+ * Refer to our debayering explanation (https://kavidey.github.io/NeoObscura/mcu_design/#debayering) for more details*/ 
 void edge_handler(uint8_t pixels_in[3][3], lateral_t lateral,
                   vertical_t vertical, uint8_t pixels_out[3][3]);
 
-// The filter3x3 function
+/* Handles debayering of pixels on the boundary of the image
+ *    -- pixels_in: 3 by 3 array of pixels centered to debayer
+ *    -- lateral: what kind of vertical boundary this is (if any)
+ *    -- vertical: what kind of horizontal boundary this is (if any)
+ *    -- color: what color of light the center pixel of was reading
+ *
+ * returns: RGBA color of center pixel
+ * Refer to our debayering explanation (https://kavidey.github.io/NeoObscura/mcu_design/#debayering) for more details*/ 
 rgba_t filter3x3(uint8_t pixels_in[3][3], lateral_t lateral,
                  vertical_t vertical, color_t color);
 
-// The debayer function
+/* Debayers an image
+ *    -- input: pointer to input greyscale image
+ *    -- output: pointer to output color image (must be same size as input)
+ * Refer to our debayering explanation (https://kavidey.github.io/NeoObscura/mcu_design/#debayering) for more details*/ 
 void debayer(pixel_buf_Type *input, color_pixel_buf_Type *output);
 
 #endif

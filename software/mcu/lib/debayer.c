@@ -1,5 +1,11 @@
-// debayer.c
-// debayer functions
+/*
+File: debayer.c
+Author(s): Henry Merrilees
+Email(s): hmerrilees@hmc.edu
+Date: 12/7/23
+
+Source code for debayer functions
+*/
 
 #include "debayer.h"
 

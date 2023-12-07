@@ -1,5 +1,12 @@
-// qoi.c
-// qoi compression functions
+/*
+File: qoi.c
+Author(s): Neil Chulani, Kavi Dey
+Email(s): nchulani@hmc.edu, kdey@hmc.edu
+Date: 12/7/23
+
+Source code for interfacing with QOI compression accelerator
+*/
+
 
 #include "STM32L432KC_SPI.h"
 

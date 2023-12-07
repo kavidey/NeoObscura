@@ -1,5 +1,11 @@
-// sensor.c
-// sensor functions
+/*
+File: sensor.c
+Author(s): Kavi Dey
+Email(s): kdey@hmc.edu
+Date: 12/7/23
+
+Source code for interfacing with sensor
+*/
 
 #include "sensor.h"
 #include "STM32L432KC_ADC.h"
@@ -34,10 +40,13 @@ void selectPixel(SENSOR_CFG_TypeDef *sensor_cfg, int x, int y) {
 uint8_t adcToBrightness(SENSOR_CFG_TypeDef *sensor_cfg, uint16_t adcVal) {
   float val = ((float)adcVal) / 65536.0;
   val = (val * (1 + sensor_cfg->alpha) + sensor_cfg->beta);
+
+  // Clamp output
   if (val < 0) {
     val = 0;
   } else if (val > 1) {
     val = 1;
   }
+  
   return (uint8_t)(val * 255.0);
 }
