@@ -81,7 +81,7 @@ The pixel $$f(i,j)$$ in the input image is adjusted using the following equation
 
 $$g(i,j) = \alpha \cdot f(i,j) + \beta$$
 
-We set $$\alpha = 0.2, \beta = -0.2$$ to create an image had a reasonable amount of contrast and black level close to 0.
+We set $$\alpha = 1.1, \beta = -0.1$$ to create an image had a reasonable amount of contrast and black level close to 0.
 
 <!-- TODO: Add before and after images -->
 
@@ -180,6 +180,12 @@ The first task of the FPGA is to shift in the 1200 RGBA pixels into RAM over SPI
 Once it is done writing the pixels to RAM, the SPI module will set the pixelsReady signal high, which will tell the encoder module to begin encoding. Once the SPI module reads that the encoder is done encoding (when doneEncoding is high), it will shift out an information code of 0x80 to the MCU to indicate that the encoded image is ready, before shifting out the encoded bytes -->
 
 The SPI peripheral is setup with a 5 MHz clock with polarity of 0 and phase of 1. There is only one device on the SPI Bus (the FPGA) so the chip select line is replaced with a reset signal for initalizing the compression algorithm each time before use.
+
+The full reset sequence involves:
+
+1. Raising the reset line
+2. Writing 0xAF twice
+3. Lowering the reset line
 
 See [FPGA Design]({{ site.baseurl }}/fpga_design/) for a detailed explanation of how compression is implemented.
 
