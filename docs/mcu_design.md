@@ -95,7 +95,7 @@ A physical Bayer filter covers the camera. The pixel locations determine the "co
 The filter is applied to the sensor, and we obtain a single channel image
 
 <p align="center">
-    <img src="{{ site.baseurl }}/assets/img/single_channel.png" alt="Simulated raw sensor output of course logo" width="400"/>
+    <img src="{{ site.baseurl }}/assets/img/single_channel.png" alt="Simulated raw sensor output of course logo" width="400" style="image-rendering: pixelated;"/>
 </p>
 
 
@@ -141,7 +141,7 @@ We proceed to shift the 3x3 kernel to be centered at all the coordinates of the 
 The final result looks as follows.
 
 <p align="center">
-    <img src="{{ site.baseurl }}/assets/img/debayered.png" alt="Course Logo, Debayered" width="400"/>
+    <img src="{{ site.baseurl }}/assets/img/debayered.png" alt="Course Logo, Debayered" width="400" style="image-rendering: pixelated;"/>
 </p>
 
 
