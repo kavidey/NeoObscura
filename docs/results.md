@@ -4,12 +4,32 @@ title: Results
 permalink: /results/
 ---
 
-Working camera sensor
+Our camera sensor meets all the specifications we set out for ourselves at the beginning of this project:
 
-Resolution
+1. [x] MCU reads image from sensor
+2. [x] MCU and FPGA communicate over SPI
+3. [x] FPGA compresses images using the QOI algorithm
+4. [x] MCU sends compressed images to laptop over UART
+5. [x] Laptop saves and displays compressed images
 
-FPS
+We created a working 30x40 pixel sensor that outputs 8 bit, full color images at around 1.2 fps. The limiting factor in our FPS is the serial baudrate of XX. With a maximum ADC sampling speed of 5.33 Msps and 1200 samples per frame, our theoretical maximum is 4442 FPS. In practice (taking into account switching delays, CPU computation time, etc.) we achieve a sampling rate of 52 ksps resulting in 43.5 FPS (if we don't account for UART transmission time).
 
-Debayering
+<!-- 
+One frame takes 23 ms = 0.023 s
+There are 1200 samples per frame -> 0.0000191667 s per sample -> 52,173.822306396 samples per sec
+The limit on the FPS imposed by the ADC is 43.4782608696
+ -->
 
-Compression
+Debayering was not originally in our project proposal because we were not sure if it was possible to manufacture a bayer filter in time and it was not necessary for the electrical camera functionality. After successfully making one using an inkjet printer and printer transparencies we implemented a
+
+<!-- TODO: Add quantitative info about compression (runtime, efficiency, etc.)-->
+
+Compressing the images has a noticeable impact on the maximum FPS we can achieve over USART. A 30x40 RGB 8 bit image takes up 3,600 bytes. The theoretical maximum size of a 30x40 8 bit RGB*A* QOI encoded image is 6,100 bytes (which would have a worse FPS than sending the raw image) however in practice we see an average image size of XX. This results in an increase from XX to XX FPS when using QOI compression vs sending raw images!
+
+
+### Future Work
+There are a few improvements we want to make to this project. The first, most obvious one, is to design and manufacture a camera body and associated lens system so that it can be used as an actual camera instead of just a sensor.
+
+Additional features to increase its functionality as a camera including adding an onboard screen for displaying images, and the ability to save files to an SD card.
+
+To address the FPS limit imposed by USART, we also want to use the USB peripheral on the MCU to make the camera act as UVC device work with any computer without the need for python code to receive and display images.

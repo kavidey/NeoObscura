@@ -47,7 +47,7 @@ The source code for the project is located in the Github repository [here](https
 | Sensor PCB | Custom | 1 | $8.32 |  [source files](https://github.com/kavidey/NeoObscura/tree/e155/hardware/Sensor)* |
 | Mezzanine Breakout PCB | Custom | 2 | $0.69 |  [source files](https://github.com/kavidey/NeoObscura/tree/e155/hardware/MezzanineBreakout)* |
 | SMD Phototransistors | PT0805CS | 1200 | $0.08 |  [link](https://www.alibaba.com/product-detail/0805-SMD-Phototransistor-PT0805CS-Photosensor-Photosensitive_1600907962335.html) |
-| 16:1 Analog Mux & Breakout | CD74HC4067 | 3 | $5.95 |  [link](https://www.alibaba.com/product-detail/0805-SMD-Phototransistor-PT0805CS-Photosensor-Photosensitive_1600907962335.html) |
+| 16:1 Analog Mux & Breakout | CD74HC4067 | 3 | $5.95 |  [link](https://www.sparkfun.com/products/9056) |
 | Female Mezzanine Connector | 0513380574 | 2 | $2.30 |  [link](https://www.digikey.com/en/products/detail/molex/0513380574/2404972) |
 | Male Mezzanine Connector | 5017450501 | 2 | $2.11 |  [link](https://www.digikey.com/en/products/detail/molex/5017450501/2818869) |
 | 32:1 Analog Mux | ADG732BSUZ | 1 | $13.11 |  [link](https://www.digikey.com/en/products/detail/molex/5017450501/2818869) |

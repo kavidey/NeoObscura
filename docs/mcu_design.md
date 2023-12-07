@@ -39,6 +39,25 @@ There are several ways to start an ADC conversion (single conversion mode, conti
 
 #### Interfacing with Image Sensor
 
+There are 3 components to interfacing with the MCU, row selection, column selection, and output.
+
+Row selection uses a 32:1 analog mux that is built into the sensor PCB. There are 30 rows so 5 address bits are required to select the necessary row.
+
+Originally, we planned to use 3x 16 channel external ADCs and read from all columns at once, however we scaled down the design to be more achieveable in the timeline of this project (that would have required a 3rd custom PCB that we didn't have time to create). Because of that change, we opted to use three 16:1 analog muxes ([CD74HC4067](https://www.sparkfun.com/products/9056)) on our breadboard to control the 40 columns. Using three 16:1 muxes instead of one 64:1 mux requires slightly more complicated addressing logic than for the row selection. The MCU outputs a 6 bit signal indicating which column it wants to select. The *lower* 4 bits are wired to all three 16:1 muxes while the *upper* 2 bits are wired to a 2:4 bit decoder on the FPGA that controls the enable pin on each of the three 16:1 muxes, only activating the correct one based on the column the MCU wants to select.
+
+All of the address selection is done using the GPIO pins on the MCU.
+
+[ADC Peripheral](#adc-peripheral) and [ADC Interrupt Handler](#adc-interrupt-handler) have more details on exact process of setting up the ADC and reading individual pixels. Below is a trace of the voltage input to the ADC while one whole frame was being captured.
+
+<p align="center">
+    <img src="{{ site.baseurl }}/assets/img/sensor_trace.png" alt="Sensor Oscilloscope Trace" width="600"/>
+</p>
+<h5 align="center">
+Sensor Oscilloscope Trace
+</h5>
+
+Note that the ~120 Hz component of the signal is due to the flicker of the fluorescent lights in the digital lab.
+
 #### Image Processing
 
 The output of the image processing pipeline is a 8 bit 30x40 QOI encoded image. We chose to use the ADC in 12 bit mode even though the final image is 8 bit to prevent [color banding](https://en.wikipedia.org/wiki/Colour_banding) and other image artifacts caused by insufficient color resolution.
@@ -70,7 +89,7 @@ We set $$\alpha = 0.2, \beta = -0.2$$ to create an image had a reasonable amount
 
 #### Compression & SPI Peripheral
 
-The MCU and FPGA communicate using over SPI using a custom set of commands as shown below:
+The MCU and FPGA communicate using over SPI using a custom sequence of commands as shown below:
 
 <div align="center">
     <div class="mermaid" style="width: 500px;">
@@ -102,7 +121,9 @@ Note right of F: 1. Raise FPGA Reset<br/>2. Send 0xAF (2x)<br/>3.   Lower FPGA R
 The first task of the FPGA is to shift in the 1200 RGBA pixels into RAM over SPI from the MCU.
 Once it is done writing the pixels to RAM, the SPI module will set the pixelsReady signal high, which will tell the encoder module to begin encoding. Once the SPI module reads that the encoder is done encoding (when doneEncoding is high), it will shift out an information code of 0x80 to the MCU to indicate that the encoded image is ready, before shifting out the encoded bytes -->
 
-The SPI peripheral is setup with a 5 MHz clock with polarity of 0 and phase of 1. There is only one device on the SPI Bus (the FPGA) so the chip select line was replaced with a reset signal.
+The SPI peripheral is setup with a 5 MHz clock with polarity of 0 and phase of 1. There is only one device on the SPI Bus (the FPGA) so the chip select line is replaced with a reset signal for initalizing the compression algorithm each time before use.
+
+See [FPGA Design]({{ site.baseurl }}/fpga_design/) for a detailed explanation of how compression is implemented.
 
 #### USART Peripheral
 

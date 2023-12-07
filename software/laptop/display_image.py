@@ -123,7 +123,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "-cmp",
         "--compression",
-        help="Decompress the image before displaying",
+        help="Decompress the image before displaying (overrides: --channels, --width, --height)",
         type=str,
         default="none",
     )

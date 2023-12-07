@@ -6,6 +6,8 @@ permalink: /team/
 
 # Kavi Dey
 
+Kavi is a undergraduate at Harvey Mudd College (Class of 2026). He as a deep interest in computer science, engineering, and physics, especially with applications in deep learning, robotics, and quantum computing.
+
 #### Contact
 <!-- Personal Website -->
 
