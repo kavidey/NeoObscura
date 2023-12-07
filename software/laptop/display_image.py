@@ -24,30 +24,34 @@ def read_serial():
 
             while running:
                 start_time = time.time()
-                data = ser.readline()[:-1]
                 if COMPRESSION == "none":
+                    data = ser.readline()[:-1]
                     if len(data) == IMAGE_BYTES:
-                        pixels_strings = split_into_groups(data, BYTES_PER_CHANNEL)
-                        pixels = [int(pixel, 16) for pixel in pixels_strings]
-                        pixels = np.array(pixels, dtype=np.uint8).reshape(
-                            (VERTICAL_RESOLUTION, HORIZONTAL_RESOLUTION, NUM_CHANNELS)
-                        )
-                        image = pixels
+                        try:
+                            pixels_strings = split_into_groups(data, BYTES_PER_CHANNEL)
+                            pixels = [int(pixel, 16) for pixel in pixels_strings]
+                            pixels = np.array(pixels, dtype=np.uint8).reshape(
+                                (VERTICAL_RESOLUTION, HORIZONTAL_RESOLUTION, NUM_CHANNELS)
+                            )
+                            image = pixels
+                        except Exception as e:
+                            print(f"Recieved invalid image: {e}")
                     else:
                         print(f"Recieved invalid image with {len(data)} bytes")
                 elif COMPRESSION == "qoi":
                     try:
-                        decoded = bytearray.fromhex(data.decode('ascii'))
-                        image = qoi.decode(decoded)
-                        print(image)
+                        data = ser.read_until(bytes([0,0,0,0,0,0,0,1]))
+                        # print(data)
+                        # print(len(data))
+                        image = qoi.decode(data)
+                        # print(image)
                         if SAVE_FIRST_IMAGE:
                             i = 0
                             while (OUTPUT_DIR / f"image_{i}.qoi").exists():
                                 i += 1
                             
                             with (OUTPUT_DIR / f"image_{i}.qoi").open("wb") as f:
-                                f.write(decoded)
-                            qoi.write(OUTPUT_DIR / f"image_{i}.test.qoi", image)
+                                f.write(data)
                             running = False
                             break
                     except Exception as e:
@@ -63,7 +67,7 @@ def display_image():
     global image
     global running
     while running:
-        displayImage = cv2.resize(image, (400, 300))
+        displayImage = cv2.cvtColor(cv2.resize(image, (400, 300)), cv2.COLOR_RGB2BGR)
         if SHOW_FPS:
             cv2.putText(
                 displayImage,
