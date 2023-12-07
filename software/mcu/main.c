@@ -101,7 +101,7 @@ int main(void) {
 #endif
 
   // Setup UART
-  USART_LAPTOP = initUSART(USART2_ID, 115200);
+  USART_LAPTOP = initUSART(USART2_ID, 921600);
 
   // Setup ADC
   initADC(ADC_12BIT_RESOLUTION);

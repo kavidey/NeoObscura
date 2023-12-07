@@ -115,7 +115,7 @@ if __name__ == "__main__":
         "--baudrate",
         help="Baudrate of the serial port",
         type=int,
-        default=115200,
+        default=921600,
     )
     parser.add_argument(
         "-c", "--channels", help="Number of channels per pixel", type=int, default=3
