@@ -1,10 +1,10 @@
 /*
- * Authors:    Kavi Dey, kdey@hmc.edu
- *             Neil Chulani, nchulani@.hmc.edu
- * Created:   12/3/2023
+ * Author:    Neil Chulani, nchulani@.hmc.edu
+ * Created:   12/6/2023
  * 
- * This file contains a set of modules for QOI compression
+ * This file contains modules to perform QOI encoding on an FPGA for hardware accelerated compression
  */
+
 
 module qoi2top (
 	input logic sck,
@@ -28,12 +28,10 @@ module qoi2top (
 	
 	logic high_clk;
 	HSOSC #()
-		 hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(high_clk));
-	logic low_clk;
-	LSOSC #()
-		 lf_osc (.CLKLFPU(1'b1), .CLKLFEN(1'b1), .CLKLF(low_clk));	 
-		 
-	logic [4:0] new_clk;
+		 hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(high_clk)); 
+		
+	// Create new clock that is 1/2 the speed of ram clock to remove metastability issues 
+	logic [1:0] new_clk;
 	always_ff @(negedge high_clk) begin
 		new_clk = new_clk + 1;
 	end
@@ -42,6 +40,8 @@ module qoi2top (
 	encoder encoderInstance(new_clk[1], reset, pixelsReady, doneEncoding, encoderControllingRam, encoderRamIn, encoderRamAddress, encoderRamWE, encoderRamOut);
 	ram ramInstance (high_clk, spiControllingRam, spiRamIn, spiRamAddress, spiRamWE, spiRamOut, encoderControllingRam, encoderRamIn, encoderRamAddress, encoderRamWE, encoderRamOut);
 endmodule
+
+// Module to encode 1200 RGBA pixels in RAM following QOI image compression format
 module encoder ( 
 	input logic clk,
 	input logic reset,
@@ -55,6 +55,7 @@ module encoder (
 	output logic encoderRamWE,
 	input logic [15:0] encoderRamOut
 );
+	// Create internal FSM signals for QOI encoding
 	logic doneEncoding;
 	logic [31:0] lastPixel, curPixel;
 	logic [5:0] runCount, index;
@@ -104,6 +105,7 @@ module encoder (
 	assign vg_bOutHelper = vg_b + 8;
 	assign vg_bOut = vg_bOutHelper[3:0];
 	
+	// Run count helpers
 	logic [5:0] runCountOutHelper;
 	assign runCountOutHelper = runCount - 1;
 	logic [5:0] runCountOut;
@@ -113,19 +115,22 @@ module encoder (
 	logic [13:0] readAddress, writeAddress;
 	logic finalPixel;
 	
+	// FSM states
 	typedef enum logic [6:0] {S0, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S16, S17, S18, S19, S20, S21, S22, S23, S24, S25, S26, S27, S28, S29, S30, S31, S32, S33, S34, S35, S36, S37, S38, S39, S40, S41, S42, S43, S44, S45, S46, S47, S48, S49, S50, S51, S52, S53, S54, S55, S56, S57, S58, S59, S60, S61, S62, S63, S64, S65, S66, S67, S68, S69, S70, S71, S72, S73, S74, S75, S76, S77, S78, S79, S80, S81, S82, S83, S84, S85, S86, S87, S88, S89, S90, S91, S92, S93, S94, S95, S96, S97, S98, S99, S100} statetype;
 	statetype state, nextstate, jumpBack;
 	
+	// FSM state register
 	always_ff @(posedge clk, posedge reset)
 		if (reset) state <= S0;
 		else	   state <= nextstate;
 	
+	// FSM nextstate logic
 	always_comb
 		case (state)
 			S0: nextstate = S1;
 			S1: if (pixelsReady) nextstate = S3;
 				else			 nextstate = S1;
-			S2: nextstate = S3;
+			S2: nextstate = S3; // Start load next pixel
 			S3: nextstate = S4;
 			S4: nextstate = S5;
 			S5: nextstate = S6;
@@ -150,16 +155,16 @@ module encoder (
 			S24: nextstate = S25;
 			S25: nextstate = S26;
 			S26: nextstate = S27;
-			S27: nextstate = S33; 
-			S28: nextstate = S29;
+			S27: nextstate = S33; // End load next pixel 
+			S28: nextstate = S29; // Begin write encodedByte
 			S29: nextstate = S86;
 			S86: nextstate = S87;
 			S87: nextstate = S30;
 			S30: nextstate = S31;
-			S31: nextstate = S32;
-			S32: if (doneEncoding) nextstate = S53;
-				 else nextstate = jumpBack;
-			S33: if (curPixel == lastPixel) nextstate =  S34;
+			S31: nextstate = S32; 
+			S32: if (doneEncoding) nextstate = S53; // End write encodedByte
+				 else nextstate = jumpBack;					 
+			S33: if (curPixel == lastPixel) nextstate =  S34; // First encoding state
 				 else						 nextstate = S36;
 			S34: if (runCount == 62 || finalPixel) nextstate = S35;
 				 else								nextstate = S2;
@@ -185,8 +190,8 @@ module encoder (
 			S49: nextstate = S28;
 			S50: nextstate = S28;
 			S51: nextstate = S28;
-			S52: nextstate = S28;
-			S53: nextstate = S54;
+			S52: nextstate = S28; // Last encoding state
+			S53: nextstate = S54; // Begin write QOI end footer
 			S54: nextstate = S88;
 			S88: nextstate = S55;
 			S55: nextstate = S56;
@@ -225,11 +230,12 @@ module encoder (
 			S82: nextstate = S99;
 			S99: nextstate = S100;
 			S100: nextstate = S84;
-			S84: nextstate = S85;
-			S85: nextstate = S85;
+			S84: nextstate = S85; // End write QOI end footer
+			S85: nextstate = S85; // Done
 			default: nextstate = S0;
 		endcase
 	
+	// FSM Output logic 
 	always_ff @(posedge clk)
 		case (state)
 			S0: begin
@@ -442,12 +448,7 @@ module encoder (
 		endcase
 endmodule
 
-
-
-
-
-
-
+// Module to recieve 1200 RGBA pixels from MCU and send encoded bytes back to MCU after compression
 module spi (
 	input logic sck,
 	input logic sdi,
@@ -523,6 +524,7 @@ module spi (
 				if (doneEncoding) begin
 					spiCounterNew = spiCounterNew + 1;
 					if (firstOut) begin
+						// Shift out 0x80 to signal MCU when done encoding
 						sdo = outCode[7 - spiOutCounter];
 						if (spiOutCounter == 7) begin
 							firstOut = 0;
@@ -530,7 +532,6 @@ module spi (
 					end
 					else begin
 						sdo = dataOut[7 - spiOutCounter];
-						//sdo = 1;
 					end
 					
 					if (spiOutCounter == 0) begin
@@ -571,7 +572,6 @@ module spi (
 					spiOutCounter = spiOutCounter + 1;
 					if (spiCounterNew == 0) begin
 						dataOut = tempDataOut;
-						//dataOut = 8'h77; // should be tempdataout ----------------------------------------------------------------
 					end
 				end
 				else begin
@@ -581,6 +581,7 @@ module spi (
 	end
 endmodule
 
+// Module to allow both SPI and Encoder modules to read/write RAM
 module ram (
 	input logic clk,
 	
