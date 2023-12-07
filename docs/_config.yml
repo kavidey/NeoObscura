@@ -1,6 +1,7 @@
 # Configuration Options
 title: NeoObscura
 author: "Kavi Dey, Henry Merrilees, Neil Chulani"
+description: "NeoObscura: A completely from scratch image sensor with QOI Compression"
 theme: minima
 
 header-pages:

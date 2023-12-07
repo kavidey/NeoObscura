@@ -16,7 +16,7 @@ Kavi is a undergraduate at Harvey Mudd College (Class of 2026). He as a deep int
 <a href="mailto:kaviasher@gmail.com">
 <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/envelope.svg" width="25" height="25">
 </a>
-<a href="github.com/kavidey/">
+<a href="https://github.com/kavidey/">
 <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/github.svg" width="25" height="25">
 </a>
 <a href="https://www.linkedin.com/in/kavidey/">
