@@ -86,6 +86,64 @@ We set $$\alpha = 0.2, \beta = -0.2$$ to create an image had a reasonable amount
 <!-- TODO: Add before and after images -->
 
 ##### Debayering
+A physical Bayer filter covers the camera. The pixel locations determine the "color" of each value.
+
+<p align="center">
+    <img src="{{ site.baseurl }}/assets/diagrams/debayering/filter.png" alt="Bayer filter pattern" width="400"/>
+</p>
+
+The filter is applied to the sensor, and we obtain a single channel image
+
+<p align="center">
+    <img src="{{ site.baseurl }}/assets/diagrams/img/single_channel.png" alt="Simulated raw sensor output of course logo" width="400"/>
+</p>
+
+
+Debayering is the process of converting this single channel image (visualized below in grayscale) into an image with full color per each pixel.
+
+Each color channel of each color pixel is calculated as a linear interpolation of adjacent values of the respective color.
+
+Each color pixel can therefore be obtained from the values of the 3x3 grid of single-channel values centered on its location.
+
+<p align="center">
+    <img src="{{ site.baseurl }}/assets/diagrams/debayering/kernel.png" alt="Channel calculation" width="400"/>
+</p>
+
+
+This 3x3 grid covers out-of-bounds values when calculating pixels on the border of the image. 
+
+
+<p align="center">
+    <img src="{{ site.baseurl }}/assets/diagrams/debayering/overlay.png" alt="Filter on border pixel" width="400"/>
+</p>
+
+Naively, one would extend the border pixels as necessary to fill the filter input. 
+This violates the Bayer patern, which may instead be preserved by copying/mirroring the row/column one removed from the edge.
+Pixels on two edges (i.e. corner pixels) are accounted for by sequentially mirroring horizontally/vertically, where the ordering making no difference. Pre-handling the (literal) edge cases enables the 3x3 kernel logic to remain simple.
+
+<p align="center">
+    <img src="{{ site.baseurl }}/assets/diagrams/debayering/edge_handling.png" alt="Edge handling" width="400"/>
+</p>
+
+It would be theoretically ideal that in the case of a green corner, the diagonally inferred pixel would be sampled from the corner itself rather than the green pixel one removed from both edges. 
+
+This ends up not mattering as the 3x3 kernel samples channels directly on the same color tile, so the green channel of the green corner Bayer tile corner is sampled directly anyways, irrespective of what green pixels are mirrored.
+
+We proceed to shift the 3x3 kernel to be centered at all the coordinates of the image until the full color image is calculated.
+
+<p align="center">
+    <img src="{{ site.baseurl }}/assets/diagrams/debayering/progression.png" alt="Filter traverse pattern" width="400"/>
+</p>
+
+The final result looks as follows.
+
+<p align="center">
+    <img src="{{ site.baseurl }}/assets/diagrams/img/debayered.png" alt="Course Logo, Debayered" width="400"/>
+</p>
+
+
+
+
 
 #### Compression & SPI Peripheral
 
