@@ -39,9 +39,7 @@ There are several ways to start an ADC conversion (single conversion mode, conti
 #### Debayering
 
 #### Color Correction
-{% katex display %}
-c = \pm\sqrt{a^2 + b^2}
-{% endkatex %}
+$$f(x) = \int_{-\infty}^\infty \hat f(\xi)\,e^{2 \pi i \xi x} \,d\xi$$
 
 #### Compression & SPI Peripheral
 
