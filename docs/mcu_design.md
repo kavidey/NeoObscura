@@ -77,7 +77,7 @@ The brightness and contrast of the image straight from the camera sensor depend 
 
 To correct the brightness and contrast, we use alpha-beta adjustment as described by Richard Szeliski in Computer Vision: Algorithms and Applications, 2nd ed.
 
-The pixel in the input image $$f(i,j)$$ is adjusted using the following equation:
+The pixel $$f(i,j)$$ in the input image is adjusted using the following equation:
 
 $$g(i,j) = \alpha \cdot f(i,j) + \beta$$
 

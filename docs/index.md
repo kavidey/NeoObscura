@@ -35,3 +35,7 @@ Useful pieces of documentation including: schematics, the BOM, references, and s
 #### [Team]({{ site.baseurl }}/team/)
 
 Who we are
+
+#### [Media]({{ site.baseurl }}/media/)
+
+Images and videos showing our project in action
