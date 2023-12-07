@@ -36,3 +36,6 @@ Since both the SPI and Encoder modules need to read and write to/from RAM, the R
 
 #### Top Module 
 The Top module simply instantiates 1 instance of each of the above modules, as well as the internal high frequency oscillator to be used as the clock. One important thing to note is that the clock signal that is fed into the encoder module runs at half the speed of the clock signal fed into the RAM module to remove the potential for metastability on the RAM I/Os. Also, the SPI clock (sck) must run at a speed of at least half of the internal high frequency oscillator, which runs at 48 MHz, for the same reason. 
+
+#### 2:4 Decoder
+Alongside the QOI Compression logic, the FPGA also implements a 2:4 decoder to decode addresses for the analog muxes. For more details on why this is implemented, refer to [Interfacing with Image Sensor](https://kavidey.github.io/NeoObscura/mcu_design/#interfacing-with-image-sensor).
