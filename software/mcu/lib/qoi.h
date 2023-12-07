@@ -22,7 +22,7 @@ typedef struct {
   int size;
 } encoded_image_Type;
 
-#define QOI_DELAY 200000
+#define QOI_DELAY 100000
 
 
 ///////////////////////////////////////////////////////////////////////////////

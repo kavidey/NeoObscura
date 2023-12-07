@@ -95,7 +95,7 @@ A physical Bayer filter covers the camera. The pixel locations determine the "co
 The filter is applied to the sensor, and we obtain a single channel image
 
 <p align="center">
-    <img src="{{ site.baseurl }}/assets/diagrams/img/single_channel.png" alt="Simulated raw sensor output of course logo" width="400"/>
+    <img src="{{ site.baseurl }}/assets/img/single_channel.png" alt="Simulated raw sensor output of course logo" width="400"/>
 </p>
 
 
@@ -141,7 +141,7 @@ We proceed to shift the 3x3 kernel to be centered at all the coordinates of the 
 The final result looks as follows.
 
 <p align="center">
-    <img src="{{ site.baseurl }}/assets/diagrams/img/debayered.png" alt="Course Logo, Debayered" width="400"/>
+    <img src="{{ site.baseurl }}/assets/img/debayered.png" alt="Course Logo, Debayered" width="400"/>
 </p>
 
 
@@ -196,7 +196,7 @@ See [FPGA Design]({{ site.baseurl }}/fpga_design/) for a detailed explanation of
 
 The primary goal for this project is to build a functioning camera not to drive a display, so we chose USART as simple protocol for sending images to a laptop.
 
-After the image is captured, color corrected, debayered, and compressed, it is converted to hex and sent over USART to the laptop. We chose specifically to use USART_2, which transmits through the built in Micro-USB port on the Nucleo board for simplicity. We are transitting at 115200 bits/s which was the highest we could go without running into signal integrity issues and dropping a significant number of frames.
+After the image is captured, color corrected, debayered, and compressed, it is converted to hex and sent over USART to the laptop. We chose specifically to use USART_2, which transmits through the built in Micro-USB port on the Nucleo board for simplicity. We are transitting with a baudrate of 921,600 which was the highest we could go without running into signal integrity issues and dropping a significant number of frames.
 
 See [results]({{ site.baseurl }}/results/) for more information the maximum frame rate we were able to achieve.
 

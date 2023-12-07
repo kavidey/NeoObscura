@@ -26,7 +26,7 @@ Debayering was not originally in our project proposal because we were not sure i
 
 <!-- TODO: Add quantitative info about compression (runtime, efficiency, etc.)-->
 
-Compressing the images has a noticeable impact on the maximum FPS we achieve (unfortunately decreasing it). A 30x40 RGB 8 bit image takes up 3,600 bytes but requires sending 7,200 bytes over serial (using encoding each byte as a 2 digit hex number). The theoretical maximum size of a 30x40 8 bit RGB*A* QOI encoded image is 6,100 bytes (12,200 bytes over serial). This would have a worse FPS than sending the raw image however in practice we see an average image size of 2,500 bytes. The QOI compressed image takes less *does* take less time to send, the compression itself and communicating with the FPGA both take a significant amount of time, resulting in 1.5 FPS.
+Compressing the images has a noticeable impact on the maximum FPS we achieve (unfortunately decreasing it). A 30x40 RGB 8 bit image takes up 3,600 bytes but requires sending 7,200 bytes over serial (using encoding each byte as a 2 digit hex number). The theoretical maximum size of a 30x40 8 bit RGB*A* QOI encoded image is 6,100 bytes (12,200 bytes over serial). This would have a worse FPS than sending the raw image however in practice we see an average image size of 2,500 bytes. The QOI compressed image takes less *does* take less time to send, the compression itself and communicating with the FPGA both take a significant amount of time, resulting in 2 FPS.
 
 
 ### Future Work
