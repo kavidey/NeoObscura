@@ -24,6 +24,7 @@ The limit on the FPS imposed by the ADC is 43.4782608696
 
 Debayering was not originally in our project proposal because we were not sure if it was possible to manufacture a bayer filter in time and it was not necessary for the electrical camera functionality. After successfully making one using an inkjet printer and printer transparencies we implemented a
 
+Using the FPGA as a hardware accelerator allows us to successfully encode an image efficiently. Each pixel takes a maximum of 52 clock cycles to load, encode, and write to ram, and for 1200 pixels, that is 62,000 clock cycles. Writing the end footer to RAM then takes 40 more clock cycles, giving a total of 62,040 clock cycles. Since the encoder runs at 24MHz, encoding one image takes a maximum of less than 0.0026 seconds. 
 <!-- TODO: Add quantitative info about compression (runtime, efficiency, etc.)-->
 
 Compressing the images has a noticeable impact on the maximum FPS we achieve (unfortunately decreasing it). A 30x40 RGB 8 bit image takes up 3,600 bytes but requires sending 7,200 bytes over serial (using encoding each byte as a 2 digit hex number). The theoretical maximum size of a 30x40 8 bit RGB*A* QOI encoded image is 6,100 bytes (12,200 bytes over serial). This would have a worse FPS than sending the raw image however in practice we see an average image size of 2,500 bytes. The QOI compressed image takes less *does* take less time to send, the compression itself and communicating with the FPGA both take a significant amount of time, resulting in 2 FPS.
