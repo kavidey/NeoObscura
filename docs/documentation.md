@@ -58,4 +58,18 @@ The source code for the project is located in the Github repository [here](https
 <!-- 8.32+2\cdot0.69+0.08\cdot1200+3\cdot5.95+2\cdot2.30+2\cdot2.11+13.11 -->
 *\*Note: The custom PCBs were manufactured by [JLCPCB](https://jlcpcb.com/).*
 
+# References
+[1] [http://szsgir.com/data/PT0805CS.pdf](http://szsgir.com/data/PT0805CS.pdf)
+
+[2] [https://qoiformat.org/](https://qoiformat.org/)
+
+[3] [https://www.electronics-notes.com/articles/electronic_components/transistor/phototransistor-circuits-applications.php](https://www.electronics-notes.com/articles/electronic_components/transistor/phototransistor-circuits-applications.php)
+
+<!-- TODO: Make this an actual reference format -->
+
+# Inspiration
+The inspiration for this project came from a simlar project found [here](https://www.youtube.com/watch?v=PaXweP73NT4).
+
+We aim to expland on this project by making it higher resolution, adding a bayer filter for color imagery, and adding on-device image compression.
+
 [^1]: [https://www.electronics-notes.com/articles/electronic_components/transistor/phototransistor-circuits-applications.php](https://www.electronics-notes.com/articles/electronic_components/transistor/phototransistor-circuits-applications.php)
