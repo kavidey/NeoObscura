@@ -32,14 +32,23 @@ Each time the ADC interrupt handler is triggered it saves the current pixel into
 <!-- TODO: move color correction code from the ADC interrupt to the main loop -->
 
 #### ADC Peripheral
-The ADC is setup to read the voltage output of a single pixel on one of its 16 external channels. We are using the ADC at its maximum resolution of 12 bits and maximum sampling rate of 5.33 Msps (Note: the ADC sampling rate is not the limiting factor in our FPS, see [results]({{ site.baseurl }}/results/) for more details). Nonetheless, the ADC is driven using the system clock at the maximum speed of 80 MHz to reduce sampling time as much as possible.
+The ADC is setup to read the voltage output of a single pixel on one of its 16 external channels. We are using the ADC at its maximum resolution of 12 bits and maximum sampling rate of 5.33 Msps (Note: the ADC sampling rate is not the limiting factor in our FPS, see [results]({{ site.baseurl }}/results/) for more details). Nonetheless, the ADC is driven using the system clock at the maximum speed of 80 MHz to reduce sampling time as much as possible. We are using the ADC in left aligned mode with offset disabled so that the magnitude of the output does not depend on the ADC resolution.
 
 There are several ways to start an ADC conversion (single conversion mode, continuous conversion mode, and hardware or software triggers). We chose to use software triggers to start all of our conversions because we want the highest possible sampling speed but also need to change the state of the analog muxes between each sample. As shown in the [MCU Block Diagram](#mcu-block-diagram), conversions are started in software from the main loop (at the beginning of a new frame) or in the ADC Handler Interrupt after the muxes have been setup for the next pixel.
 
-#### Debayering
+#### Image Processing
+##### Color Correction
+The brightness and contrast of the image straight from the camera sensor depend on a lot of factors including: the ambient light and the resistor used in the phototransistor circuit.
 
-#### Color Correction
-$$f(x) = \int_{-\infty}^\infty \hat f(\xi)\,e^{2 \pi i \xi x} \,d\xi$$
+To correct the brightness and contrast, we use alpha-beta adjustment as described by Richard Szeliski in Computer Vision: Algorithms and Applications, 2nd ed.
+
+The pixel in the input image $$f(i,j)$$ is adjusted using the following equation:
+
+$$g(i,j) = \alpha \cdot f(i,j) + \beta$$
+
+We set $$\alpha = 0.2, \beta = -0.2$$ to create an image had a reasonable amount of contrast and black level close to 0.
+
+##### Debayering
 
 #### Compression & SPI Peripheral
 
