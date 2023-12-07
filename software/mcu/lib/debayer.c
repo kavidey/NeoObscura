@@ -157,6 +157,7 @@ void debayer(pixel_buf_Type *input, color_pixel_buf_Type *output) {
 
       // Call the filter
       pixel_out = filter3x3(pixels_in, lateral, vertical, color);
+      pixel_out.a = 0xFF; // Set alpha as fully visible
       (*output)[j][i] = pixel_out;
     }
   }

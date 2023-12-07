@@ -12,7 +12,9 @@ Our camera sensor meets all the specifications we set out for ourselves at the b
 4. [x] MCU sends compressed images to laptop over UART
 5. [x] Laptop saves and displays compressed images
 
-We created a working 30x40 pixel sensor that outputs 8 bit, full color images at around 1.2 fps. The limiting factor in our FPS is the serial baudrate of XX. With a maximum ADC sampling speed of 5.33 Msps and 1200 samples per frame, our theoretical maximum is 4442 FPS. In practice (taking into account switching delays, CPU computation time, etc.) we achieve a sampling rate of 52 ksps resulting in 43.5 FPS (if we don't account for UART transmission time).
+We created a working 30x40 pixel sensor that outputs 8 bit, full color images at around 1.2 FPS. The limiting factor in our FPS is the serial baudrate of XX. With a maximum ADC sampling speed of 5.33 Msps and 1200 samples per frame, our theoretical maximum is 4442 FPS. In practice (taking into account switching delays, CPU computation time, etc.) we achieve a sampling rate of 52 ksps resulting in 43.5 FPS (if we don't account for USART transmission time).
+
+Accounting for USART transmission time (assuming an average compressed image size of XX bytes) we get the expected 1.2 FPS.
 
 <!-- 
 One frame takes 23 ms = 0.023 s
@@ -24,7 +26,9 @@ Debayering was not originally in our project proposal because we were not sure i
 
 <!-- TODO: Add quantitative info about compression (runtime, efficiency, etc.)-->
 
-Compressing the images has a noticeable impact on the maximum FPS we can achieve over USART. A 30x40 RGB 8 bit image takes up 3,600 bytes. The theoretical maximum size of a 30x40 8 bit RGB*A* QOI encoded image is 6,100 bytes (which would have a worse FPS than sending the raw image) however in practice we see an average image size of XX. This results in an increase from XX to XX FPS when using QOI compression vs sending raw images!
+Compressing the images has a noticeable impact on the maximum FPS we can achieve over USART. A 30x40 RGB 8 bit image takes up 3,600 bytes but requires sending 7,200 bytes over serial (using encoding each byte as a 2 digit hex number).
+
+The theoretical maximum size of a 30x40 8 bit RGB*A* QOI encoded image is 6,100 bytes (12,200 bytes over serial). This would have a worse FPS than sending the raw image however in practice we see an average image size of XX bytes. This results in an increase from XX to XX FPS when using QOI compression vs sending raw images!
 
 
 ### Future Work

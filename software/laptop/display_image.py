@@ -37,7 +37,19 @@ def read_serial():
                         print(f"Recieved invalid image with {len(data)} bytes")
                 elif COMPRESSION == "qoi":
                     try:
-                        image = qoi.decode(bytearray.fromhex(data.decode('ascii')))
+                        decoded = bytearray.fromhex(data.decode('ascii'))
+                        image = qoi.decode(decoded)
+                        print(image)
+                        if SAVE_FIRST_IMAGE:
+                            i = 0
+                            while (OUTPUT_DIR / f"image_{i}.qoi").exists():
+                                i += 1
+                            
+                            with (OUTPUT_DIR / f"image_{i}.qoi").open("wb") as f:
+                                f.write(decoded)
+                            qoi.write(OUTPUT_DIR / f"image_{i}.test.qoi", image)
+                            running = False
+                            break
                     except Exception as e:
                         print(f"Recieved invalid image qoi image: {e}")
                 fps = 1 / (time.time() - start_time)
@@ -49,7 +61,8 @@ def read_serial():
 # Displays (and upscales) the image
 def display_image():
     global image
-    while True:
+    global running
+    while running:
         displayImage = cv2.resize(image, (400, 300))
         if SHOW_FPS:
             cv2.putText(
@@ -102,7 +115,7 @@ if __name__ == "__main__":
         "--baudrate",
         help="Baudrate of the serial port",
         type=int,
-        default=115200,
+        default=921600,
     )
     parser.add_argument(
         "-c", "--channels", help="Number of channels per pixel", type=int, default=3
@@ -130,8 +143,16 @@ if __name__ == "__main__":
     parser.add_argument(
         "-o", "--output", help="Output file directory", type=str, default="snapshots"
     )
+    parser.add_argument(
+        "--save-first-image",
+        help="Saves the first image to the output directory and exits. This is only valid when used with --compression",
+        action="store_const",
+        const=True,
+        default=False,
+    )
 
     args = parser.parse_args()
+    # print(args)
 
     # Parameters
     SERIAL_PORT = args.serialport
@@ -140,6 +161,7 @@ if __name__ == "__main__":
     OUTPUT_DIR = Path(args.output)
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     COMPRESSION = args.compression
+    SAVE_FIRST_IMAGE = args.save_first_image
 
     # Constants
     BYTES_PER_CHANNEL = 2
@@ -159,8 +181,9 @@ if __name__ == "__main__":
 
     serial_thread = threading.Thread(target=read_serial)
     serial_thread.start()
-    display_image()
-    running = False
+    if not SAVE_FIRST_IMAGE:
+        display_image()
+        running = False
     serial_thread.join()
 
     cv2.destroyAllWindows()

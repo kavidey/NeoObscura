@@ -55,14 +55,14 @@ USART_TypeDef * initUSART(int USART_ID, int baud_rate) {
 
     // Set M = 00
     USART->CR1 &= ~(USART_CR1_M0 | USART_CR1_M1);    // M=00 corresponds to 1 start bit, 8 data bits, n stop bits
-    USART->CR1 &= ~USART_CR1_OVER8; // Set to 16 times sampling freq
+    USART->CR1 |= USART_CR1_OVER8; // Set to 8 times sampling freq
     USART->CR2 &= ~USART_CR2_STOP;  // 0b00 corresponds to 1 stop bit
 
     // Set baud rate to 115200 (see RM 38.5.4 for details)
-    // Tx/Rx baud = f_CK/USARTDIV (since oversampling by 16)
+    // Tx/Rx baud = 2*f_CK/USARTDIV (since oversampling by 16)
     // f_CK = 16 MHz (HSI)
 
-    USART->BRR = (uint16_t) (HSI_FREQ / baud_rate);
+    USART->BRR = (uint16_t) (2*HSI_FREQ / baud_rate);
 
     USART->CR1 |= USART_CR1_UE;     // Enable USART
     USART->CR1 |= USART_CR1_TE | USART_CR1_RE; // Enable transmission and reception
