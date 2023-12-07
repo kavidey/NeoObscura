@@ -31,6 +31,10 @@ Kavi is a undergraduate at Harvey Mudd College (Class of 2026). He has a deep in
 
 # Henry Merrilees
 
+Henry is an undergraduate at Pitzer College (Class of 2025) majoring in computer science. He enjoys distributed systems, emergent behavior, machine learning, type theory, and natural language processing.
+
+[Personal Website](https://henrymerrile.es)
+
 # Neil Chulani
 
 Neil is an undergraduate at Pomona College (Class of 2026). He loves embedded systems and firmware engineering, as well as hardware hacking. He is also part of the Pomona-Pitzer men's tennis team.

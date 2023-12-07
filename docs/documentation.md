@@ -59,11 +59,12 @@ The source code for the project is located in the Github repository [here](https
 *\*Note: The custom PCBs were manufactured by [JLCPCB](https://jlcpcb.com/).*
 
 # References
-[1] [http://szsgir.com/data/PT0805CS.pdf](http://szsgir.com/data/PT0805CS.pdf)
 
-[2] [https://qoiformat.org/](https://qoiformat.org/)
+Phototransister Circuts Applications. [https://www.electronics-notes.com/articles/electronic_components/transistor/phototransistor-circuits-applications.php](https://www.electronics-notes.com/articles/electronic_components/transistor/phototransistor-circuits-applications.php) Accessed 7 Dec. 2023.
 
-[3] [https://www.electronics-notes.com/articles/electronic_components/transistor/phototransistor-circuits-applications.php](https://www.electronics-notes.com/articles/electronic_components/transistor/phototransistor-circuits-applications.php)
+Qoi Image Compression. [https://qoiformat.org/](https://qoiformat.org/) Accessed 7 Dec. 2023.
+
+Technical Data Sheet 0805 SMD Phototransistor: PT0805CS. [http://szsgir.com/data/PT0805CS.pdf](http://szsgir.com/data/PT0805CS.pdf) Accessed 7 Dec. 2023.
 
 <!-- TODO: Make this an actual reference format -->
 

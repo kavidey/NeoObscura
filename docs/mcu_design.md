@@ -125,6 +125,9 @@ Pixels on two edges (i.e. corner pixels) are accounted for by sequentially mirro
     <img src="{{ site.baseurl }}/assets/diagrams/debayering/edge_handling.png" alt="Edge handling" width="400"/>
 </p>
 
+This edge-handling diagram extends rotationally to all other edges and corners.
+
+
 It would be theoretically ideal that in the case of a green corner, the diagonally inferred pixel would be sampled from the corner itself rather than the green pixel one removed from both edges. 
 
 This ends up not mattering as the 3x3 kernel samples channels directly on the same color tile, so the green channel of the green corner Bayer tile corner is sampled directly anyways, irrespective of what green pixels are mirrored.
