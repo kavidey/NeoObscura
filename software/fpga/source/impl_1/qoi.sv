@@ -1,11 +1,24 @@
 /*
- * Author:    Neil Chulani, nchulani@.hmc.edu
+ * Author:    Neil Chulani, nchulani@hmc.edu
  * Created:   12/6/2023
  * 
  * This file contains modules to perform QOI encoding on an FPGA for hardware accelerated compression
  */
 
 
+ /*
+ * module: qoi2top
+ *
+ * Top level QOI module (mainly structural verilog)
+ *
+ * Inputs:
+ *    sck: SPI Clock
+ *    sdi: SPI serical data in
+ *    reset: reset signal
+ *
+ * Outputs:
+ *    sdo: SPI serical data out
+ */
 module qoi2top (
 	input logic sck,
 	input logic sdi,
@@ -41,7 +54,23 @@ module qoi2top (
 	ram ramInstance (high_clk, spiControllingRam, spiRamIn, spiRamAddress, spiRamWE, spiRamOut, encoderControllingRam, encoderRamIn, encoderRamAddress, encoderRamWE, encoderRamOut);
 endmodule
 
-// Module to encode 1200 RGBA pixels in RAM following QOI image compression format
+ /*
+ * module: qoi2top
+ *
+ * Main QOI encoding module
+ *
+ * Inputs:
+ *    clk: clock
+ *    reset: reset
+ *    pixelsReady: signal from SPI module that all pixels have been recieved
+ *    encoderRamOut[15:0]: data from RAM
+ *
+ * Outputs:
+ *    doneEncodingFinal: signal to SPI module that compression is complete
+ *    encoderRamIn: data to write to RAM
+ *    encoderRamAddress: address to read/write in RAM
+ *    enocoderRamWE: whether this module wants to read or write to/from RAM
+ */
 module encoder ( 
 	input logic clk,
 	input logic reset,
@@ -448,7 +477,29 @@ module encoder (
 		endcase
 endmodule
 
-// Module to recieve 1200 RGBA pixels from MCU and send encoded bytes back to MCU after compression
+
+ /*
+ * module: spi
+ *
+ * SPI logic for QOI compresssion
+ *
+ * Receives 1200 RGBA pixels from MCU and sends compressed bytes back to MCU
+ *
+ * Inputs:
+ *    sck: SPI Clock
+ *    sdi: SPI serical data in
+ *    reset: reset signal
+ *    spiRamOut: RAM data out
+ *    doneEncoding: signal from compression module that compression is complete
+ *
+ * Outputs:
+ *    sdo: SPI serical data out
+ *	  spiControllingRam: whether the SPI module is controlling RAM right now
+ *	  spiRamIn[15:0]: RAM data in
+ *	  spiRamAddress[13:0]: RAM Address
+ *	  spiRamWE: RAM Write Enable
+ *    pixelsReady: signal to compression module that all the pixels have been recieved
+ */
 module spi (
 	input logic sck,
 	input logic sdi,
@@ -581,6 +632,28 @@ module spi (
 	end
 endmodule
 
+ /*
+ * module: ram
+ *
+ * RAM Manager
+ *
+ * Implies ram logic and controls when the SPI and Encoder modules can access it
+ *
+ * Inputs:
+ *    clk: clock
+ *    spiControllingRam: Whether the SPI module wants to control RAM
+ *    spiRamIn: data the SPI module wants to write to RAM
+ *    spiRamAddress: address the SPI module wants to interact with
+ *    spiRamWE: whether the SPI module wants to read or write to/from RAM
+ *    encoderControllingRam: Whether the Encoder module wants to control RAM
+ *    encoderRamIn: data the Encoder module wants to write to RAM
+ *    encoderRamAddress: address the Encoder module wants to interact with
+ *    encoderRamWE: whether the Encodr module wants to read or write to/from RAM
+ *
+ * Outputs:
+ *    spiRamOut: output of ram going to the SPI module
+ *    encoderRamOut: output of ram going to the Encoder module
+ */
 // Module to allow both SPI and Encoder modules to read/write RAM
 module ram (
 	input logic clk,

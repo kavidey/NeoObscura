@@ -1,0 +1,1142 @@
+{
+ "builder": {
+  "_version": "<undefined>",
+  "_logger": "hdl_checker.builders.fallback",
+  "_work_folder": "/Users/kavidey/github/NeoObscura/software/fpga/.hdl_checker",
+  "_builtin_libraries": [],
+  "_added_libraries": [
+   {
+    "name": "default_library",
+    "case_sensitive": false,
+    "__class__": "Identifier"
+   }
+  ],
+  "__class__": "Fallback"
+ },
+ "config_file": [
+  {
+   "name": "/tmp/hdl_checker_project_pid19651.json",
+   "__class__": "Path"
+  },
+  1701941641.34381,
+  "generated"
+ ],
+ "database": {
+  "sources": [
+   {
+    "path": {
+     "name": "/Users/kavidey/github/NeoObscura/software/fpga/source/impl_1/decoder.sv",
+     "__class__": "Path"
+    },
+    "mtime": 1701651119.3767626,
+    "flags": {
+     "source_specific": [],
+     "single": [],
+     "dependencies": []
+    },
+    "dependencies": [],
+    "diags": []
+   },
+   {
+    "path": {
+     "name": "/Users/kavidey/github/NeoObscura/software/fpga/source/impl_1/neo_obscura_top.sv",
+     "__class__": "Path"
+    },
+    "mtime": 1701651675.4505,
+    "flags": {
+     "source_specific": [],
+     "single": [],
+     "dependencies": []
+    },
+    "dependencies": [],
+    "diags": []
+   },
+   {
+    "path": {
+     "name": "/Users/kavidey/github/NeoObscura/software/fpga/source/impl_1/qoi.sv",
+     "__class__": "Path"
+    },
+    "mtime": 1701942453.4913747,
+    "flags": {
+     "source_specific": [],
+     "single": [],
+     "dependencies": []
+    },
+    "dependencies": [],
+    "diags": []
+   }
+  ],
+  "inferred_libraries": [
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpby0z2o3b.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp3tox7kjk.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpeg1uaito.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp23r2mh5o.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpop44dyz2.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp9wls74p5.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpuylb802s.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpzsjr1jsc.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpvr2it0jl.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp7f3bm3iw.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpyysgigc5.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp66qpvmzk.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpu51jzon1.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpffx64ifv.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpzx8dtgtk.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp05dkwwkj.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpm83iynjc.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp66ky33qh.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpze_3dd2f.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpzo4n5d42.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpd2r4t756.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpgxmb9szq.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpdkq5khxz.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp7rm8wbbg.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp63bdblyw.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpd9a31kbt.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpyd9ndinh.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpdn4elbop.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpgkgsqe6a.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpsq4_u2ak.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpwmuv1k63.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp80mlj_ma.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpafdh1mpt.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpojaduraj.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp1ubv1zcf.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmplpnexgj4.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp7jr3drim.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpoemlhq81.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmppc_l7i6h.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp9tymyfwp.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpzalzvo02.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpkl88i4sr.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpcmz7qeco.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpl94f928d.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpa9e63h9p.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpeywrix28.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmps_nzab63.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpjmf4feil.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpt8mbfg4m.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmph7w5i7r1.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpkjt7est5.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmppiz2tx8d.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpy_5dt4bh.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp4vqyfb4k.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp3e0k2uje.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpebxtbkvm.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpo9erfdst.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp7hk5yt_r.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpjy30issu.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp4z6qxnt7.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmphaqy9iae.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpjjluxokw.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmphkj0mbgs.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpii70uo7i.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp1f9zd1b2.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp4dhjwisv.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpslqghgtt.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpyfc0qb0b.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpuypyhr1l.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpuwfh65kn.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp_dkoc41c.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpa0b5bsf2.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmptiweky00.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp8r1u75lx.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpy4dk6d0j.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpjvjvelfg.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmprv3dw359.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmprhjptmd2.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp3ja3cco3.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpr4sqdvpc.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpi2uopk2k.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpemyna64h.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmprxhidiwm.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpy49s7_to.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp3c_6wjmh.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpeohpxdal.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpjsqq55g9.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpkffp837l.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpg5l25mev.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp6fq2nl56.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmphuice0ft.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpvuahjb30.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp3yv6b3vn.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpwx_dusoc.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmppxnan14q.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp5o23clhf.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpcakj_upp.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpmxq7ap1k.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpn8xtujim.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpxjdcx_ry.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpcpjdu9x_.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp0wuy0xey.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpbhn9yle9.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpj3oel62w.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpztcorlf8.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpipa891s0.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpb24s5gmh.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmph5mszds0.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpuzic9okd.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpqkwexrnh.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp2et_o6o1.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpkgqrldf4.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpo0ehtwlg.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpx3g1_94t.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp6ab3jtnz.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpat9f_y9_.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp7b5jbtsi.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmphn5h7ghf.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpmf4ny263.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpxr942y0m.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpsbupw39u.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp87ov_mb3.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmphn95cyvl.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpq5c5kdqz.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp9qwtdlur.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp0nvc7sry.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpqf66ntx9.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpu4jl6apw.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpc3kgcpdi.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpj0oaommy.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpel64l5qd.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmptp3uoia1.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpjpl3lzss.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp8p5asy_n.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp57dsvp_h.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp60rfkjz3.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpbwa885ns.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/Users/kavidey/github/NeoObscura/software/fpga/source/impl_1/decoder.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp_sb534od.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpdyy1ctw4.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpf8lc9ax3.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpfz29bzdd.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp57282tj5.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp590vr4z0.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp227a5zku.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpjvigdpcq.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpa6gup2nl.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpfycl80sq.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpc_4u_u0n.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmppzna6vw1.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpmoziah37.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp527ptawx.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp5dk_h3a2.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpy3jnqkny.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpup8ancqv.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpjryqmdw5.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpgz0_ik78.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp8v3fvx_i.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpib76n7vs.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpkqpwgimh.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp85djjvn6.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpo6p2nc8n.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp8n57ttic.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmphxd3edgc.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp4fs2dc7i.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp9exl6rqp.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpmppl2ip1.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmps3ic1qd8.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpxm7argqu.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpfia8wwzy.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp10sbqi4s.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp2mxfwe9y.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp_pdbe0ky.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpz87l2zx_.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpwm94cyqw.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpbiiokv8z.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp14o62zya.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpa_o6minx.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpkifqq3id.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpjt39dawp.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp4mzq294p.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp13up6dnl.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp850yiuwa.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpsojjkef5.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmprzojdyzq.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp_lq1ih7c.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpc10s8s2p.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpuefj3fa_.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpn3lilmb8.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp9ej52nwj.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpw2fgly5x.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpfy0f_xip.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmphlpvfjjj.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp5indpxe3.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpbzrsttgg.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/Users/kavidey/github/NeoObscura/software/fpga/source/impl_1/neo_obscura_top.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp8p7zgyeg.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpifahvf1g.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp8r09x5u3.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpjolx7b_m.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpzekrpm6e.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmps39ftnhp.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpyqauke_q.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp2k_ghuno.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpo7y9ff0l.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp6jt53ygx.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp_kkf1z_8.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpqytm62hc.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpzkx2s6l2.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp5xx70uhv.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp79kta6px.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpdwiblxdj.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpeywi2_dx.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpjt5aka4_.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp5d9y82yi.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpc7bx6p47.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpjfqw88b0.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmplc77s5as.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp2c3rsiob.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp20qlwbnm.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpnqgdglvc.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp7dd7_3n5.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpn5ddqg0t.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmph5uf9l9r.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp6vwp03vb.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmppmbf_jvx.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpx484osa4.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp73nyl6vl.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpxbm9n3f4.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpjvciry31.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpn_fxv236.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp4nz48_i_.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpfxcvo4wh.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpyxz8acmy.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmptzo5m9uh.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmpegbczzcr.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/Users/kavidey/github/NeoObscura/software/fpga/source/impl_1/qoi.sv",
+    "__class__": "Path"
+   },
+   {
+    "name": "/var/folders/b1/15j_gfbn6q1b0txsrcxn2zrw0000gn/T/tmp31_unlmp.sv",
+    "__class__": "Path"
+   }
+  ],
+  "design_units": [
+   {
+    "owner": {
+     "name": "/Users/kavidey/github/NeoObscura/software/fpga/source/impl_1/qoi.sv",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "qoi2top",
+     "case_sensitive": true,
+     "__class__": "VerilogIdentifier"
+    },
+    "locations": [
+     [
+      21,
+      7
+     ]
+    ],
+    "__class__": "VerilogDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/Users/kavidey/github/NeoObscura/software/fpga/source/impl_1/neo_obscura_top.sv",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "neo_obscura_top",
+     "case_sensitive": true,
+     "__class__": "VerilogIdentifier"
+    },
+    "locations": [
+     [
+      20,
+      7
+     ]
+    ],
+    "__class__": "VerilogDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/Users/kavidey/github/NeoObscura/software/fpga/source/impl_1/decoder.sv",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "decoder",
+     "case_sensitive": true,
+     "__class__": "VerilogIdentifier"
+    },
+    "locations": [
+     [
+      19,
+      7
+     ]
+    ],
+    "__class__": "VerilogDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/Users/kavidey/github/NeoObscura/software/fpga/source/impl_1/qoi.sv",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "encoder",
+     "case_sensitive": true,
+     "__class__": "VerilogIdentifier"
+    },
+    "locations": [
+     [
+      73,
+      7
+     ]
+    ],
+    "__class__": "VerilogDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/Users/kavidey/github/NeoObscura/software/fpga/source/impl_1/qoi.sv",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "ram",
+     "case_sensitive": true,
+     "__class__": "VerilogIdentifier"
+    },
+    "locations": [
+     [
+      657,
+      7
+     ]
+    ],
+    "__class__": "VerilogDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/Users/kavidey/github/NeoObscura/software/fpga/source/impl_1/qoi.sv",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "spi",
+     "case_sensitive": true,
+     "__class__": "VerilogIdentifier"
+    },
+    "locations": [
+     [
+      502,
+      7
+     ]
+    ],
+    "__class__": "VerilogDesignUnit"
+   }
+  ],
+  "__class__": "Database"
+ },
+ "__version__": "0.7.4"
+}
