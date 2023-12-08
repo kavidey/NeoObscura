@@ -50,7 +50,7 @@ All of the address selection is done using the GPIO pins on the MCU.
 [ADC Peripheral](#adc-peripheral) and [ADC Interrupt Handler](#adc-interrupt-handler) have more details on exact process of setting up the ADC and reading individual pixels. Below is a trace of the voltage input to the ADC while one whole frame was being captured.
 
 <p align="center">
-    <img src="{{ site.baseurl }}/assets/img/sensor_trace.png" alt="Sensor Oscilloscope Trace" width="600"/>
+    <img src="{{ site.baseurl }}/assets/img/sensor_trace.png" alt="Sensor Oscilloscope Trace" width="600"  style="image-rendering:pixelated;"/>
 </p>
 <h5 align="center">
 Sensor Oscilloscope Trace
