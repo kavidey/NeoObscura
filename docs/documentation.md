@@ -68,8 +68,7 @@ Technical Data Sheet 0805 SMD Phototransistor: PT0805CS. [http://szsgir.com/data
 
 <!-- TODO: Make this an actual reference format -->
 # Acknowledgements
-1. Prof. Brake
-2. Sean Hodgins
+Prof. Brake for all of his help, support and teaching as we attempted this crazy project. Sean Hodgins for inspiring us to do this in the first place.
 
 # Inspiration
 The inspiration for this project came from a simlar project found [here](https://www.youtube.com/watch?v=PaXweP73NT4).
