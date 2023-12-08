@@ -30,15 +30,21 @@ permalink: /media/
 <table style="margin-left: auto; margin-right: auto;">
   <tr>
     <td>
-      <img src="{{ site.baseurl }}/assets/img/flashlight.mov" alt="Description" width="200"/>
+      <video width="200" height="400" controls>
+        <source src="{{ site.baseurl }}/assets/img/flashlight.mov" type="video/mp4">
+      </video>
       <p>Sensor working with flashlight</p>
     </td>
     <td>
-      <img src="{{ site.baseurl }}/assets/img/laser.mov" alt="Description" width="200"/>
+      <video width="200" height="400" controls>
+        <source src="{{ site.baseurl }}/assets/img/laser.mov" type="video/mp4">
+      </video>
       <p>Sensor working with laser pointer</p>
     </td>
     <td>
-      <img src="{{ site.baseurl }}/assets/img/smiley.mov" alt="Description" width="200"/>
+      <video width="200" height="400" controls>
+        <source src="{{ site.baseurl }}/assets/img/smiley.mov" type="video/mp4">
+      </video>
       <p>Sensor working with smiley face!</p>
     </td>
   </tr>
@@ -57,4 +63,5 @@ permalink: /media/
     </td>
   </tr>
 </table>
+
 
