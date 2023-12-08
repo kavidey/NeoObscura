@@ -12,6 +12,8 @@ permalink: /media/
 <p align="center">
     <img src="{{ site.baseurl }}/assets/img/dog_single.png" alt="Simulated raw camera data of dog (in Bayer pattern)" width="400" style="image-rendering:pixelated;"/>
     <p style="text-align: center;"><em>Simulated raw camera data of dog (in Bayer pattern)</em></p>
+</p>
+<p align="center">
     <img src="{{ site.baseurl }}/assets/img/dog_color.png" alt="Debayered image of dog" width="400" style="image-rendering:pixelated;"/>
     <p style="text-align: center;"><em>Debayered image of dog</em></p>
 </p>
