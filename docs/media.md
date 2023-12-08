@@ -5,9 +5,21 @@ permalink: /media/
 ---
 
 ## Showcase Video
+<p align="center">
+    <iframe width="262" height="467" src="https://www.youtube.com/embed/lJYW2ZMiyLE" title="NeoObscura: A completely from scratch image sensor with QOI Compression" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</p>
 
 ## Showcase Photos
 
+<p align="center">
+    <img src="{{ site.baseurl }}/assets/media/whole_setup.png" alt="Camera Sensor + Laptop" width="400"/>
+    <p style="text-align: center;"><em>Camera Sensor + Laptop</em></p>
+</p>
+
+<p align="center">
+    <img src="{{ site.baseurl }}/assets/media/sensor.png" alt="Finished image sensor with Bayer Filter" width="400"/>
+    <p style="text-align: center;"><em>Finished image sensor with Bayer Filter</em></p>
+</p>
 
 <p align="center">
     <img src="{{ site.baseurl }}/assets/img/dog_single.png" alt="Simulated raw camera data of dog (in Bayer pattern)" width="400" style="image-rendering:pixelated;"/>
@@ -64,4 +76,7 @@ permalink: /media/
   </tr>
 </table>
 
-
+<p align="center">
+    <img src="{{ site.baseurl }}/assets/media/sensor_in_progress.png" alt="In-Progress image sensor (it took 8 hours to solder)" width="500"/>
+    <p style="text-align: center;"><em>In-Progress image sensor (it took 8 hours to solder)</em></p>
+</p>
