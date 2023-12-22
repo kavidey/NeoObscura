@@ -3,23 +3,22 @@
 *                        The Embedded Experts                        *
 **********************************************************************
 
--------------------------- END-OF-HEADER -----------------------------
+-------------------------- END-OF-HEADER -----------------------------x 
 
 File    : main.c
 Purpose : Generic application start
 
 */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "lib/STM32L432KC.h"
-#include "lib/STM32L432KC_USB.h"
 #include "lib/STM32L432KC_FLASH.h"
 #include "lib/STM32L432KC_GPIO.h"
 #include "lib/STM32L432KC_RCC.h"
 #include "lib/STM32L432KC_USART.h"
+#include "lib/STM32L432KC_USB.h"
 #include <stdint.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <stm32l432xx.h>
 
 char tempString[32];

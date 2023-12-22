@@ -4,11 +4,20 @@
 #include "STM32L432KC_USB.h"
 #include "STM32L432KC_GPIO.h"
 #include "STM32L432KC_RCC.h"
+#include "cmsis_gcc.h"
 #include "stm32l432xx.h"
 #include <stdint.h>
 
 void initUSB() {
+  /// Setup USB pins ///
   gpioEnable(GPIO_PORT_A);
+
+  // AF5 for SPI1 on pins PA11 & PA12
+  GPIOA->AFR[1] |=
+      (0b1010 << GPIO_AFRH_AFSEL11_Pos) | (0b1010 << GPIO_AFRH_AFSEL12_Pos);
+
+  pinMode(PA11, GPIO_ALT);
+  pinMode(PA12, GPIO_ALT);
 
   /// Enable clock to USB ///
   // Enable the 48 MHz clock and wire it to the USB peripheral
@@ -45,54 +54,67 @@ void initUSB() {
 
   // Raise the reset line
   USB->CNTR &= ~(USB_CNTR_FRES);
+
+  USB_ClearSRAM();
+
+  USB_Reset();
 }
 
-__ALIGNED(8)
-__IO static USB_BTABLE_ENTRY *BTable = (volatile uint16_t *)__USBBUF_BEGIN;
-
-__ALIGNED(8)
-__IO static char *EP0_Buf =
-    ((volatile uint16_t *)__USBBUF_BEGIN) + sizeof(USB_BTABLE_ENTRY) * 9;
-
-static void USB_ClearSRAM() {
-  char *buffer = (char *)__USBBUF_BEGIN;
-
-  for (int i = 0; i < 1024; i++) {
-    buffer[i] = 0;
+void USB_ClearSRAM() {
+  char *p = (uint8_t *)USB_SRAM;
+  for (int i = 0; i < USB_SRAM_SIZE; i++) {
+    *++p = 0xe;
   }
+  ((uint16_t *) USB_SRAM)[1023] = 0xdead;
+}
+
+USB_BTABLE_ENTRY (*BTable)[8] = USB_SRAM;
+
+void USB_EndpointInit() {
+  // Reset all endpoint registers
+  USB->EP0R = 0;
+  USB->EP1R = 0;
+  USB->EP2R = 0;
+  USB->EP3R = 0;
+  USB->EP4R = 0;
+  USB->EP5R = 0;
+  USB->EP6R = 0;
+  USB->EP7R = 0;
+
+  // Setup BTable entry for endpoint 0 (control)
+  BTable[0]->ADDR_TX = EP0_TX_BUF_INDEX * 64;
+  BTable[0]->COUNT_TX = 0;
+  BTable[0]->ADDR_RX = EP0_RX_BUF_INDEX * 64;
+  BTable[0]->COUNT_RX =
+      USB_COUNTRX_BL1 |
+      (1 << USB_COUNT_RX_NUMBLOCK_Pos); // 64 byte buffer size (RM0394 p. 1550)
+
+  // Endpoint type: control, enable receiving, disable transmitting
+  USB_SetEPnR(&USB->EP0R, USB_EP_CONTROL | USB_EP_RX_VALID | USB_EP_TX_NAK,
+              USB_EP_TYPE_MASK | USB_EP_RX_VALID | USB_EP_TX_VALID);
+
+  // Set address to 0 and enable function
+  USB->DADDR = USB_DADDR_EF;
+}
+
+void USB_Reset() {
+  USB_EndpointInit();
+
+  // Set address to 0 and enable function
+  USB->DADDR = USB_DADDR_EF;
 }
 
 void USB_IRQHandler() {
   if ((USB->ISTR & USB_ISTR_RESET) != 0) {
+    USB_Reset();
     // Clear interrupt
     USB->ISTR = ~USB_ISTR_RESET;
-
-    // Clear SRAM for readability
-    USB_ClearSRAM();
-
-    // Prepare BTable
-    USB->BTABLE = __MEM2USB(BTable);
-
-    BTable[0].ADDR_RX = __MEM2USB(EP0_Buf[0]);
-    BTable[0].ADDR_TX = __MEM2USB(EP0_Buf[1]);
-    BTable[0].COUNT_TX = 0;
-    BTable[0].COUNT_RX = (1 << 15) | (1 << 10);
-
-    // ((uint16_t *) __USBBUF_BEGIN)[0] = __MEM2USB(EP0_Buf[0]);
-    // ((uint16_t *) __USBBUF_BEGIN)[2] = __MEM2USB(EP0_Buf[1]);
-
-    // Endpoint type: control, enable receiving, disable transmitting
-    USB_SetEPnR(&USB->EP0R, USB_EP_CONTROL | USB_EP_RX_VALID | USB_EP_TX_NAK,
-                USB_EP_TYPE_MASK | USB_EP_RX_VALID | USB_EP_TX_VALID);
-
-    // Set Enable Function
-    // USB->DADDR |= USB_DADDR_EF;
-    USB->DADDR = USB_DADDR_EF;
   } else if ((USB->ISTR & USB_ISTR_CTR) != 0) {
+    __BKPT();
     // if the message was for the 0 endpoint
-    if ((USB->ISTR & USB_ISTR_EP_ID) == 0) {
-      USB_HandleControl();
-    }
+    // if ((USB->ISTR & USB_ISTR_EP_ID) == 0) {
+    //   USB_HandleControl();
+    // }
   }
 }
 

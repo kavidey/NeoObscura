@@ -60,18 +60,26 @@ static const USB_DESCRIPTOR_DEVICE DeviceDescriptor = {.Length = 18,
                                                        .strProduct = 0,
                                                        .strSerialNumber = 0,
                                                        .NumConfigurations = 1};
-
-#define __USBBUF_BEGIN 0x40006000
-#define __MEM2USB(X) (((int)X - __USBBUF_BEGIN) / 2)
-#define __USB2MEM(X) (((int)X * 2 + __USBBUF_BEGIN))
-
 typedef struct {
-    unsigned short ADDR_TX;
-    unsigned short COUNT_TX;
-    unsigned short ADDR_RX;
-    unsigned short COUNT_RX;
+  volatile uint32_t ADDR_TX;
+  volatile uint32_t COUNT_TX;
+  volatile uint32_t ADDR_RX;
+  volatile uint32_t COUNT_RX;
 } USB_BTABLE_ENTRY;
 
+// Modified from: https://github.com/trebisky/stm32f103/blob/master/usb/usb.c
+#define USB_SRAM (unsigned long *)0x40006C00
+#define USB_SRAM_SIZE 1024 /* bytes */
+
+#define NUM_EP 8
+
+#define EP0_TX_BUF_INDEX	1
+#define EP0_RX_BUF_INDEX	2
+
+#define USB_COUNTRX_BL0 (0b0 << 15)
+#define USB_COUNTRX_BL1 (0b1 << 15)
+
+#define USB_COUNT_RX_NUMBLOCK_Pos 10
 ///////////////////////////////////////////////////////////////////////////////
 // Function prototypes
 ///////////////////////////////////////////////////////////////////////////////
@@ -81,10 +89,14 @@ void initUSB();
 void USB_HandleControl();
 void USB_HandleSetup(USB_SETUP_PACKET *setup);
 
+void USB_Reset();
+
 /*
 Modified from https://github.com/CShark/stm32usb/wiki/03.-USB-Reset and
 https://www.mikrocontroller.net/articles/USB-Tutorial_mit_STM32
 */
 void USB_SetEPnR(volatile uint16_t *endpoint, uint16_t value, uint16_t mask);
 
+void USB_EndpointInit();
+void USB_ClearSRAM();
 #endif
